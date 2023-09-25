@@ -1,0 +1,60 @@
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\obj\Debug\Presentasión.csprojResolveAssemblyReference.cache
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\obj\Debug\Iglesia.Acerca_de.resources
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\obj\Debug\Iglesia.Agregar_Personas.resources
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\obj\Debug\Iglesia.AgregarPersonas2.resources
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\obj\Debug\Iglesia.ConsultaPers.resources
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\obj\Debug\Iglesia.DetallePersonas2.resources
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\obj\Debug\Iglesia.Ensayos.resources
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\obj\Debug\Iglesia.Formulario.resources
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\obj\Debug\Iglesia.GestionarPersonas.resources
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\obj\Debug\Iglesia.Form1.resources
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\obj\Debug\Iglesia.Modificar_Personas.resources
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\obj\Debug\Iglesia.Properties.Resources.resources
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\obj\Debug\Presentasión.csproj.GenerateResource.Cache
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\obj\Debug\RdlCompile.cache
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\obj\Debug\RdlCompile.compiled
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\obj\Debug\Iglesia.exe
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\obj\Debug\Iglesia.pdb
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\bin\Debug\Iglesia.accdb
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\bin\Debug\Iglesia.exe.config
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\bin\Debug\Iglesia.exe
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\bin\Debug\Iglesia.pdb
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\bin\Debug\Requisitos\dotNetFx45_Full_setup.exe
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\bin\Debug\Iglesia.exe.manifest
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\bin\Debug\Iglesia.application
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\obj\Debug\Iglesia.exe.manifest
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\Iglesia\obj\Debug\Iglesia.application
+C:\Users\MELIS\Downloads\Iglesia recupero\Iglesia\obj\Debug\Presentasión.csproj.AssemblyReference.cache
+C:\Users\MELIS\Downloads\Iglesia recupero\Iglesia\obj\Debug\Iglesia.Acerca_de.resources
+C:\Users\MELIS\Downloads\Iglesia recupero\Iglesia\obj\Debug\Iglesia.Agregar_Personas.resources
+C:\Users\MELIS\Downloads\Iglesia recupero\Iglesia\obj\Debug\Iglesia.AgregarPersonas2.resources
+C:\Users\MELIS\Downloads\Iglesia recupero\Iglesia\obj\Debug\Iglesia.ConsultaPers.resources
+C:\Users\MELIS\Downloads\Iglesia recupero\Iglesia\obj\Debug\Iglesia.DetallePersonas2.resources
+C:\Users\MELIS\Downloads\Iglesia recupero\Iglesia\obj\Debug\Iglesia.Ensayos.resources
+C:\Users\MELIS\Downloads\Iglesia recupero\Iglesia\obj\Debug\Iglesia.Formulario.resources
+C:\Users\MELIS\Downloads\Iglesia recupero\Iglesia\obj\Debug\Iglesia.GestionarPersonas.resources
+C:\Users\MELIS\Downloads\Iglesia recupero\Iglesia\obj\Debug\Iglesia.Form1.resources
+C:\Users\MELIS\Downloads\Iglesia recupero\Iglesia\obj\Debug\Iglesia.Modificar_Personas.resources
+C:\Users\MELIS\Downloads\Iglesia recupero\Iglesia\obj\Debug\Iglesia.Properties.Resources.resources
+C:\Users\MELIS\Downloads\Iglesia recupero\Iglesia\obj\Debug\Presentasión.csproj.GenerateResource.cache
+C:\Users\MELIS\Downloads\Iglesia recupero\Iglesia\obj\Debug\Presentasión.csproj.CoreCompileInputs.cache
+C:\Users\MELIS\Downloads\Iglesia recupero\Iglesia\obj\Debug\Iglesia.exe
+C:\Users\MELIS\Downloads\Iglesia recupero\Iglesia\obj\Debug\Iglesia.pdb
+C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023\Iglesia\obj\Debug\Presentasión.csproj.AssemblyReference.cache
+C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023\Iglesia\obj\Debug\Iglesia.Acerca_de.resources
+C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023\Iglesia\obj\Debug\Iglesia.Agregar_Personas.resources
+C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023\Iglesia\obj\Debug\Iglesia.AgregarPersonas2.resources
+C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023\Iglesia\obj\Debug\Iglesia.ConsultaPers.resources
+C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023\Iglesia\obj\Debug\Iglesia.DetallePersonas2.resources
+C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023\Iglesia\obj\Debug\Iglesia.Ensayos.resources
+C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023\Iglesia\obj\Debug\Iglesia.Formulario.resources
+C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023\Iglesia\obj\Debug\Iglesia.GestionarPersonas.resources
+C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023\Iglesia\obj\Debug\Iglesia.Form1.resources
+C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023\Iglesia\obj\Debug\Iglesia.Modificar_Personas.resources
+C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023\Iglesia\obj\Debug\Iglesia.Properties.Resources.resources
+C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023\Iglesia\obj\Debug\Presentasión.csproj.GenerateResource.cache
+C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023\Iglesia\obj\Debug\Presentasión.csproj.CoreCompileInputs.cache
+C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023\Iglesia\obj\Debug\Iglesia.exe
+C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023\Iglesia\obj\Debug\Iglesia.pdb

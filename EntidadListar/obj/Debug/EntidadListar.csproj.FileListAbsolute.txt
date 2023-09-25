@@ -1,0 +1,5 @@
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\EntidadListar\bin\Debug\EntidadListar.dll
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\EntidadListar\bin\Debug\EntidadListar.pdb
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\EntidadListar\obj\Debug\EntidadListar.csprojResolveAssemblyReference.cache
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\EntidadListar\obj\Debug\EntidadListar.dll
+C:\Users\lguzman\Documents\Visual Studio 2012\Projects\Iglesia\EntidadListar\obj\Debug\EntidadListar.pdb
