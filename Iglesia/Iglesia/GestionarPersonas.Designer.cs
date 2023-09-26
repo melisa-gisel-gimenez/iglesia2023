@@ -345,7 +345,7 @@
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.dgvConsultaPersonas);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            //this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GestionarPersonas";
             this.Text = "Gestionar Personas";
             this.Load += new System.EventHandler(this.GestionarPersonas_Load);

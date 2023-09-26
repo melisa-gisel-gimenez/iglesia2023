@@ -94,24 +94,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DetallePersonas2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DetallePersonas2.Designer.cs">
-      <DependentUpon>DetallePersonas2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormTipodeEgreso.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormTipodeEgreso.Designer.cs">
-      <DependentUpon>FormTipodeEgreso.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormTipodeIngreso.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormTipodeIngreso.Designer.cs">
-      <DependentUpon>FormTipodeIngreso.cs</DependentUpon>
-    </Compile>
     <Compile Include="GestionarPersonas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,29 +117,8 @@
     <EmbeddedResource Include="Acerca de...resx">
       <DependentUpon>Acerca de...cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgregarPersonas.resx">
-      <DependentUpon>AgregarPersonas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AsignarMentor.resx">
       <DependentUpon>AsignarMentor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DetallePersonas2.resx">
-      <DependentUpon>DetallePersonas2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormTipodeEgreso.resx">
-      <DependentUpon>FormTipodeEgreso.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormTipodeIngreso.resx">
-      <DependentUpon>FormTipodeIngreso.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GestionarPersonas.resx">
-      <DependentUpon>GestionarPersonas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Iglesia Adm.resx">
-      <DependentUpon>Iglesia Adm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modificar_Personas.resx">
-      <DependentUpon>Modificar_Personas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

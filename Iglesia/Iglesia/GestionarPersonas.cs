@@ -16,7 +16,7 @@ namespace Iglesia
         public GestionarPersonas()
         {
             InitializeComponent();
-            BtnEliminar.Enabled=false;
+            BtnEliminar.Enabled = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -52,12 +52,12 @@ namespace Iglesia
                 ventana.txtTelefono.Text = fila.Cells[5].Value.ToString();
                 ventana.textBox1.Text = fila.Cells[6].Value.ToString();
                 ventana.dateTimePicker1.Text = fila.Cells[7].Value.ToString();
-                
+
 
             }
 
             ventana.Show();
-            
+
             Close();
         }
 
@@ -112,7 +112,7 @@ namespace Iglesia
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -291,7 +291,7 @@ namespace Iglesia
                         break;
                     }
 
-                
+
             }
         }
 
@@ -309,11 +309,11 @@ namespace Iglesia
             Close();
             GestionarPersonas open = new GestionarPersonas();
             open.Show();
-            
 
-                
-            
-                
+
+
+
+
 
         }
 
@@ -336,7 +336,7 @@ namespace Iglesia
             TxtDirec.Clear();
             TxtTel.Clear();
             TxtSexo.Clear();
-            
+
             foreach (DataGridViewRow fila in dgvConsultaPersonas.Rows)
             {
                 fila.Cells[0].Style.BackColor = Color.White;
@@ -375,7 +375,7 @@ namespace Iglesia
             }
 
             BtnPuesto.Enabled = false;
-            
+
         }
 
         private void dgvConsultaPersonas_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -392,8 +392,8 @@ namespace Iglesia
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            DetallePersonas2 Ventana = new DetallePersonas2();
-            Ventana.ShowDialog();
+            //DetallePersonas2 Ventana = new DetallePersonas2();
+            //Ventana.ShowDialog();
         }
 
         private void dgvConsultaPersonas_DoubleClick(object sender, EventArgs e)
@@ -403,20 +403,25 @@ namespace Iglesia
 
         private void button1_Click_3(object sender, EventArgs e)
         {
-            DetallePersonas2 Ventana = new DetallePersonas2();
+            //DetallePersonas2 Ventana = new DetallePersonas2();
+            /*
+                        foreach (DataGridViewRow fila in dgvConsultaPersonas.SelectedRows)
+                        {
+                            Ventana.TxtDNI.Text = fila.Cells[0].Value.ToString();
+                            Ventana.TxtNombre.Text = fila.Cells[1].Value.ToString()+" "+ fila.Cells[2].Value.ToString();
+                            Ventana.TxtConsolidador.Text = fila.Cells[6].Value.ToString();
+                            //Ventana.txtDireccion.Text = fila.Cells[3].Value.ToString();
 
-            foreach (DataGridViewRow fila in dgvConsultaPersonas.SelectedRows)
-            {
-                Ventana.TxtDNI.Text = fila.Cells[0].Value.ToString();
-                Ventana.TxtNombre.Text = fila.Cells[1].Value.ToString()+" "+ fila.Cells[2].Value.ToString();
-                Ventana.TxtConsolidador.Text = fila.Cells[6].Value.ToString();
-                //Ventana.txtDireccion.Text = fila.Cells[3].Value.ToString();
+
+                        }
+
+                        Ventana.Show();
+
+                    }
 
 
-            }
-
-            Ventana.Show();
-
+                }
+            */
         }
     }
 }
