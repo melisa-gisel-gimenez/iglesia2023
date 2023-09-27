@@ -77,8 +77,8 @@ namespace Iglesia
         {
             //GestionarPersonas Ventana = new GestionarPersonas();
 
-
-            OleDbConnection cn = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\MELIS\OneDrive\Escritorio\Iglesianuevo2023.mdb");
+            // string conexion @"Provider = Microsoft.Jet.OLEDB.4.0; Data Source = C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb";
+            OleDbConnection cn = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb");
             cn.Open(); 
             String consulta2 = "insert into Miembros (DNI, NOMBRE, APELLIDO, DIRECCION, BARRIO, TELEFONO, FECHA_NAC, BAUTIZADO, EMAIL) values (" + int.Parse(txtDNI.Text) + ", '" + txtNombre.Text + "', '" + txtApellido.Text + "', '" + txtDireccion.Text + "', '" + txtBarrio.Text + "', " + txtTelefono.Text + ", '" + dateTimePicker1.Value + " ', " + checkBox_bautismo.Checked + ", '" + textemail.Text + "');";
 
@@ -130,8 +130,8 @@ namespace Iglesia
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
-            GestionarPersonas ventana = new GestionarPersonas();
-            ventana.ShowDialog();
+           // GestionarPersonas ventana = new GestionarPersonas();
+            //ventana.ShowDialog();
            
         }
 
@@ -172,9 +172,10 @@ namespace Iglesia
         {
             bool encontrado=false;
 
-            OleDbConnection conexion = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\MELIS\OneDrive\Escritorio\Iglesianuevo2023.mdb");
+            OleDbConnection conexion = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb");
+           // OleDbConnection conexion = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\MELIS\OneDrive\Escritorio\Iglesianuevo2023.mdb");
             conexion.Open();
-            string Consulta = "select * from Miembros where DNI="+ DNI + ";";
+            string Consulta = "select * from Miembros where DNI='"+ DNI + "';";
             OleDbCommand comando = new OleDbCommand(Consulta, conexion);
             OleDbDataReader dr = comando.ExecuteReader();
             while (dr.Read())
@@ -184,9 +185,11 @@ namespace Iglesia
             }
 
             return encontrado;
-        }
             }
-        }
+
+
+    }
+}
         
 
         

@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.personasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarPersonasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cargarPersonasNuevasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cargarPersonas = new System.Windows.Forms.ToolStripMenuItem();
             this.departamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jóvenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asistenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,8 +62,9 @@
             this.tesoreríaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.asignarMentorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -90,7 +90,8 @@
             // 
             this.personasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consultarPersonasToolStripMenuItem,
-            this.cargarPersonasNuevasToolStripMenuItem});
+            this.cargarPersonas,
+            this.asignarMentorToolStripMenuItem});
             this.personasToolStripMenuItem.Name = "personasToolStripMenuItem";
             this.personasToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.personasToolStripMenuItem.Text = "Personas";
@@ -98,16 +99,16 @@
             // consultarPersonasToolStripMenuItem
             // 
             this.consultarPersonasToolStripMenuItem.Name = "consultarPersonasToolStripMenuItem";
-            this.consultarPersonasToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.consultarPersonasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultarPersonasToolStripMenuItem.Text = "Consultar Personas";
             this.consultarPersonasToolStripMenuItem.Click += new System.EventHandler(this.consultarPersonasToolStripMenuItem_Click);
             // 
-            // cargarPersonasNuevasToolStripMenuItem
+            // cargarPersonas
             // 
-            this.cargarPersonasNuevasToolStripMenuItem.Name = "cargarPersonasNuevasToolStripMenuItem";
-            this.cargarPersonasNuevasToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.cargarPersonasNuevasToolStripMenuItem.Text = "Gestionar Personas";
-            this.cargarPersonasNuevasToolStripMenuItem.Click += new System.EventHandler(this.cargarPersonasNuevasToolStripMenuItem_Click);
+            this.cargarPersonas.Name = "cargarPersonas";
+            this.cargarPersonas.Size = new System.Drawing.Size(180, 22);
+            this.cargarPersonas.Text = "Alta Miembros";
+            this.cargarPersonas.Click += new System.EventHandler(this.cargarPersonasNuevasToolStripMenuItem_Click);
             // 
             // departamentosToolStripMenuItem
             // 
@@ -324,7 +325,7 @@
             // tesoreríaToolStripMenuItem
             // 
             this.tesoreríaToolStripMenuItem.Name = "tesoreríaToolStripMenuItem";
-            this.tesoreríaToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.tesoreríaToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.tesoreríaToolStripMenuItem.Text = "Tesorería";
             this.tesoreríaToolStripMenuItem.Click += new System.EventHandler(this.tesoreríaToolStripMenuItem_Click);
             // 
@@ -342,19 +343,6 @@
             this.cerrarToolStripMenuItem.Text = "Cerrar";
             this.cerrarToolStripMenuItem.Click += new System.EventHandler(this.cerrarToolStripMenuItem_Click);
             // 
-            // pictureBox1
-            // 
-            
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            //this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(648, 412);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            
-            // 
             // button1
             // 
             this.button1.AutoEllipsis = true;
@@ -370,16 +358,31 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(648, 412);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // asignarMentorToolStripMenuItem
+            // 
+            this.asignarMentorToolStripMenuItem.Name = "asignarMentorToolStripMenuItem";
+            this.asignarMentorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.asignarMentorToolStripMenuItem.Text = "Asignar Mentor";
+            this.asignarMentorToolStripMenuItem.Click += new System.EventHandler(this.asignarMentorToolStripMenuItem_Click);
+            // 
             // Form1
             // 
-            
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(648, 436);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
-           // this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Iglesia Adm.";
@@ -389,7 +392,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-            
+
         }
 
         #endregion
@@ -397,7 +400,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem personasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarPersonasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cargarPersonasNuevasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cargarPersonas;
         private System.Windows.Forms.ToolStripMenuItem departamentosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem jóvenesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asistenciaToolStripMenuItem;
@@ -430,6 +433,7 @@
         private System.Windows.Forms.ToolStripMenuItem cerrarToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem asignarMentorToolStripMenuItem;
     }
 }
 

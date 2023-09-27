@@ -183,5 +183,11 @@ namespace Iglesia
             //GestionarPersonas Form1 = new GestionarPersonas();
             //Form1.Show();
         }
+
+        private void asignarMentorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AsignarMentor Form1 = new AsignarMentor();
+            Form1.Show();
+        }
     }
 }

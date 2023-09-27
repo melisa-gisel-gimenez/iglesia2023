@@ -120,6 +120,9 @@
     <EmbeddedResource Include="AsignarMentor.resx">
       <DependentUpon>AsignarMentor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Iglesia Adm.resx">
+      <DependentUpon>Iglesia Adm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
