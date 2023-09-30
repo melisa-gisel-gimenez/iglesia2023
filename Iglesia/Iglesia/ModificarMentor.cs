@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace Iglesia
 {
-    public partial class AsignarMentor : Form
+    public partial class ModificarMentor : Form
     {        
             private OleDbConnection conexion;
             private OleDbDataAdapter adaptador;
             private DataSet dataSet;
 
-            public AsignarMentor()
+            public ModificarMentor()
             {
                 InitializeComponent();
 
@@ -38,7 +38,7 @@ namespace Iglesia
               conexion = new OleDbConnection(connectionString);
 
               // Define la consulta SQL para seleccionar los registros con ID_Mentor vacío.
-              string consulta = "SELECT DNI, nombre, fecha_alta, id_mentor FROM Miembros WHERE id_mentor IS NULL";
+              string consulta = "SELECT DNI, nombre, fecha_alta, id_mentor FROM Miembros WHERE id_mentor IS NOT NULL";
 
               // Crea un adaptador de datos para ejecutar la consulta y llenar el DataSet.
               adaptador = new OleDbDataAdapter(consulta, conexion);
@@ -89,6 +89,7 @@ namespace Iglesia
             textBoxDNI.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells[0].Value.ToString();
             textBoxNombre.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells[1].Value.ToString();
 
+            button2.Enabled = true;
             dni = int.Parse(textBoxDNI.Text);
             nombreM = textBoxNombre.Text;
             /*
@@ -104,6 +105,7 @@ namespace Iglesia
             int id;
             string nombreMentor;
             int cantidadMentoreados;
+            button2.Enabled = false;
 
             textBoxIdMentor.Text = DGV2.Rows[DGV2.CurrentRow.Index].Cells[0].Value.ToString();
             textBoxNombreMentor.Text = DGV2.Rows[DGV2.CurrentRow.Index].Cells[1].Value.ToString();
@@ -156,7 +158,7 @@ namespace Iglesia
 
                     else
                     {
-                        MessageBox.Show("Se asignó el mentor con éxito!!!");
+                        MessageBox.Show("Se asignó el nuevo mentor con éxito!!!");
                     }
 
                     OleDbCommand comando2 = new OleDbCommand(consulta4, cn);
@@ -178,7 +180,35 @@ namespace Iglesia
 
         }
 
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if ((textBoxDNI.Text == "") || (textBoxNombre.Text) == "")
+            {
+                MessageBox.Show("No puede dejar campos vacíos, por favor seleccione un miembro.");
+                button2.Enabled = false;
+            }
+            else
+            {
+                
+                OleDbConnection cn = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb");
+                cn.Open();
+                String consulta3 = "UPDATE Miembros SET id_mentor = NULL WHERE DNI = '" + int.Parse(textBoxDNI.Text) + "';";
+                OleDbCommand comando1 = new OleDbCommand(consulta3, cn);
+
+                int cantidad = comando1.ExecuteNonQuery();
+
+
+                if (cantidad < 1)
+                {
+                    MessageBox.Show("Ocurrió un problema");
+                }
+
+                else
+                {
+                    MessageBox.Show("El Miembro elegido, ya no tiene un mentor asignado.");
+                }
+            }
+        }
     }
 }
 

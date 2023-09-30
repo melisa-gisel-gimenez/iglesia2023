@@ -189,5 +189,11 @@ namespace Iglesia
             AsignarMentor Form1 = new AsignarMentor();
             Form1.Show();
         }
+
+        private void modificarMentoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModificarMentor Form1 = new ModificarMentor();
+            Form1.Show();
+        }
     }
 }

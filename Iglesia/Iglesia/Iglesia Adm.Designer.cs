@@ -32,6 +32,7 @@
             this.personasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarPersonasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargarPersonas = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignarMentorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.departamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jóvenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asistenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,7 +65,7 @@
             this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.asignarMentorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarMentoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -91,7 +92,8 @@
             this.personasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consultarPersonasToolStripMenuItem,
             this.cargarPersonas,
-            this.asignarMentorToolStripMenuItem});
+            this.asignarMentorToolStripMenuItem,
+            this.modificarMentoresToolStripMenuItem});
             this.personasToolStripMenuItem.Name = "personasToolStripMenuItem";
             this.personasToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.personasToolStripMenuItem.Text = "Personas";
@@ -109,6 +111,13 @@
             this.cargarPersonas.Size = new System.Drawing.Size(180, 22);
             this.cargarPersonas.Text = "Alta Miembros";
             this.cargarPersonas.Click += new System.EventHandler(this.cargarPersonasNuevasToolStripMenuItem_Click);
+            // 
+            // asignarMentorToolStripMenuItem
+            // 
+            this.asignarMentorToolStripMenuItem.Name = "asignarMentorToolStripMenuItem";
+            this.asignarMentorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.asignarMentorToolStripMenuItem.Text = "Asignar Mentor";
+            this.asignarMentorToolStripMenuItem.Click += new System.EventHandler(this.asignarMentorToolStripMenuItem_Click);
             // 
             // departamentosToolStripMenuItem
             // 
@@ -368,12 +377,12 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // asignarMentorToolStripMenuItem
+            // modificarMentoresToolStripMenuItem
             // 
-            this.asignarMentorToolStripMenuItem.Name = "asignarMentorToolStripMenuItem";
-            this.asignarMentorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.asignarMentorToolStripMenuItem.Text = "Asignar Mentor";
-            this.asignarMentorToolStripMenuItem.Click += new System.EventHandler(this.asignarMentorToolStripMenuItem_Click);
+            this.modificarMentoresToolStripMenuItem.Name = "modificarMentoresToolStripMenuItem";
+            this.modificarMentoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modificarMentoresToolStripMenuItem.Text = "Modificar mentores";
+            this.modificarMentoresToolStripMenuItem.Click += new System.EventHandler(this.modificarMentoresToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -434,6 +443,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem asignarMentorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificarMentoresToolStripMenuItem;
     }
 }
 

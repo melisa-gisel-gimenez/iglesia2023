@@ -1,7 +1,7 @@
 ﻿
 namespace Iglesia
 {
-    partial class AsignarMentor
+    partial class ModificarMentor
     {
         /// <summary>
         /// Required designer variable.
@@ -55,9 +55,9 @@ namespace Iglesia
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(45, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 13);
+            this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Personas sin Mentor";
+            this.label1.Text = "Miembros";
             // 
             // DGV1
             // 
@@ -177,11 +177,11 @@ namespace Iglesia
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(440, 383);
+            this.button1.Location = new System.Drawing.Point(440, 390);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 39);
+            this.button1.Size = new System.Drawing.Size(119, 57);
             this.button1.TabIndex = 13;
-            this.button1.Text = "Asignar Mentor";
+            this.button1.Text = "Cambiar el Mentor";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -196,18 +196,19 @@ namespace Iglesia
             // button2
             // 
             this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(131, 441);
+            this.button2.Location = new System.Drawing.Point(440, 464);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 39);
+            this.button2.Size = new System.Drawing.Size(119, 55);
             this.button2.TabIndex = 16;
-            this.button2.Text = "Alta de  Mentores";
+            this.button2.Text = "Fin de la Mentoría";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // AsignarMentor
+            // ModificarMentor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 502);
+            this.ClientSize = new System.Drawing.Size(620, 531);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBoxCantidad);
             this.Controls.Add(this.button1);
@@ -225,8 +226,8 @@ namespace Iglesia
             this.Controls.Add(this.label2);
             this.Controls.Add(this.DGV1);
             this.Controls.Add(this.label1);
-            this.Name = "AsignarMentor";
-            this.Text = "AsignarMentor";
+            this.Name = "ModificarMentor";
+            this.Text = "ModificarMentor";
             this.Load += new System.EventHandler(this.AsignarMentor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV2)).EndInit();

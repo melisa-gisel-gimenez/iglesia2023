@@ -74,6 +74,18 @@
     <Compile Include="AgregarPersonas.Designer.cs">
       <DependentUpon>AgregarPersonas.cs</DependentUpon>
     </Compile>
+    <Compile Include="AltaMentores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaMentores.Designer.cs">
+      <DependentUpon>AltaMentores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarMentor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarMentor.Designer.cs">
+      <DependentUpon>ModificarMentor.cs</DependentUpon>
+    </Compile>
     <Compile Include="AsignarMentor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +128,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Acerca de...resx">
       <DependentUpon>Acerca de...cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AltaMentores.resx">
+      <DependentUpon>AltaMentores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarMentor.resx">
+      <DependentUpon>ModificarMentor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AsignarMentor.resx">
       <DependentUpon>AsignarMentor.cs</DependentUpon>
