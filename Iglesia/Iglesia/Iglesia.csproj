@@ -129,6 +129,9 @@
     <EmbeddedResource Include="Acerca de...resx">
       <DependentUpon>Acerca de...cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AgregarPersonas.resx">
+      <DependentUpon>AgregarPersonas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AltaMentores.resx">
       <DependentUpon>AltaMentores.cs</DependentUpon>
     </EmbeddedResource>

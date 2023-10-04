@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Text.RegularExpressions;
 
 namespace Iglesia
 {
@@ -46,75 +47,47 @@ namespace Iglesia
                 txtDireccion.Text = "";
                 txtNombre.Text = "";
                 txtTelefono.Text = "";
-                textBox1.Text = "";
+                //textBox1.Text = "";
                 dateTimePicker1.Text = "";
                 textemail.Text = "";
 
             }
-            /*
-            if (Validacion()==true)
-            {
-                GuardarBD();
-                txtDNI.Text = "";
-                txtApellido.Text = "";
-                txtBarrio.Text = "";
-                txtDireccion.Text = "";
-                txtNombre.Text = "";
-                txtTelefono.Text = "";
-                textBox1.Text = "";
-                dateTimePicker1.Text = "";
-                //richTextBox1.Text = "";
-
-            }
-            */
-
-            //GuardarBD();
-
-
+            
         }
 
         private void GuardarBD()
         {
-            //GestionarPersonas Ventana = new GestionarPersonas();
 
-            // string conexion @"Provider = Microsoft.Jet.OLEDB.4.0; Data Source = C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb";
-            OleDbConnection cn = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb");
-            cn.Open(); 
-            String consulta2 = "insert into Miembros (DNI, NOMBRE, APELLIDO, DIRECCION, BARRIO, TELEFONO, FECHA_NAC, BAUTIZADO, EMAIL) values (" + int.Parse(txtDNI.Text) + ", '" + txtNombre.Text + "', '" + txtApellido.Text + "', '" + txtDireccion.Text + "', '" + txtBarrio.Text + "', " + txtTelefono.Text + ", '" + dateTimePicker1.Value + " ', " + checkBox_bautismo.Checked + ", '" + textemail.Text + "');";
-
-            // String consulta = "insert into Personas (IdDNI, Nombre, Apellido, Dirección, Barrio, Teléfono, Sexo, Fecha de Nacimiento, Puesto1, Puesto2, Puesto3, Puesto4) values ("+int.Parse(txtDNI.Text)+", '"+txtNombre.Text+"', '"+txtApellido.Text+"', '"+txtDireccion.Text+"', '"+txtBarrio.Text+"', "+int.Parse(txtTelefono.Text)+", '"+Convert.ToDateTime(dateTimePicker1.Text)+"', '"+comboBox5.Text+"',"+int.Parse(comboBox1.Text)+ ", " + int.Parse(comboBox2.Text) + ", " + int.Parse(comboBox3.Text) + ", " + int.Parse(comboBox4.Text) + ");";
-           // String consulta2 = "insert into Personas values (" + int.Parse(txtDNI.Text) + ", '" + txtNombre.Text + "', '" + txtApellido.Text + "', '" + txtDireccion.Text + "', '" + txtBarrio.Text + "', '" + txtTelefono.Text + "', '" + textBox1.Text + "', '" + dateTimePicker1.Value + "', '" +  "');";
-
-            //foreach (DataGridViewRow fila in Ventana.dgvConsultaPersonas.Rows)
-            //{
-            //    if (fila.Cells[0].Value != null)
-            //        if (fila.Cells[0].Value.ToString() == txtDNI.Text)
-            //        {
-            //            MessageBox.Show("La persona ya existe en la Base de Datos");
-            //        }
-            //        else
-
-
-            OleDbCommand comando1 = new OleDbCommand(consulta2, cn);
-
-
-
-
-            int cantidad = comando1.ExecuteNonQuery();
-
-
-            if (cantidad < 1)
+            if ((txtDNI.Text == "" || txtApellido.Text == "" || txtNombre.Text == "" || txtTelefono.Text == "" || textemail.Text == ""))
             {
-                MessageBox.Show("Ocurrió un problema");
+                MessageBox.Show("Los campos Nombre Apellido telefono DNI y Email son obligatorios. Por favor completelos");
             }
-        
-        MessageBox.Show("Se guardó con éxito!!!");
-            
-            
-            
-            
-           
+            else
+            {
+                // string conexion @"Provider = Microsoft.Jet.OLEDB.4.0; Data Source = C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb";
+                OleDbConnection cn = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb");
+                cn.Open();
+                String consulta2 = "insert into Miembros (DNI, NOMBRE, APELLIDO, DIRECCION, BARRIO, TELEFONO, FECHA_NAC, BAUTIZADO, EMAIL) values (" + int.Parse(txtDNI.Text) + ", '" + txtNombre.Text + "', '" + txtApellido.Text + "', '" + txtDireccion.Text + "', '" + txtBarrio.Text + "', '" + txtTelefono.Text + "', '" + dateTimePicker1.Value + " ', " + checkBox_bautismo.Checked + ", '" + textemail.Text + "');";
+
+
+                OleDbCommand comando1 = new OleDbCommand(consulta2, cn);
+
+
+                int cantidad = comando1.ExecuteNonQuery();
+
+
+                if (cantidad < 1)
+                {
+                    MessageBox.Show("Ocurrió un problema");
+                }
+                else
+                {
+                    MessageBox.Show("Se guardó con éxito!!!");
+                }
+                             
+
             }
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             txtDNI.Text = "";
@@ -123,16 +96,15 @@ namespace Iglesia
             txtDireccion.Text = "";
             txtNombre.Text = "";
             txtTelefono.Text = "";
-            textBox1.Text = "";
+            checkBox_bautismo.Checked = false;
+            //textBox1.Text = "";
             dateTimePicker1.Text = "";
             //richTextBox1.Text="";
         }
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
-           // GestionarPersonas ventana = new GestionarPersonas();
-            //ventana.ShowDialog();
-           
+                     
         }
 
         private void Agregar_Personas_Load(object sender, EventArgs e)
@@ -154,12 +126,16 @@ namespace Iglesia
                 MessageBox.Show("Debe ingresar al menos el número de DNI", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtDNI.Focus();
             }
-             if (BuscarDNI(int.Parse(txtDNI.Text)))
+            else
             {
-                validado = false;
-                MessageBox.Show("El DNI ya se encuentra registrado", "DNI EXISTENTE", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtDNI.Focus();
-                txtDNI.SelectAll();
+
+                if (BuscarDNI(int.Parse(txtDNI.Text)))
+                {
+                    validado = false;
+                    MessageBox.Show("El DNI ya se encuentra registrado", "DNI EXISTENTE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtDNI.Focus();
+                    txtDNI.SelectAll();
+                }
             }
             
 
@@ -187,6 +163,92 @@ namespace Iglesia
             return encontrado;
             }
 
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {            
+            
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // Si no es alfanumérico ni espacio en blanco ni tecla de control, ignora la tecla presionada
+                e.Handled = true;
+            }
+
+        }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // Si no es alfanumérico ni espacio en blanco ni tecla de control, ignora la tecla presionada
+                e.Handled = true;
+            }
+        }
+
+        private void txtDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // Si no es alfanumérico ni espacio en blanco ni tecla de control, ignora la tecla presionada
+                e.Handled = true;
+            }
+        }
+
+        private void txtBarrio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // Si no es alfanumérico ni espacio en blanco ni tecla de control, ignora la tecla presionada
+                e.Handled = true;
+            }
+        }
+
+        private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
+        {          
+                // Verifica si la tecla presionada no es un dígito numérico o una tecla de control
+                if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                {
+                    // Si no es un número o una tecla de control, ignora la tecla presionada
+                    e.Handled = true;
+                }
+        }
+
+            private void txtDNI_TextChanged_1(object sender, EventArgs e)
+            {
+                // Verifica si la longitud del texto en el TextBox es mayor a 8
+                if (txtDNI.Text.Length > 8)
+                {
+                // Si es mayor a 8, recorta el texto para que solo tenga 8 caracteres
+                //txtDNI.Text = txtDNI.Text.Substring(0, 8);
+                // Coloca el cursor al final del texto
+                //txtDNI.SelectionStart = txtDNI.Text.Length;
+                MessageBox.Show("Solo puede ingresar 8 números. Por favor, verifique el DNI ingresado");
+                }
+            }
+
+        private bool EsDireccionDeCorreoValida(string direccionCorreo)
+        {
+            // Expresión regular para validar una dirección de correo electrónico
+            string patron = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
+            // Usar la clase Regex para verificar si la dirección de correo coincide con el patrón
+            Regex regex = new Regex(patron);
+
+            return regex.IsMatch(direccionCorreo);
+        }
+        private void ValidarCorreoElectronico()
+        {
+            string correo = textemail.Text;
+
+            if (EsDireccionDeCorreoValida(correo))
+            {
+                // La dirección de correo es válida
+                // Puedes realizar otras acciones aquí si es necesario
+            }
+            else
+            {
+                MessageBox.Show("La dirección de correo no es válida. Por favor verifiquela");
+                // Muestra un mensaje de error o realiza alguna acción de validación adicional
+            }
+        }
 
     }
 }
@@ -194,35 +256,9 @@ namespace Iglesia
 
         
 
-        //private void label21_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void label15_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void label16_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void label19_Click(object sender, EventArgs e)
-        //{
-
-        //}
+        
 
        
-
-        
-    //}
 
 
 

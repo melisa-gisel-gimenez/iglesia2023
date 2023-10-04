@@ -97,3 +97,5 @@ C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023 - vale\Iglesia\Iglesia\ob
 C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023 - vale\Iglesia\Iglesia\obj\Debug\Iglesia.AsignarMentor.resources
 C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023 - vale\Iglesia\Iglesia\obj\Debug\Iglesia.Form1.resources
 C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023 - vale\Iglesia\Iglesia\obj\Debug\Iglesia.ModificarMentor.resources
+C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023 - vale\Iglesia\Iglesia\obj\Debug\Iglesia.AgregarPersonas.resources
+C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023 - vale\Iglesia\Iglesia\obj\Debug\Iglesia.AltaMentores.resources
