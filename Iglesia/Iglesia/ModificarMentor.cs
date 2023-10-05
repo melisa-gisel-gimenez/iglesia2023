@@ -31,7 +31,9 @@ namespace Iglesia
 
             private void CargarMiembros()
             {
-              // Establece la cadena de conexión a tu archivo de base de datos Access (MDB).
+             //  Debo agregar al DGV la fecha de asigancion y fecha de baja desde la tabla de asignaciones
+            
+            // Establece la cadena de conexión a tu archivo de base de datos Access (MDB).
               string connectionString = @"Provider = Microsoft.Jet.OLEDB.4.0; Data Source = C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb";
 
               // Crea una conexión a la base de datos.
@@ -88,6 +90,7 @@ namespace Iglesia
             
             textBoxDNI.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells[0].Value.ToString();
             textBoxNombre.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells[1].Value.ToString();
+            textBoxMentorAsignado.Text= DGV1.Rows[DGV1.CurrentRow.Index].Cells[3].Value.ToString();
 
             button2.Enabled = true;
             dni = int.Parse(textBoxDNI.Text);
@@ -145,7 +148,9 @@ namespace Iglesia
                     cn.Open();
                     String consulta3 = "UPDATE Miembros SET id_mentor ='" + int.Parse(textBoxIdMentor.Text) + "' " + " WHERE DNI = '" + int.Parse(textBoxDNI.Text) + "';";
                     String consulta4 = "UPDATE Mentores SET cantidad = cantidad + 1" + " WHERE id_mentor = " + int.Parse(textBoxIdMentor.Text) + ";";
-
+                    //agregar consulta de fecha asignacion para el mentor nuevo.
+                    String consulta5 = "UPDATE Mentores SET cantidad = cantidad - 1" + " WHERE id_mentor = " + int.Parse(textBoxMentorAsignado.Text) + ";";
+                    //agregar consulta de fecha fin asignacion en el mentor viejo.
                     OleDbCommand comando1 = new OleDbCommand(consulta3, cn);
 
                     int cantidad = comando1.ExecuteNonQuery();
@@ -175,6 +180,24 @@ namespace Iglesia
                     {
                         MessageBox.Show("Se registró el mentoreado con éxito!!!");
                     }
+                    OleDbCommand comando3 = new OleDbCommand(consulta5, cn);
+
+                    int cantidad2 = comando3.ExecuteNonQuery();
+
+
+                    if (cantidad2 < 1)
+                    {
+                        MessageBox.Show("Ocurrió un problema");
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Se modificó el mentor anterior con exito!");
+                    }
+
+                    CargarMentores();
+                    CargarMiembros();
+
                 }
             }
 
@@ -192,7 +215,9 @@ namespace Iglesia
                 
                 OleDbConnection cn = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb");
                 cn.Open();
-                String consulta3 = "UPDATE Miembros SET id_mentor = NULL WHERE DNI = '" + int.Parse(textBoxDNI.Text) + "';";
+                //String consulta3 = "UPDATE Miembros SET id_mentor = NULL WHERE DNI = '" + int.Parse(textBoxDNI.Text) + "';";
+                  String consulta3 = "UPDATE Mentores SET cantidad = cantidad - 1" + " WHERE id_mentor = " + int.Parse(textBoxMentorAsignado.Text) + ";";
+               //agregar consulta para registrar fecha fin asignacion en la tabla asignaciones
                 OleDbCommand comando1 = new OleDbCommand(consulta3, cn);
 
                 int cantidad = comando1.ExecuteNonQuery();
@@ -207,6 +232,9 @@ namespace Iglesia
                 {
                     MessageBox.Show("El Miembro elegido, ya no tiene un mentor asignado.");
                 }
+
+                CargarMentores();
+                CargarMiembros();
             }
         }
     }

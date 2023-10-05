@@ -39,6 +39,7 @@ namespace Iglesia
 
               // Define la consulta SQL para seleccionar los registros con ID_Mentor vacío.
               string consulta = "SELECT DNI, nombre, fecha_alta, id_mentor FROM Miembros WHERE id_mentor IS NULL";
+            //hacer una consulta para guardar la fecha de asignacion en la tabla asignaciones
 
               // Crea un adaptador de datos para ejecutar la consulta y llenar el DataSet.
               adaptador = new OleDbDataAdapter(consulta, conexion);
@@ -143,7 +144,7 @@ namespace Iglesia
                     cn.Open();
                     String consulta3 = "UPDATE Miembros SET id_mentor ='" + int.Parse(textBoxIdMentor.Text) + "' " + " WHERE DNI = '" + int.Parse(textBoxDNI.Text) + "';";
                     String consulta4 = "UPDATE Mentores SET cantidad = cantidad + 1" + " WHERE id_mentor = " + int.Parse(textBoxIdMentor.Text) + ";";
-
+                    //agregar consulta para registrar fecha de asignacion de mentor en tabla asignaciones
                     OleDbCommand comando1 = new OleDbCommand(consulta3, cn);
 
                     int cantidad = comando1.ExecuteNonQuery();

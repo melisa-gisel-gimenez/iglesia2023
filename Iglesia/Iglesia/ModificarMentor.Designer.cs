@@ -46,6 +46,8 @@ namespace Iglesia
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxCantidad = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.textBoxMentorAsignado = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV2)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +66,7 @@ namespace Iglesia
             this.DGV1.AllowUserToAddRows = false;
             this.DGV1.AllowUserToDeleteRows = false;
             this.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV1.Location = new System.Drawing.Point(48, 58);
+            this.DGV1.Location = new System.Drawing.Point(44, 60);
             this.DGV1.Name = "DGV1";
             this.DGV1.ReadOnly = true;
             this.DGV1.Size = new System.Drawing.Size(327, 150);
@@ -74,7 +76,7 @@ namespace Iglesia
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(45, 243);
+            this.label2.Location = new System.Drawing.Point(45, 289);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 13);
             this.label2.TabIndex = 2;
@@ -85,7 +87,7 @@ namespace Iglesia
             this.DGV2.AllowUserToAddRows = false;
             this.DGV2.AllowUserToDeleteRows = false;
             this.DGV2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV2.Location = new System.Drawing.Point(48, 272);
+            this.DGV2.Location = new System.Drawing.Point(48, 316);
             this.DGV2.Name = "DGV2";
             this.DGV2.ReadOnly = true;
             this.DGV2.Size = new System.Drawing.Size(327, 150);
@@ -104,7 +106,7 @@ namespace Iglesia
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(456, 243);
+            this.label4.Location = new System.Drawing.Point(472, 289);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 13);
             this.label4.TabIndex = 5;
@@ -137,21 +139,21 @@ namespace Iglesia
             // 
             // textBoxNombre
             // 
-            this.textBoxNombre.Location = new System.Drawing.Point(459, 109);
+            this.textBoxNombre.Location = new System.Drawing.Point(459, 113);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(100, 20);
             this.textBoxNombre.TabIndex = 8;
             // 
             // textBoxIdMentor
             // 
-            this.textBoxIdMentor.Location = new System.Drawing.Point(459, 272);
+            this.textBoxIdMentor.Location = new System.Drawing.Point(459, 338);
             this.textBoxIdMentor.Name = "textBoxIdMentor";
             this.textBoxIdMentor.Size = new System.Drawing.Size(100, 20);
             this.textBoxIdMentor.TabIndex = 9;
             // 
             // textBoxNombreMentor
             // 
-            this.textBoxNombreMentor.Location = new System.Drawing.Point(459, 309);
+            this.textBoxNombreMentor.Location = new System.Drawing.Point(459, 375);
             this.textBoxNombreMentor.Name = "textBoxNombreMentor";
             this.textBoxNombreMentor.Size = new System.Drawing.Size(100, 20);
             this.textBoxNombreMentor.TabIndex = 10;
@@ -159,7 +161,7 @@ namespace Iglesia
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(403, 279);
+            this.label7.Location = new System.Drawing.Point(411, 345);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(18, 13);
             this.label7.TabIndex = 11;
@@ -168,7 +170,7 @@ namespace Iglesia
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(403, 316);
+            this.label8.Location = new System.Drawing.Point(403, 382);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(44, 13);
             this.label8.TabIndex = 12;
@@ -177,7 +179,7 @@ namespace Iglesia
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(440, 390);
+            this.button1.Location = new System.Drawing.Point(440, 462);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(119, 57);
             this.button1.TabIndex = 13;
@@ -187,7 +189,7 @@ namespace Iglesia
             // 
             // textBoxCantidad
             // 
-            this.textBoxCantidad.Location = new System.Drawing.Point(459, 346);
+            this.textBoxCantidad.Location = new System.Drawing.Point(459, 411);
             this.textBoxCantidad.Name = "textBoxCantidad";
             this.textBoxCantidad.Size = new System.Drawing.Size(100, 20);
             this.textBoxCantidad.TabIndex = 15;
@@ -196,7 +198,7 @@ namespace Iglesia
             // button2
             // 
             this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(440, 464);
+            this.button2.Location = new System.Drawing.Point(440, 189);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(119, 55);
             this.button2.TabIndex = 16;
@@ -204,11 +206,29 @@ namespace Iglesia
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // textBoxMentorAsignado
+            // 
+            this.textBoxMentorAsignado.Location = new System.Drawing.Point(459, 145);
+            this.textBoxMentorAsignado.Name = "textBoxMentorAsignado";
+            this.textBoxMentorAsignado.Size = new System.Drawing.Size(100, 20);
+            this.textBoxMentorAsignado.TabIndex = 17;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(399, 152);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(54, 13);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "ID Mentor";
+            // 
             // ModificarMentor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(620, 531);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.textBoxMentorAsignado);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBoxCantidad);
             this.Controls.Add(this.button1);
@@ -255,5 +275,7 @@ namespace Iglesia
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBoxCantidad;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBoxMentorAsignado;
+        private System.Windows.Forms.Label label9;
     }
 }
