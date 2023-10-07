@@ -201,5 +201,11 @@ namespace Iglesia
             Modificar_Personas Form1 = new Modificar_Personas();
             Form1.Show();
         }
+
+        private void inhabilitarPersonasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InhabilitarPersonas Form1 = new InhabilitarPersonas();
+            Form1.Show();
+        }
     }
 }

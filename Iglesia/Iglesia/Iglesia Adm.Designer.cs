@@ -65,8 +65,9 @@
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.modificarDatosPersonalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.inhabilitarPersonasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -96,7 +97,8 @@
             this.cargarPersonas,
             this.asignarMentorToolStripMenuItem,
             this.modificarMentoresToolStripMenuItem,
-            this.modificarDatosPersonalesToolStripMenuItem});
+            this.modificarDatosPersonalesToolStripMenuItem,
+            this.inhabilitarPersonasToolStripMenuItem});
             this.personasToolStripMenuItem.Name = "personasToolStripMenuItem";
             this.personasToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.personasToolStripMenuItem.Text = "Personas";
@@ -378,23 +380,30 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 28);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(864, 509);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // modificarDatosPersonalesToolStripMenuItem
             // 
             this.modificarDatosPersonalesToolStripMenuItem.Name = "modificarDatosPersonalesToolStripMenuItem";
             this.modificarDatosPersonalesToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
             this.modificarDatosPersonalesToolStripMenuItem.Text = "Modificar Datos Personales";
             this.modificarDatosPersonalesToolStripMenuItem.Click += new System.EventHandler(this.modificarDatosPersonalesToolStripMenuItem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 28);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(864, 509);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // inhabilitarPersonasToolStripMenuItem
+            // 
+            this.inhabilitarPersonasToolStripMenuItem.Name = "inhabilitarPersonasToolStripMenuItem";
+            this.inhabilitarPersonasToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
+            this.inhabilitarPersonasToolStripMenuItem.Text = "Inhabilitar Personas";
+            this.inhabilitarPersonasToolStripMenuItem.Click += new System.EventHandler(this.inhabilitarPersonasToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -458,6 +467,7 @@
         private System.Windows.Forms.ToolStripMenuItem asignarMentorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarMentoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarDatosPersonalesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inhabilitarPersonasToolStripMenuItem;
     }
 }
 
