@@ -195,5 +195,11 @@ namespace Iglesia
             ModificarMentor Form1 = new ModificarMentor();
             Form1.Show();
         }
+
+        private void modificarDatosPersonalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Modificar_Personas Form1 = new Modificar_Personas();
+            Form1.Show();
+        }
     }
 }

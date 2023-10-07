@@ -50,7 +50,7 @@ namespace Iglesia
                 ventana.txtDireccion.Text = fila.Cells[3].Value.ToString();
                 ventana.txtBarrio.Text = fila.Cells[4].Value.ToString();
                 ventana.txtTelefono.Text = fila.Cells[5].Value.ToString();
-                ventana.textBox1.Text = fila.Cells[6].Value.ToString();
+                ventana.textBoxBuscarDNI.Text = fila.Cells[6].Value.ToString();
                 ventana.dateTimePicker1.Text = fila.Cells[7].Value.ToString();
 
 

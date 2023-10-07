@@ -116,3 +116,4 @@ C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\obj\Debug\
 C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\obj\Debug\Iglesia.csproj.CopyComplete
 C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\obj\Debug\Iglesia.exe
 C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\obj\Debug\Iglesia.pdb
+C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\obj\Debug\Iglesia.Modificar_Personas.resources

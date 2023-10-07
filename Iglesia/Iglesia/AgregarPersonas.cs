@@ -39,8 +39,9 @@ namespace Iglesia
         {
 
             if (Validacion() == true)
-            {
+            {    
                 GuardarBD();
+                
                 /*
                 txtDNI.Text = "";
                 txtApellido.Text = "";
@@ -57,34 +58,35 @@ namespace Iglesia
         }
 
         private void GuardarBD()
-        {
-
+        {    
             if ((txtDNI.Text == "" || txtApellido.Text == "" || txtNombre.Text == "" || txtTelefono.Text == "" || textemail.Text == ""))
             {
                 MessageBox.Show("Los campos Nombre Apellido telefono DNI y Email son obligatorios. Por favor completelos");
             }
             else
-            {
-                // string conexion @"Provider = Microsoft.Jet.OLEDB.4.0; Data Source = C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb";
-                OleDbConnection cn = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb");
-                cn.Open();
-                String consulta2 = "insert into Miembros (DNI, NOMBRE, APELLIDO, DIRECCION, BARRIO, TELEFONO, FECHA_NAC, BAUTIZADO, EMAIL) values (" + int.Parse(txtDNI.Text) + ", '" + txtNombre.Text + "', '" + txtApellido.Text + "', '" + txtDireccion.Text + "', '" + txtBarrio.Text + "', '" + txtTelefono.Text + "', '" + dateTimePicker1.Value + " ', " + checkBox_bautismo.Checked + ", '" + textemail.Text + "');";
+            {        
+
+                    // string conexion @"Provider = Microsoft.Jet.OLEDB.4.0; Data Source = C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb";
+                    OleDbConnection cn = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb");
+                    cn.Open();
+                    String consulta2 = "insert into Miembros (DNI, NOMBRE, APELLIDO, DIRECCION, BARRIO, TELEFONO, FECHA_NAC, BAUTIZADO, EMAIL) values (" + int.Parse(txtDNI.Text) + ", '" + txtNombre.Text + "', '" + txtApellido.Text + "', '" + txtDireccion.Text + "', '" + txtBarrio.Text + "', '" + txtTelefono.Text + "', '" + dateTimePicker1.Value + " ', " + checkBox_bautismo.Checked + ", '" + textemail.Text + "');";
 
 
-                OleDbCommand comando1 = new OleDbCommand(consulta2, cn);
+                    OleDbCommand comando1 = new OleDbCommand(consulta2, cn);
 
 
-                int cantidad = comando1.ExecuteNonQuery();
+                    int cantidad = comando1.ExecuteNonQuery();
 
 
-                if (cantidad < 1)
-                {
-                    MessageBox.Show("Ocurrió un problema");
-                }
-                else
-                {
-                    MessageBox.Show("Se guardó con éxito!!!");
-                }
+                    if (cantidad < 1)
+                    {
+                        MessageBox.Show("Ocurrió un problema");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se guardó con éxito!!!");
+                    }
+                
                              
 
             }
@@ -98,9 +100,9 @@ namespace Iglesia
             txtNombre.Text = "";
             txtTelefono.Text = "";
             checkBox_bautismo.Checked = false;
-            //textBox1.Text = "";
+            textemail.Text = "";
             dateTimePicker1.Text = "";
-            //richTextBox1.Text="";
+           
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -251,6 +253,10 @@ namespace Iglesia
             }
         }
 
+        private void textemail_MouseLeave(object sender, EventArgs e)
+        {
+            ValidarCorreoElectronico();
+        }
     }
 }
         
