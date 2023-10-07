@@ -99,3 +99,20 @@ C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023 - vale\Iglesia\Iglesia\ob
 C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023 - vale\Iglesia\Iglesia\obj\Debug\Iglesia.ModificarMentor.resources
 C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023 - vale\Iglesia\Iglesia\obj\Debug\Iglesia.AgregarPersonas.resources
 C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023 - vale\Iglesia\Iglesia\obj\Debug\Iglesia.AltaMentores.resources
+C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\bin\Debug\Iglesia.exe.config
+C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\bin\Debug\Iglesia.exe
+C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\bin\Debug\Iglesia.pdb
+C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\obj\Debug\Iglesia.csproj.AssemblyReference.cache
+C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\obj\Debug\Iglesia.Acerca_de.resources
+C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\obj\Debug\Iglesia.AgregarPersonas.resources
+C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\obj\Debug\Iglesia.AltaMentores.resources
+C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\obj\Debug\Iglesia.ModificarMentor.resources
+C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\obj\Debug\Iglesia.AsignarMentor.resources
+C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\obj\Debug\Iglesia.Form1.resources
+C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\obj\Debug\Iglesia.Properties.Resources.resources
+C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\obj\Debug\Iglesia.csproj.GenerateResource.cache
+C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\obj\Debug\Iglesia.csproj.CoreCompileInputs.cache
+C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\obj\Debug\Iglesia.csproj.CopyComplete
+C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\obj\Debug\Iglesia.exe
+C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\obj\Debug\Iglesia.pdb

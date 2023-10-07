@@ -108,7 +108,7 @@ namespace Iglesia
 
             textBoxIdMentor.Text = DGV2.Rows[DGV2.CurrentRow.Index].Cells[0].Value.ToString();
             textBoxNombreMentor.Text = DGV2.Rows[DGV2.CurrentRow.Index].Cells[1].Value.ToString();
-            textBoxCantidad.Text = DGV2.Rows[DGV2.CurrentRow.Index].Cells[3].Value.ToString();
+            textBoxCantidad.Text = DGV2.Rows[DGV2.CurrentRow.Index].Cells[4].Value.ToString();
             cantidadMentoreados = int.Parse(textBoxCantidad.Text);
 
             if (cantidadMentoreados == 5)
@@ -139,12 +139,17 @@ namespace Iglesia
                 }
                 else
                 {
+                    
+                    DateTime fechaAsignacion= DateTime.Now.Date;
 
+                   // MessageBox.Show((fechaAsignacion).ToString());
                     OleDbConnection cn = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb");
                     cn.Open();
-                    String consulta3 = "UPDATE Miembros SET id_mentor ='" + int.Parse(textBoxIdMentor.Text) + "' " + " WHERE DNI = '" + int.Parse(textBoxDNI.Text) + "';";
+                    String consulta3 = "UPDATE Miembros SET id_mentor ='" + int.Parse(textBoxIdMentor.Text) + "' " + " WHERE DNI = " + int.Parse(textBoxDNI.Text) + ";";
                     String consulta4 = "UPDATE Mentores SET cantidad = cantidad + 1" + " WHERE id_mentor = " + int.Parse(textBoxIdMentor.Text) + ";";
                     //agregar consulta para registrar fecha de asignacion de mentor en tabla asignaciones
+                    string consulta5= "INSERT INTO AsignacionMentor (DNI, id_mentor, fecha_asignacion) values (" +  int.Parse(textBoxDNI.Text)+","  +  int.Parse(textBoxIdMentor.Text)+"," + "'" + fechaAsignacion + "');";
+
                     OleDbCommand comando1 = new OleDbCommand(consulta3, cn);
 
                     int cantidad = comando1.ExecuteNonQuery();
@@ -174,6 +179,23 @@ namespace Iglesia
                     {
                         MessageBox.Show("Se registró el mentoreado con éxito!!!");
                     }
+
+                    OleDbCommand comando3 = new OleDbCommand (consulta5, cn);
+                    int cantidad2 = comando3.ExecuteNonQuery();
+
+                    if (cantidad2 < 1)
+                    {
+                        MessageBox.Show("ocurrio un error en la tabla asignacion");
+                    }
+                    else
+                    {
+                        
+                        MessageBox.Show("se registró la asignación con exito en la tabla asignaciones");
+
+                    }
+
+                    CargarMiembros();
+                    CargarMentores();
                 }
             }
 

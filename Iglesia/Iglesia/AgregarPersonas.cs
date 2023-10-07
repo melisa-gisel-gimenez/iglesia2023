@@ -41,6 +41,7 @@ namespace Iglesia
             if (Validacion() == true)
             {
                 GuardarBD();
+                /*
                 txtDNI.Text = "";
                 txtApellido.Text = "";
                 txtBarrio.Text = "";
@@ -50,7 +51,7 @@ namespace Iglesia
                 //textBox1.Text = "";
                 dateTimePicker1.Text = "";
                 textemail.Text = "";
-
+                */
             }
             
         }
@@ -151,7 +152,7 @@ namespace Iglesia
             OleDbConnection conexion = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb");
            // OleDbConnection conexion = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\MELIS\OneDrive\Escritorio\Iglesianuevo2023.mdb");
             conexion.Open();
-            string Consulta = "select * from Miembros where DNI='"+ DNI + "';";
+            string Consulta = "select * from Miembros where DNI="+ DNI + ";";
             OleDbCommand comando = new OleDbCommand(Consulta, conexion);
             OleDbDataReader dr = comando.ExecuteReader();
             while (dr.Read())
