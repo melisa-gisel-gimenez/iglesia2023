@@ -71,6 +71,7 @@ namespace Iglesia
             txtBarrio.Text = "";
             txtDireccion.Text = "";
             txtNombre.Text = "";
+            txtDNI.Text = "";
             txtTelefono.Text = "";
             textemail.Text = "";
             textBoxFechaNac.Text = "";

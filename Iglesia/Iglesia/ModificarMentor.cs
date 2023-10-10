@@ -26,6 +26,7 @@ namespace Iglesia
             private void AsignarMentor_Load(object sender, EventArgs e)
             {
              ConfigurarDGV();
+             ConfigurarDGV2();
              CargarMiembros();
              CargarMentores();
             }
@@ -91,7 +92,7 @@ namespace Iglesia
 
         private void CargarMiembros()
             {
-             //  Debo agregar al DGV la fecha de asigancion y fecha de baja desde la tabla de asignaciones
+             
             
             // Establece la cadena de conexión a tu archivo de base de datos Access (MDB).
               string connectionString = @"Provider = Microsoft.Jet.OLEDB.4.0; Data Source = C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb";
@@ -153,6 +154,49 @@ namespace Iglesia
             DGV2.DataSource = dataSet.Tables["Mentores"];
         }
 
+        private void ConfigurarDGV2()
+        {
+            // Configura el DataGridView (DGV) para que no genere automáticamente las columnas.
+            DGV2.AutoGenerateColumns = false;
+
+            // Crea y agrega las columnas manualmente en el orden deseado.
+
+            // Columna id_mentor
+            DataGridViewTextBoxColumn colId = new DataGridViewTextBoxColumn();
+            colId.DataPropertyName = "id_mentor"; // Nombre de la columna en el origen de datos
+            colId.HeaderText = "Nro de Mentor";
+            colId.DisplayIndex = 0;
+            DGV2.Columns.Add(colId);
+
+            // Columna Nombre
+            DataGridViewTextBoxColumn colNombre = new DataGridViewTextBoxColumn();
+            colNombre.DataPropertyName = "Nombre"; // Nombre de la columna en el origen de datos
+            colNombre.HeaderText = "Nombre";
+            colNombre.DisplayIndex = 1;
+            DGV2.Columns.Add(colNombre);
+
+            // Columna Apellido
+            DataGridViewTextBoxColumn colApellido = new DataGridViewTextBoxColumn();
+            colApellido.DataPropertyName = "Apellido"; // Nombre de la columna en el origen de datos
+            colApellido.HeaderText = "Apellido";
+            colApellido.DisplayIndex = 2;
+            DGV2.Columns.Add(colApellido);
+
+            // Columna DNI
+            DataGridViewTextBoxColumn colDNI = new DataGridViewTextBoxColumn();
+            colDNI.DataPropertyName = "DNI"; // Nombre de la columna en el origen de datos
+            colDNI.HeaderText = "DNI";
+            colDNI.DisplayIndex = 3;
+            DGV2.Columns.Add(colDNI);
+
+            // Columna cantidad
+            DataGridViewTextBoxColumn colCantidad = new DataGridViewTextBoxColumn();
+            colCantidad.DataPropertyName = "cantidad"; // Nombre de la columna en el origen de datos
+            colCantidad.HeaderText = "Total de asignaciones";
+            colCantidad.DisplayIndex = 4;
+            DGV2.Columns.Add(colCantidad);
+
+        }
         private void DGV1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int dni;
