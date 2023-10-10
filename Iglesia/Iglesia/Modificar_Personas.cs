@@ -97,15 +97,19 @@ namespace Iglesia
 
                             if (reader.Read())
                             {
-                                
+                                txtDNI.Text = reader["DNI"].ToString();
                                 txtNombre.Text = reader["NOMBRE"].ToString();
                                 txtApellido.Text = reader["APELLIDO"].ToString();
                                 txtDireccion.Text = reader["DIRECCION"].ToString();
                                 txtBarrio.Text = reader["BARRIO"].ToString();
                                 txtTelefono.Text = reader["TELEFONO"].ToString();
                                 textemail.Text = reader["EMAIL"].ToString();
+                                textBoxFechaNac.Text = reader["FECHA_NAC"].ToString();
                                 checkBoxBautizado.Checked = Convert.ToBoolean(reader["bautizado"]);
-                            }
+                                
+                                
+
+                        }
                             else
                             {
                                 MessageBox.Show("No se encontró ningún registro con el DNI proporcionado.");
@@ -172,7 +176,7 @@ namespace Iglesia
                     comando.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
                     comando.Parameters.AddWithValue("@Email", textemail.Text);
                     comando.Parameters.AddWithValue("@Checkbox",checkBoxBautizado.Checked);                    
-                    comando.Parameters.AddWithValue("@FECHA_NAC", dateTimePicker1.Text);
+                    comando.Parameters.AddWithValue("@FECHA_NAC", textBoxFechaNac.Text);
                     comando.Parameters.AddWithValue("@DNI", dniModificado);
                     comando.Parameters.AddWithValue("@DNI2", dniAModificar);
 

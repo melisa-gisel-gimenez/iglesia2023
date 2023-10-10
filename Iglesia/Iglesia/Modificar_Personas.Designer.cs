@@ -53,11 +53,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxBuscarDNI = new System.Windows.Forms.TextBox();
             this.botonBuscar = new System.Windows.Forms.Button();
+            this.textBoxFechaNac = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.textBoxFechaNac);
             this.groupBox2.Controls.Add(this.checkBoxBautizado);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.textemail);
@@ -171,7 +173,7 @@
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(4, 270);
+            this.dateTimePicker1.Location = new System.Drawing.Point(461, 270);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(136, 23);
@@ -356,6 +358,16 @@
             this.botonBuscar.UseVisualStyleBackColor = true;
             this.botonBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // textBoxFechaNac
+            // 
+            this.textBoxFechaNac.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxFechaNac.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.textBoxFechaNac.Location = new System.Drawing.Point(7, 274);
+            this.textBoxFechaNac.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxFechaNac.Name = "textBoxFechaNac";
+            this.textBoxFechaNac.Size = new System.Drawing.Size(132, 23);
+            this.textBoxFechaNac.TabIndex = 37;
+            // 
             // Modificar_Personas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -405,5 +417,6 @@
         private System.Windows.Forms.Button botonBuscar;
         private System.Windows.Forms.CheckBox checkBoxBautizado;
         private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.TextBox textBoxFechaNac;
     }
 }
