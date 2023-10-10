@@ -49,6 +49,8 @@ namespace Iglesia
             this.textBoxDNIBuscar.Name = "textBoxDNIBuscar";
             this.textBoxDNIBuscar.Size = new System.Drawing.Size(100, 22);
             this.textBoxDNIBuscar.TabIndex = 0;
+            this.textBoxDNIBuscar.TextChanged += new System.EventHandler(this.textBoxDNIBuscar_TextChanged_1);
+            this.textBoxDNIBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDNIBuscar_KeyPress);
             // 
             // label1
             // 
@@ -81,6 +83,7 @@ namespace Iglesia
             // 
             this.textBoxNombre.Location = new System.Drawing.Point(97, 90);
             this.textBoxNombre.Name = "textBoxNombre";
+            this.textBoxNombre.ReadOnly = true;
             this.textBoxNombre.Size = new System.Drawing.Size(100, 22);
             this.textBoxNombre.TabIndex = 4;
             // 
@@ -116,6 +119,7 @@ namespace Iglesia
             // 
             this.textBoxApellido.Location = new System.Drawing.Point(97, 130);
             this.textBoxApellido.Name = "textBoxApellido";
+            this.textBoxApellido.ReadOnly = true;
             this.textBoxApellido.Size = new System.Drawing.Size(100, 22);
             this.textBoxApellido.TabIndex = 8;
             // 
@@ -123,6 +127,7 @@ namespace Iglesia
             // 
             this.textBoxDNI.Location = new System.Drawing.Point(97, 169);
             this.textBoxDNI.Name = "textBoxDNI";
+            this.textBoxDNI.ReadOnly = true;
             this.textBoxDNI.Size = new System.Drawing.Size(100, 22);
             this.textBoxDNI.TabIndex = 9;
             // 
