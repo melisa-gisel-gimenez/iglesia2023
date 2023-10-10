@@ -32,7 +32,7 @@ namespace Iglesia
         {
             OleDbConnection conexion = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb");
             conexion.Open();
-            string Consulta = "UPDATE Miembros SET Nombre='" + txtNombre.Text + "', Apellido='" + txtApellido.Text + "', Dirección= '" + txtDireccion.Text + "', Barrio = '" + txtBarrio.Text + "', Telefono = " + txtTelefono.Text + ",DNI=" + txtDNI.Text + ", fecha_nac = '" + dateTimePicker1.Value + "' WHERE DNI = " + textBoxBuscarDNI.Text + ";";
+            string Consulta = "UPDATE Miembros SET Nombre='" + txtNombre.Text + "', Apellido='" + txtApellido.Text + "', Dirección= '" + txtDireccion.Text + "', Barrio = '" + txtBarrio.Text + "', Telefono = " + txtTelefono.Text + ",DNI=" + txtDNI.Text + ", fecha_nac = '" + textBoxFechaNac.Text + "' WHERE DNI = " + textBoxBuscarDNI.Text + ";";
             OleDbCommand comando = new OleDbCommand(Consulta, conexion);
             OleDbDataReader dr = comando.ExecuteReader();
 
@@ -73,7 +73,7 @@ namespace Iglesia
             txtNombre.Text = "";
             txtTelefono.Text = "";
             textemail.Text = "";
-            dateTimePicker1.Text = "";
+            textBoxFechaNac.Text = "";
             
         }
                   
