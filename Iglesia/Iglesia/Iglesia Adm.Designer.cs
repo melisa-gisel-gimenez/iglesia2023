@@ -34,6 +34,8 @@
             this.cargarPersonas = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarMentorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarMentoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarDatosPersonalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inhabilitarPersonasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.departamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jóvenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asistenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,9 +67,8 @@
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
-            this.modificarDatosPersonalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.inhabilitarPersonasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaDeMentoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -98,7 +99,8 @@
             this.asignarMentorToolStripMenuItem,
             this.modificarMentoresToolStripMenuItem,
             this.modificarDatosPersonalesToolStripMenuItem,
-            this.inhabilitarPersonasToolStripMenuItem});
+            this.inhabilitarPersonasToolStripMenuItem,
+            this.altaDeMentoresToolStripMenuItem});
             this.personasToolStripMenuItem.Name = "personasToolStripMenuItem";
             this.personasToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.personasToolStripMenuItem.Text = "Personas";
@@ -130,6 +132,20 @@
             this.modificarMentoresToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
             this.modificarMentoresToolStripMenuItem.Text = "Modificar mentores";
             this.modificarMentoresToolStripMenuItem.Click += new System.EventHandler(this.modificarMentoresToolStripMenuItem_Click);
+            // 
+            // modificarDatosPersonalesToolStripMenuItem
+            // 
+            this.modificarDatosPersonalesToolStripMenuItem.Name = "modificarDatosPersonalesToolStripMenuItem";
+            this.modificarDatosPersonalesToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
+            this.modificarDatosPersonalesToolStripMenuItem.Text = "Modificar Datos Personales";
+            this.modificarDatosPersonalesToolStripMenuItem.Click += new System.EventHandler(this.modificarDatosPersonalesToolStripMenuItem_Click);
+            // 
+            // inhabilitarPersonasToolStripMenuItem
+            // 
+            this.inhabilitarPersonasToolStripMenuItem.Name = "inhabilitarPersonasToolStripMenuItem";
+            this.inhabilitarPersonasToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
+            this.inhabilitarPersonasToolStripMenuItem.Text = "Inhabilitar Personas";
+            this.inhabilitarPersonasToolStripMenuItem.Click += new System.EventHandler(this.inhabilitarPersonasToolStripMenuItem_Click);
             // 
             // departamentosToolStripMenuItem
             // 
@@ -372,20 +388,13 @@
             this.button1.FlatAppearance.BorderSize = 5;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(33, 84);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(117, 58);
             this.button1.TabIndex = 2;
             this.button1.Text = "Gestionar Personas";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // modificarDatosPersonalesToolStripMenuItem
-            // 
-            this.modificarDatosPersonalesToolStripMenuItem.Name = "modificarDatosPersonalesToolStripMenuItem";
-            this.modificarDatosPersonalesToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
-            this.modificarDatosPersonalesToolStripMenuItem.Text = "Modificar Datos Personales";
-            this.modificarDatosPersonalesToolStripMenuItem.Click += new System.EventHandler(this.modificarDatosPersonalesToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -398,12 +407,12 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // inhabilitarPersonasToolStripMenuItem
+            // altaDeMentoresToolStripMenuItem
             // 
-            this.inhabilitarPersonasToolStripMenuItem.Name = "inhabilitarPersonasToolStripMenuItem";
-            this.inhabilitarPersonasToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
-            this.inhabilitarPersonasToolStripMenuItem.Text = "Inhabilitar Personas";
-            this.inhabilitarPersonasToolStripMenuItem.Click += new System.EventHandler(this.inhabilitarPersonasToolStripMenuItem_Click);
+            this.altaDeMentoresToolStripMenuItem.Name = "altaDeMentoresToolStripMenuItem";
+            this.altaDeMentoresToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
+            this.altaDeMentoresToolStripMenuItem.Text = "Alta de Mentores";
+            this.altaDeMentoresToolStripMenuItem.Click += new System.EventHandler(this.altaDeMentoresToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -414,7 +423,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Iglesia Adm.";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -468,6 +477,7 @@
         private System.Windows.Forms.ToolStripMenuItem modificarMentoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarDatosPersonalesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inhabilitarPersonasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem altaDeMentoresToolStripMenuItem;
     }
 }
 

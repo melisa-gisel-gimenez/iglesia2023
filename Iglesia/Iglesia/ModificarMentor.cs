@@ -401,7 +401,7 @@ namespace Iglesia
 
                 else
                 {
-                    MessageBox.Show("Se registró a fecha de fin con exito.");
+                    MessageBox.Show("Se registró la fecha de fin con exito.");
                 }
 
                 CargarMentores();

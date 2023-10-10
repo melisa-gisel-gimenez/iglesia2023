@@ -207,5 +207,11 @@ namespace Iglesia
             InhabilitarPersonas Form1 = new InhabilitarPersonas();
             Form1.Show();
         }
+
+        private void altaDeMentoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AltaMentores Form1 =new AltaMentores();
+            Form1.Show();
+        }
     }
 }
