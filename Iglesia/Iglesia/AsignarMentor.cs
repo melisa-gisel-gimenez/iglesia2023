@@ -38,9 +38,8 @@ namespace Iglesia
               conexion = new OleDbConnection(connectionString);
 
               // Define la consulta SQL para seleccionar los registros con ID_Mentor vacío.
-              string consulta = "SELECT DNI, nombre, fecha_alta, id_mentor FROM Miembros WHERE id_mentor IS NULL";
-            //hacer una consulta para guardar la fecha de asignacion en la tabla asignaciones
-
+              string consulta = "SELECT id_miembro, DNI, nombre, apellido, fecha_alta, id_mentor FROM Miembros WHERE id_mentor IS NULL";
+            
               // Crea un adaptador de datos para ejecutar la consulta y llenar el DataSet.
               adaptador = new OleDbDataAdapter(consulta, conexion);
 
@@ -87,8 +86,9 @@ namespace Iglesia
             int dni;
             string nombreM;
             
-            textBoxDNI.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells[0].Value.ToString();
-            textBoxNombre.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells[1].Value.ToString();
+            textBoxIDMiembro.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells[0].Value.ToString();
+            textBoxDNI.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells[1].Value.ToString();
+            textBoxNombre.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells[2].Value.ToString();
 
             dni = int.Parse(textBoxDNI.Text);
             nombreM = textBoxNombre.Text;
@@ -148,7 +148,7 @@ namespace Iglesia
                     String consulta3 = "UPDATE Miembros SET id_mentor ='" + int.Parse(textBoxIdMentor.Text) + "' " + " WHERE DNI = " + int.Parse(textBoxDNI.Text) + ";";
                     String consulta4 = "UPDATE Mentores SET cantidad = cantidad + 1" + " WHERE id_mentor = " + int.Parse(textBoxIdMentor.Text) + ";";
                     //agregar consulta para registrar fecha de asignacion de mentor en tabla asignaciones
-                    string consulta5= "INSERT INTO AsignacionMentor (DNI, id_mentor, fecha_asignacion) values (" +  int.Parse(textBoxDNI.Text)+","  +  int.Parse(textBoxIdMentor.Text)+"," + "'" + fechaAsignacion + "');";
+                    string consulta5= "INSERT INTO AsignacionMentor (id_miembro, id_mentor, fecha_asignacion) values (" +  int.Parse(textBoxIDMiembro.Text)+","  +  int.Parse(textBoxIdMentor.Text)+"," + "'" + fechaAsignacion + "');";
 
                     OleDbCommand comando1 = new OleDbCommand(consulta3, cn);
 
