@@ -155,12 +155,13 @@ namespace Iglesia
         private void button1_Click(object sender, EventArgs e)
         {
             string dniAModificar = textBoxBuscarDNI.Text.Trim();
+            string dniModificado = txtDNI.Text.Trim();
 
             if (!string.IsNullOrEmpty(dniAModificar))
             {
                 string consulta = "UPDATE miembros SET NOMBRE = @Nombre, APELLIDO = @Apellido, " +
                                   "DIRECCION = @Direccion, BARRIO = @Barrio, TELEFONO = @Telefono, " +
-                                  "EMAIL = @Email, BAUTIZADO = @Checkbox, fecha_nac = @FECHA_NAC WHERE DNI = @DNI";
+                                  "EMAIL = @Email, BAUTIZADO = @Checkbox, fecha_nac = @FECHA_NAC, DNI = @DNI  WHERE DNI = @DNI2";
 
                 using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
                 {
@@ -172,7 +173,9 @@ namespace Iglesia
                     comando.Parameters.AddWithValue("@Email", textemail.Text);
                     comando.Parameters.AddWithValue("@Checkbox",checkBoxBautizado.Checked);                    
                     comando.Parameters.AddWithValue("@FECHA_NAC", dateTimePicker1.Text);
-                    comando.Parameters.AddWithValue("@DNI", dniAModificar);
+                    comando.Parameters.AddWithValue("@DNI", dniModificado);
+                    comando.Parameters.AddWithValue("@DNI2", dniAModificar);
+
 
                     try
                     {

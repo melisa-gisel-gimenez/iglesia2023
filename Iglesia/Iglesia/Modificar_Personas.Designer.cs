@@ -272,7 +272,6 @@
             this.txtDNI.Location = new System.Drawing.Point(8, 132);
             this.txtDNI.Margin = new System.Windows.Forms.Padding(4);
             this.txtDNI.Name = "txtDNI";
-            this.txtDNI.ReadOnly = true;
             this.txtDNI.Size = new System.Drawing.Size(132, 23);
             this.txtDNI.TabIndex = 9;
             this.txtDNI.TextChanged += new System.EventHandler(this.txtDNI_TextChanged);
