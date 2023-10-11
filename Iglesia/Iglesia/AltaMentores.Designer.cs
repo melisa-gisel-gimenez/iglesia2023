@@ -133,7 +133,7 @@ namespace Iglesia
             // 
             // buttonAceptar
             // 
-            this.buttonAceptar.Location = new System.Drawing.Point(44, 219);
+            this.buttonAceptar.Location = new System.Drawing.Point(44, 239);
             this.buttonAceptar.Name = "buttonAceptar";
             this.buttonAceptar.Size = new System.Drawing.Size(75, 51);
             this.buttonAceptar.TabIndex = 10;
@@ -143,7 +143,7 @@ namespace Iglesia
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(164, 219);
+            this.buttonCancelar.Location = new System.Drawing.Point(159, 239);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(75, 51);
             this.buttonCancelar.TabIndex = 11;
@@ -167,7 +167,7 @@ namespace Iglesia
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxDNIBuscar);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AltaMentores";
             this.Text = "AltaMentores";
             this.ResumeLayout(false);

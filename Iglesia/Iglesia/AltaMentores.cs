@@ -102,6 +102,8 @@ namespace Iglesia
                 //OleDbConnection conexion = new OleDbConnection(cadenaConexion);
                 conexion.Open();
 
+                //agregar consulta para insertar rol en el miembro designado como miembro
+
                 OleDbCommand cmd = new OleDbCommand(consulta, conexion);
 
                 int cantidad = cmd.ExecuteNonQuery();

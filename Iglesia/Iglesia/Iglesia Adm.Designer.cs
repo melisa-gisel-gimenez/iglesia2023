@@ -36,6 +36,7 @@
             this.modificarMentoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarDatosPersonalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inhabilitarPersonasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaDeMentoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.departamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jóvenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asistenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,7 +69,7 @@
             this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.altaDeMentoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.postularMiembrosADiscipuladoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -100,7 +101,8 @@
             this.modificarMentoresToolStripMenuItem,
             this.modificarDatosPersonalesToolStripMenuItem,
             this.inhabilitarPersonasToolStripMenuItem,
-            this.altaDeMentoresToolStripMenuItem});
+            this.altaDeMentoresToolStripMenuItem,
+            this.postularMiembrosADiscipuladoToolStripMenuItem});
             this.personasToolStripMenuItem.Name = "personasToolStripMenuItem";
             this.personasToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.personasToolStripMenuItem.Text = "Personas";
@@ -108,44 +110,51 @@
             // consultarPersonasToolStripMenuItem
             // 
             this.consultarPersonasToolStripMenuItem.Name = "consultarPersonasToolStripMenuItem";
-            this.consultarPersonasToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
+            this.consultarPersonasToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
             this.consultarPersonasToolStripMenuItem.Text = "Consultar Personas";
             this.consultarPersonasToolStripMenuItem.Click += new System.EventHandler(this.consultarPersonasToolStripMenuItem_Click);
             // 
             // cargarPersonas
             // 
             this.cargarPersonas.Name = "cargarPersonas";
-            this.cargarPersonas.Size = new System.Drawing.Size(272, 26);
+            this.cargarPersonas.Size = new System.Drawing.Size(310, 26);
             this.cargarPersonas.Text = "Alta Miembros";
             this.cargarPersonas.Click += new System.EventHandler(this.cargarPersonasNuevasToolStripMenuItem_Click);
             // 
             // asignarMentorToolStripMenuItem
             // 
             this.asignarMentorToolStripMenuItem.Name = "asignarMentorToolStripMenuItem";
-            this.asignarMentorToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
+            this.asignarMentorToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
             this.asignarMentorToolStripMenuItem.Text = "Asignar Mentor";
             this.asignarMentorToolStripMenuItem.Click += new System.EventHandler(this.asignarMentorToolStripMenuItem_Click);
             // 
             // modificarMentoresToolStripMenuItem
             // 
             this.modificarMentoresToolStripMenuItem.Name = "modificarMentoresToolStripMenuItem";
-            this.modificarMentoresToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
+            this.modificarMentoresToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
             this.modificarMentoresToolStripMenuItem.Text = "Modificar mentores";
             this.modificarMentoresToolStripMenuItem.Click += new System.EventHandler(this.modificarMentoresToolStripMenuItem_Click);
             // 
             // modificarDatosPersonalesToolStripMenuItem
             // 
             this.modificarDatosPersonalesToolStripMenuItem.Name = "modificarDatosPersonalesToolStripMenuItem";
-            this.modificarDatosPersonalesToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
+            this.modificarDatosPersonalesToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
             this.modificarDatosPersonalesToolStripMenuItem.Text = "Modificar Datos Personales";
             this.modificarDatosPersonalesToolStripMenuItem.Click += new System.EventHandler(this.modificarDatosPersonalesToolStripMenuItem_Click);
             // 
             // inhabilitarPersonasToolStripMenuItem
             // 
             this.inhabilitarPersonasToolStripMenuItem.Name = "inhabilitarPersonasToolStripMenuItem";
-            this.inhabilitarPersonasToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
+            this.inhabilitarPersonasToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
             this.inhabilitarPersonasToolStripMenuItem.Text = "Inhabilitar Personas";
             this.inhabilitarPersonasToolStripMenuItem.Click += new System.EventHandler(this.inhabilitarPersonasToolStripMenuItem_Click);
+            // 
+            // altaDeMentoresToolStripMenuItem
+            // 
+            this.altaDeMentoresToolStripMenuItem.Name = "altaDeMentoresToolStripMenuItem";
+            this.altaDeMentoresToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
+            this.altaDeMentoresToolStripMenuItem.Text = "Alta de Mentores";
+            this.altaDeMentoresToolStripMenuItem.Click += new System.EventHandler(this.altaDeMentoresToolStripMenuItem_Click);
             // 
             // departamentosToolStripMenuItem
             // 
@@ -407,12 +416,12 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // altaDeMentoresToolStripMenuItem
+            // postularMiembrosADiscipuladoToolStripMenuItem
             // 
-            this.altaDeMentoresToolStripMenuItem.Name = "altaDeMentoresToolStripMenuItem";
-            this.altaDeMentoresToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
-            this.altaDeMentoresToolStripMenuItem.Text = "Alta de Mentores";
-            this.altaDeMentoresToolStripMenuItem.Click += new System.EventHandler(this.altaDeMentoresToolStripMenuItem_Click);
+            this.postularMiembrosADiscipuladoToolStripMenuItem.Name = "postularMiembrosADiscipuladoToolStripMenuItem";
+            this.postularMiembrosADiscipuladoToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
+            this.postularMiembrosADiscipuladoToolStripMenuItem.Text = "Postular Miembros a Discipulado";
+            this.postularMiembrosADiscipuladoToolStripMenuItem.Click += new System.EventHandler(this.postularMiembrosADiscipuladoToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -478,6 +487,7 @@
         private System.Windows.Forms.ToolStripMenuItem modificarDatosPersonalesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inhabilitarPersonasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem altaDeMentoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem postularMiembrosADiscipuladoToolStripMenuItem;
     }
 }
 

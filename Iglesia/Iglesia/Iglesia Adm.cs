@@ -213,5 +213,11 @@ namespace Iglesia
             AltaMentores Form1 =new AltaMentores();
             Form1.Show();
         }
+
+        private void postularMiembrosADiscipuladoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PostularADiscipulado Form1 = new PostularADiscipulado();
+            Form1.Show();
+        }
     }
 }
