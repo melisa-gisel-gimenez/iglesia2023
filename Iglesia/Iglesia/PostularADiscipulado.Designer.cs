@@ -218,6 +218,8 @@
             this.txtDNIBuscar.Name = "txtDNIBuscar";
             this.txtDNIBuscar.Size = new System.Drawing.Size(100, 22);
             this.txtDNIBuscar.TabIndex = 43;
+            this.txtDNIBuscar.TextChanged += new System.EventHandler(this.txtDNIBuscar_TextChanged);
+            this.txtDNIBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNIBuscar_KeyPress);
             // 
             // label1
             // 
@@ -225,9 +227,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(150, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 29);
+            this.label1.Size = new System.Drawing.Size(347, 29);
             this.label1.TabIndex = 42;
-            this.label1.Text = "Postular a Discipulado";
+            this.label1.Text = "Postular a Discipulado/Enviado";
             // 
             // label10
             // 
@@ -265,7 +267,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(717, 450);
+            this.ClientSize = new System.Drawing.Size(683, 450);
             this.Controls.Add(this.textIDEtapaActual);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textIDMentor);
@@ -293,6 +295,7 @@
             this.Controls.Add(this.label1);
             this.Name = "PostularADiscipulado";
             this.Text = "PostularADiscipulado";
+            this.Load += new System.EventHandler(this.PostularADiscipulado_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
