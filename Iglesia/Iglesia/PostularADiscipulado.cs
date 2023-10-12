@@ -40,12 +40,13 @@ namespace Iglesia
 
                         if (reader.Read())
                         {
-
                             textNombre.Text = reader["NOMBRE"].ToString();
                             textApellido.Text = reader["APELLIDO"].ToString();
                             textIDEtapaActual.Text = reader["id_etapaespiritual"].ToString();
                             textFechaAlta.Text = reader["fecha_alta"].ToString();
                             textIDMentor.Text = reader["id_mentor"].ToString();
+                            textBoxIDMiembro.Text = reader ["id_miembro"].ToString();
+                            checkBoxSI.Checked = Convert.ToBoolean(reader["inhabilitado"]);
                         }
                         else
                         {
@@ -75,6 +76,8 @@ namespace Iglesia
                 textProxEtapa.Text = "Discipulado";
                 textEtapaActual.Enabled = false;
                 textProxEtapa.Enabled = false;
+                textBoxIDProxEtapa.Text = "2";
+                textBoxIDProxEtapa.Enabled = false;
             }
 
             if (textIDEtapaActual.Text == "2")
@@ -84,6 +87,8 @@ namespace Iglesia
                 textMinisterio.Enabled = false;
                 textEtapaActual.Enabled = false;
                 textProxEtapa.Enabled = false;
+                textBoxIDProxEtapa.Text= "3";
+                textBoxIDProxEtapa.Enabled= false;
 
             }
 
@@ -93,9 +98,14 @@ namespace Iglesia
                 textMinisterio.Enabled = false;
                 textEtapaActual.Enabled = false;
                 textProxEtapa.Enabled = false;
+                textBoxIDProxEtapa.Enabled = false;
                 MessageBox.Show("Esta persona ya llegó a la etapa de evolución máxima dentro de la Iglesia. Por favor elija otro miembro o revise los datos");
             }
 
+            if (checkBoxSI.Checked == true)
+            {
+                MessageBox.Show("No puede postular a una perosna inhabilitada. Consulte con Administración o verifique el DNI ingresado");
+            }
             string idMentor = textIDMentor.Text;
 
             string consulta2 = "SELECT * FROM mentores WHERE id_mentor = @ID_MENTOR";
@@ -188,6 +198,26 @@ namespace Iglesia
 
         private void PostularADiscipulado_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void buttonPostular_Click(object sender, EventArgs e)
+        {
+            string consulta2 = "INSERT INTO Postulaciones (id_mentor, id_miembro, id_etapaespiritual) values (" + textIDMentor.Text + "," + textBoxIDMiembro.Text + "," + textBoxIDProxEtapa.Text +")";
+
+            OleDbCommand comando = new OleDbCommand(consulta2, conexion);
+            conexion.Open();
+            int cantidad = comando.ExecuteNonQuery();
+
+            if (cantidad < 1)
+            {
+                MessageBox.Show("Ocurrió un problema");
+            }
+            else
+            {
+                MessageBox.Show("Se registraron la postulación con exito!");
+            }
+
 
         }
     }

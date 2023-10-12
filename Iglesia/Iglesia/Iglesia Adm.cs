@@ -219,5 +219,11 @@ namespace Iglesia
             PostularADiscipulado Form1 = new PostularADiscipulado();
             Form1.Show();
         }
+
+        private void postulacionesPorRevisarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PostulacionesRevisar Form1 = new PostulacionesRevisar();
+            Form1 .Show();
+        }
     }
 }

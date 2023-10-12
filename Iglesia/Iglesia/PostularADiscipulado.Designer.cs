@@ -53,6 +53,12 @@
             this.textIDMentor = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textIDEtapaActual = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBoxIDMiembro = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.checkBoxSI = new System.Windows.Forms.CheckBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBoxIDProxEtapa = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonCancelar
@@ -72,6 +78,7 @@
             this.buttonPostular.TabIndex = 61;
             this.buttonPostular.Text = "Postular";
             this.buttonPostular.UseVisualStyleBackColor = true;
+            this.buttonPostular.Click += new System.EventHandler(this.buttonPostular_Click);
             // 
             // idMentor
             // 
@@ -263,11 +270,68 @@
             this.textIDEtapaActual.Size = new System.Drawing.Size(69, 22);
             this.textIDEtapaActual.TabIndex = 67;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(443, 136);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(79, 16);
+            this.label12.TabIndex = 68;
+            this.label12.Text = "ID Miembro:";
+            // 
+            // textBoxIDMiembro
+            // 
+            this.textBoxIDMiembro.Location = new System.Drawing.Point(520, 130);
+            this.textBoxIDMiembro.Name = "textBoxIDMiembro";
+            this.textBoxIDMiembro.Size = new System.Drawing.Size(65, 22);
+            this.textBoxIDMiembro.TabIndex = 69;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(431, 242);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(83, 16);
+            this.label13.TabIndex = 70;
+            this.label13.Text = "Inhabilitado?";
+            // 
+            // checkBoxSI
+            // 
+            this.checkBoxSI.AutoSize = true;
+            this.checkBoxSI.Location = new System.Drawing.Point(520, 241);
+            this.checkBoxSI.Name = "checkBoxSI";
+            this.checkBoxSI.Size = new System.Drawing.Size(41, 20);
+            this.checkBoxSI.TabIndex = 71;
+            this.checkBoxSI.Text = "SI";
+            this.checkBoxSI.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(251, 235);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(89, 16);
+            this.label14.TabIndex = 72;
+            this.label14.Text = "ID Prox Etapa";
+            // 
+            // textBoxIDProxEtapa
+            // 
+            this.textBoxIDProxEtapa.Location = new System.Drawing.Point(346, 232);
+            this.textBoxIDProxEtapa.Name = "textBoxIDProxEtapa";
+            this.textBoxIDProxEtapa.Size = new System.Drawing.Size(69, 22);
+            this.textBoxIDProxEtapa.TabIndex = 73;
+            // 
             // PostularADiscipulado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 450);
+            this.Controls.Add(this.textBoxIDProxEtapa);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.checkBoxSI);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.textBoxIDMiembro);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.textIDEtapaActual);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textIDMentor);
@@ -328,5 +392,11 @@
         private System.Windows.Forms.TextBox textIDMentor;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textIDEtapaActual;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBoxIDMiembro;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.CheckBox checkBoxSI;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBoxIDProxEtapa;
     }
 }
