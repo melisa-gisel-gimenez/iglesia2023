@@ -22,15 +22,25 @@ namespace Iglesia
         }
 
         private void PostulacionesRevisar_Load(object sender, EventArgs e)
+
         {
-            cargarDGV();
+
+            cargarDGV(); 
+
+       
+            
         }
         private void cargarDGV()
         {
-            
+
 
             // Consulta SQL
-            string consulta = "SELECT *FROM postulaciones WHERE aprobado = false";
+            string consulta = "SELECT p.id_mentor, p.id_miembro, p.id_etapaespiritual, m.nombre, m.apellido, ee.etapaEspiritual " +
+                              "FROM (postulaciones p " +
+                              "INNER JOIN Miembros m ON p.id_miembro = m.id_miembro) " +
+                              "INNER JOIN EtapaEspiritual ee ON p.id_etapaespiritual = ee.id_etapaespiritual " +
+                              "WHERE aprobado = false";
+
 
             using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
             {
