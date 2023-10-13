@@ -24,10 +24,8 @@ namespace Iglesia
         private void PostulacionesRevisar_Load(object sender, EventArgs e)
 
         {
-
-            cargarDGV(); 
-
-       
+            
+            cargarDGV();        
             
         }
         private void cargarDGV()
@@ -35,18 +33,17 @@ namespace Iglesia
 
 
             // Consulta SQL
-            string consulta = "SELECT p.id_mentor, p.id_miembro, p.id_etapaespiritual, m.nombre, m.apellido, ee.etapaEspiritual " +
+            string consulta = "SELECT p.id_postulacion AS Nro_Postulacion, p.id_mentor AS Nro_Mentor, p.id_miembro AS Nro_Miembro_Postulado, m.nombre AS Nombre, m.apellido AS Apellido, m.id_etapaespiritual AS Codigo_etapa_actual, m.fecha_alta AS Desde_fecha, ee.etapaEspiritual AS Proxima_Etapa,  p.aprobado " +
                               "FROM (postulaciones p " +
                               "INNER JOIN Miembros m ON p.id_miembro = m.id_miembro) " +
                               "INNER JOIN EtapaEspiritual ee ON p.id_etapaespiritual = ee.id_etapaespiritual " +
+                              //"INNER JOIN EtapaEspiritual ee ON m.id_etapaespiritual = ee.id_etapaespiritual " +
                               "WHERE aprobado = false";
 
 
             using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
             {
-               // comando.Parameters.AddWithValue("@ID_Mentor", idMentor);
-               // comando.Parameters.AddWithValue("@ID_Miembro", idMiembro);
-                //comando.Parameters.AddWithValue("@ID_Etapa", idEtapa);
+               
 
                 try
                 {
@@ -64,6 +61,94 @@ namespace Iglesia
                 {
                     conexion.Close();
                 }
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DGV1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            labelIDPostulacion.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells[0].Value.ToString();
+            labelIDMiembro.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells[2].Value.ToString();
+            labelIDProxEtapa.Text= DGV1.Rows[DGV1.CurrentRow.Index].Cells[5].Value.ToString();
+        }
+
+        private void buttonAprobar_Click(object sender, EventArgs e)
+        {
+            if (labelIDPostulacion.Text=="")
+            {
+                MessageBox.Show("Por favor, haga click en la celda de la postulación que quiere aprobar");
+            }
+            else
+            {
+                string cadenaUpdate= "UPDATE Postulaciones SET aprobado = true WHERE Id_postulacion = @IdPostulacion";
+
+
+                OleDbCommand comando = new OleDbCommand(cadenaUpdate, conexion);
+                conexion.Open();
+               
+                comando.Parameters.AddWithValue("@IdPostulacion", labelIDPostulacion.Text);
+
+                int cantidad = comando.ExecuteNonQuery();
+
+
+                if (cantidad < 1)
+                {
+                    MessageBox.Show("Ocurrió un problema");
+                }
+
+                else
+                {
+                    MessageBox.Show("Se aprobo la postulación con exito!");
+                }
+            }
+
+           if (labelIDProxEtapa.Text =="1")
+            {
+                string cadena2 = "UPDATE MIEMBROS SET id_etapaespiritual = 2 WHERE id_miembro = @IdMiembro";
+                OleDbCommand comando = new OleDbCommand(cadena2, conexion);
+                conexion.Open();
+
+                comando.Parameters.AddWithValue("@IdMiembro", labelIDMiembro.Text);
+                int cantidad = comando.ExecuteNonQuery();
+
+
+                if (cantidad < 1)
+                {
+                    MessageBox.Show("Ocurrió un problema");
+                }
+
+                else
+                {
+                    MessageBox.Show("Se aprobo la postulación con exito!");
+                }
+
+            }
+
+            if (labelIDProxEtapa.Text == "2")
+            {
+                string cadena3 = "UPDATE MIEMBROS SET id_etapaespiritual = 3 WHERE id_miembro =@IdMiembro";
+                OleDbCommand comando = new OleDbCommand(cadena3, conexion);
+                conexion.Open();
+
+                comando.Parameters.AddWithValue("@IdMiembro", labelIDMiembro.Text);
+
+                int cantidad = comando.ExecuteNonQuery();
+
+
+                if (cantidad < 1)
+                {
+                    MessageBox.Show("Ocurrió un problema");
+                }
+
+                else
+                {
+                    MessageBox.Show("Se aprobo la postulación con exito!");
+                }
+
             }
         }
     }
