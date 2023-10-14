@@ -34,6 +34,7 @@
             this.buttonAprobar = new System.Windows.Forms.Button();
             this.labelIDMiembro = new System.Windows.Forms.Label();
             this.labelIDProxEtapa = new System.Windows.Forms.Label();
+            this.labelFechaAlta = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,11 +96,20 @@
             this.labelIDProxEtapa.Size = new System.Drawing.Size(0, 16);
             this.labelIDProxEtapa.TabIndex = 5;
             // 
+            // labelFechaAlta
+            // 
+            this.labelFechaAlta.AutoSize = true;
+            this.labelFechaAlta.Location = new System.Drawing.Point(690, 217);
+            this.labelFechaAlta.Name = "labelFechaAlta";
+            this.labelFechaAlta.Size = new System.Drawing.Size(0, 16);
+            this.labelFechaAlta.TabIndex = 6;
+            // 
             // PostulacionesRevisar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1096, 450);
+            this.Controls.Add(this.labelFechaAlta);
             this.Controls.Add(this.labelIDProxEtapa);
             this.Controls.Add(this.labelIDMiembro);
             this.Controls.Add(this.buttonAprobar);
@@ -123,5 +133,6 @@
         private System.Windows.Forms.Button buttonAprobar;
         private System.Windows.Forms.Label labelIDMiembro;
         private System.Windows.Forms.Label labelIDProxEtapa;
+        private System.Windows.Forms.Label labelFechaAlta;
     }
 }

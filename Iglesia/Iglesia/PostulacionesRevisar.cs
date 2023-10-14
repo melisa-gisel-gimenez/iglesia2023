@@ -74,10 +74,13 @@ namespace Iglesia
             labelIDPostulacion.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells[0].Value.ToString();
             labelIDMiembro.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells[2].Value.ToString();
             labelIDProxEtapa.Text= DGV1.Rows[DGV1.CurrentRow.Index].Cells[5].Value.ToString();
+            labelFechaAlta.Text= DGV1.Rows[DGV1.CurrentRow.Index].Cells[6].Value.ToString();
         }
 
         private void buttonAprobar_Click(object sender, EventArgs e)
         {
+            DateTime fecha= DateTime.Now;
+
             if (labelIDPostulacion.Text=="")
             {
                 MessageBox.Show("Por favor, haga click en la celda de la postulación que quiere aprobar");
@@ -104,6 +107,7 @@ namespace Iglesia
                 {
                     MessageBox.Show("Se aprobo la postulación con exito!");
                 }
+                conexion.Close();
             }
 
            if (labelIDProxEtapa.Text =="1")
@@ -126,6 +130,34 @@ namespace Iglesia
                     MessageBox.Show("Se aprobo la postulación con exito!");
                 }
 
+                string cadenaFecha= "INSERT INTO CambioEtapas (id_miembro, id_etapaEspiritual, fecha_alta_etapa, fecha_fin_etapa) VALUES ('" + labelIDMiembro.Text + "', " + "'" + labelIDProxEtapa.Text + "', '" + labelFechaAlta.Text + "', '" + fecha + "');";
+                OleDbCommand comando2 = new OleDbCommand(cadenaFecha, conexion);
+                int cantidad2 = comando2.ExecuteNonQuery();
+
+                if (cantidad2 < 1)
+                {
+                    MessageBox.Show("Ocurrió un problema");
+                }
+
+                else
+                {
+                    MessageBox.Show("Se registro el cambio con exito!");
+                }
+
+                string cadenaFecha2 = "INSERT INTO CambioEtapas (id_miembro, id_etapaEspiritual, fecha_alta_etapa) VALUES ('" + labelIDMiembro.Text + "', " + "'2', " + "'" + fecha + "');";
+                OleDbCommand comando3 = new OleDbCommand(cadenaFecha2, conexion);
+                int cantidad3 = comando3.ExecuteNonQuery();
+
+                if (cantidad3 < 1)
+                {
+                    MessageBox.Show("Ocurrió un problema");
+                }
+
+                else
+                {
+                    MessageBox.Show("Se registro la fecha de la nueva etapa con exito!");
+                }
+                conexion.Close();
             }
 
             if (labelIDProxEtapa.Text == "2")
@@ -148,6 +180,35 @@ namespace Iglesia
                 {
                     MessageBox.Show("Se aprobo la postulación con exito!");
                 }
+
+                string cadenaFecha = "INSERT INTO CambioEtapas (id_miembro, id_etapaEspiritual, fecha_alta_etapa, fecha_fin_etapa) VALUES ('" + labelIDMiembro.Text + "', " + "'" + labelIDProxEtapa.Text + "', '" + labelFechaAlta.Text + "', '" + fecha + "');";
+                OleDbCommand comando2 = new OleDbCommand(cadenaFecha, conexion);
+                int cantidad2 = comando2.ExecuteNonQuery();
+
+                if (cantidad2 < 1)
+                {
+                    MessageBox.Show("Ocurrió un problema");
+                }
+
+                else
+                {
+                    MessageBox.Show("Se registro el cambio con exito!");
+                }
+
+                string cadenaFecha2 = "INSERT INTO CambioEtapas (id_miembro, id_etapaEspiritual, fecha_alta_etapa) VALUES ('" + labelIDMiembro.Text + "', " + "'3', " + "'" + fecha + "');";
+                OleDbCommand comando3 = new OleDbCommand(cadenaFecha2, conexion);
+                int cantidad3 = comando3.ExecuteNonQuery();
+
+                if (cantidad3 < 1)
+                {
+                    MessageBox.Show("Ocurrió un problema");
+                }
+
+                else
+                {
+                    MessageBox.Show("Se registro la fecha de la nueva etapa con exito!");
+                }
+                conexion.Close();
 
             }
         }
