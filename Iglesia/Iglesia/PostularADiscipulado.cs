@@ -19,6 +19,7 @@ namespace Iglesia
         {
             InitializeComponent();
             conexion = new OleDbConnection(cadenaConexion);
+            CargarDatosComboBoxMinisterios();
         }
 
         private void buttonBuscar_Click(object sender, EventArgs e)
@@ -84,7 +85,7 @@ namespace Iglesia
             {
                 textEtapaActual.Text = "Discipulado";
                 textProxEtapa.Text = "Enviado";
-                textMinisterio.Enabled = false;
+                //textMinisterio.Enabled = false;
                 textEtapaActual.Enabled = false;
                 textProxEtapa.Enabled = false;
                 textBoxIDProxEtapa.Text= "3";
@@ -95,7 +96,7 @@ namespace Iglesia
             if (textIDEtapaActual.Text == "3")
             {
                 textEtapaActual.Text = "Enviado";
-                textMinisterio.Enabled = false;
+                //textMinisterio.Enabled = false;
                 textEtapaActual.Enabled = false;
                 textProxEtapa.Enabled = false;
                 textBoxIDProxEtapa.Enabled = false;
@@ -104,7 +105,7 @@ namespace Iglesia
 
             if (checkBoxSI.Checked == true)
             {
-                MessageBox.Show("No puede postular a una perosna inhabilitada. Consulte con Administración o verifique el DNI ingresado");
+                MessageBox.Show("No puede postular a una persona inhabilitada. Consulte con Administración o verifique el DNI ingresado");
             }
             string idMentor = textIDMentor.Text;
 
@@ -218,7 +219,90 @@ namespace Iglesia
                 MessageBox.Show("Se registraron la postulación con exito!");
             }
 
+            string consulta3 = "UPDATE Miembros SET id_ministerio =" + textBoxIDMinisterio.Text + " WHERE id_miembro=" + textBoxIDMiembro.Text + ";";
+            OleDbCommand comando2 = new OleDbCommand(consulta3, conexion);
+            //conexion.Open();
+            
+            int cantidad2 = comando2.ExecuteNonQuery();
 
+            if (cantidad2 < 1)
+            {
+                MessageBox.Show("Ocurrió un problema");
+            }
+            else
+            {
+                MessageBox.Show("Se registro el Ministerio en el registro dle miembro correctamente!");
+            }
+            conexion.Close();
+
+        }
+
+        private void CargarDatosComboBoxMinisterios()
+        {
+            string consulta = "SELECT nombreMinisterio FROM Ministerios";
+
+            using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
+            {
+                try
+                {
+                    conexion.Open();
+                    OleDbDataReader reader = comando.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        string nombreMinisterio = reader["nombreMinisterio"].ToString();
+                        comboBoxMinisterios.Items.Add(nombreMinisterio);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar los datos: " + ex.Message);
+                }
+                finally
+                {
+                    conexion.Close();
+                }
+            }
+        }
+
+        // Evento que se dispara al seleccionar un elemento en el ComboBox
+        private void comboBoxMinisterios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxMinisterios.SelectedIndex >= 0)
+            {
+                // Obtener el ID del ministerio seleccionado y mostrarlo en el TextBox
+                string ministerioSeleccionado = comboBoxMinisterios.SelectedItem.ToString();
+                MostrarIdMinisterio(ministerioSeleccionado);
+            }
+        }
+
+        private void MostrarIdMinisterio(string nombreMinisterio)
+        {
+            string consulta = "SELECT Id_Ministerio FROM Ministerios WHERE nombreMinisterio = @NombreMinisterio";
+
+            using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
+            {
+                comando.Parameters.AddWithValue("@NombreMinisterio", nombreMinisterio);
+
+                try
+                {
+                    conexion.Open();
+                    object resultado = comando.ExecuteScalar();
+
+                    if (resultado != null)
+                    {
+                        textBoxIDMinisterio.Text = resultado.ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al obtener el ID del ministerio: " + ex.Message);
+                }
+                finally
+                {
+                    conexion.Close();
+                }
+            }
         }
     }
 }

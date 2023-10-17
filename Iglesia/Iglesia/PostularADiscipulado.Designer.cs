@@ -59,6 +59,9 @@
             this.checkBoxSI = new System.Windows.Forms.CheckBox();
             this.label14 = new System.Windows.Forms.Label();
             this.textBoxIDProxEtapa = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBoxIDMinisterio = new System.Windows.Forms.TextBox();
+            this.comboBoxMinisterios = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // buttonCancelar
@@ -122,7 +125,7 @@
             // 
             // textMinisterio
             // 
-            this.textMinisterio.Location = new System.Drawing.Point(168, 289);
+            this.textMinisterio.Location = new System.Drawing.Point(571, 416);
             this.textMinisterio.Name = "textMinisterio";
             this.textMinisterio.Size = new System.Drawing.Size(100, 22);
             this.textMinisterio.TabIndex = 55;
@@ -321,11 +324,39 @@
             this.textBoxIDProxEtapa.Size = new System.Drawing.Size(69, 22);
             this.textBoxIDProxEtapa.TabIndex = 73;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(323, 295);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(92, 16);
+            this.label15.TabIndex = 74;
+            this.label15.Text = "Nro Ministerio:";
+            // 
+            // textBoxIDMinisterio
+            // 
+            this.textBoxIDMinisterio.Location = new System.Drawing.Point(421, 289);
+            this.textBoxIDMinisterio.Name = "textBoxIDMinisterio";
+            this.textBoxIDMinisterio.Size = new System.Drawing.Size(75, 22);
+            this.textBoxIDMinisterio.TabIndex = 75;
+            // 
+            // comboBoxMinisterios
+            // 
+            this.comboBoxMinisterios.FormattingEnabled = true;
+            this.comboBoxMinisterios.Location = new System.Drawing.Point(168, 287);
+            this.comboBoxMinisterios.Name = "comboBoxMinisterios";
+            this.comboBoxMinisterios.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxMinisterios.TabIndex = 76;
+            this.comboBoxMinisterios.SelectedIndexChanged += new System.EventHandler(this.comboBoxMinisterios_SelectedIndexChanged);
+            // 
             // PostularADiscipulado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 450);
+            this.Controls.Add(this.comboBoxMinisterios);
+            this.Controls.Add(this.textBoxIDMinisterio);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.textBoxIDProxEtapa);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.checkBoxSI);
@@ -398,5 +429,8 @@
         private System.Windows.Forms.CheckBox checkBoxSI;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBoxIDProxEtapa;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBoxIDMinisterio;
+        private System.Windows.Forms.ComboBox comboBoxMinisterios;
     }
 }
