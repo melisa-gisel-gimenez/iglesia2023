@@ -237,5 +237,11 @@ namespace Iglesia
             RegistroReunionesMentor Form1 = new RegistroReunionesMentor();
             Form1.Show();
         }
+
+        private void altaUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AltaUsuarios Form1 = new AltaUsuarios();
+            Form1.Show();
+        }
     }
 }
