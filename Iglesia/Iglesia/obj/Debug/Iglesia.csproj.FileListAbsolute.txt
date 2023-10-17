@@ -120,3 +120,4 @@ C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\obj\Debug\
 C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\obj\Debug\Iglesia.InhabilitarPersonas.resources
 C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\obj\Debug\Iglesia.PostularADiscipulado.resources
 C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\obj\Debug\Iglesia.PostulacionesRevisar.resources
+C:\Users\MELIS\OneDrive\Documentos\GitHub\iglesia2023\Iglesia\Iglesia\obj\Debug\Iglesia.AltaMinisterios.resources

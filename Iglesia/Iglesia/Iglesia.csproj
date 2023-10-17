@@ -81,6 +81,12 @@
     <Compile Include="AltaMentores.Designer.cs">
       <DependentUpon>AltaMentores.cs</DependentUpon>
     </Compile>
+    <Compile Include="AltaMinisterios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaMinisterios.Designer.cs">
+      <DependentUpon>AltaMinisterios.cs</DependentUpon>
+    </Compile>
     <Compile Include="PostulacionesRevisar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AltaMentores.resx">
       <DependentUpon>AltaMentores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AltaMinisterios.resx">
+      <DependentUpon>AltaMinisterios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InhabilitarPersonas.resx">
       <DependentUpon>InhabilitarPersonas.cs</DependentUpon>

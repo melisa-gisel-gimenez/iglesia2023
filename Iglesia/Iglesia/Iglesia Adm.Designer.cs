@@ -38,6 +38,7 @@
             this.inhabilitarPersonasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaDeMentoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.postularMiembrosADiscipuladoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.postulacionesPorRevisarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.departamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jóvenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asistenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,7 +71,7 @@
             this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.postulacionesPorRevisarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaMinisteriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -104,7 +105,8 @@
             this.inhabilitarPersonasToolStripMenuItem,
             this.altaDeMentoresToolStripMenuItem,
             this.postularMiembrosADiscipuladoToolStripMenuItem,
-            this.postulacionesPorRevisarToolStripMenuItem});
+            this.postulacionesPorRevisarToolStripMenuItem,
+            this.altaMinisteriosToolStripMenuItem});
             this.personasToolStripMenuItem.Name = "personasToolStripMenuItem";
             this.personasToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.personasToolStripMenuItem.Text = "Personas";
@@ -164,6 +166,13 @@
             this.postularMiembrosADiscipuladoToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
             this.postularMiembrosADiscipuladoToolStripMenuItem.Text = "Postular Miembros a Discipulado";
             this.postularMiembrosADiscipuladoToolStripMenuItem.Click += new System.EventHandler(this.postularMiembrosADiscipuladoToolStripMenuItem_Click);
+            // 
+            // postulacionesPorRevisarToolStripMenuItem
+            // 
+            this.postulacionesPorRevisarToolStripMenuItem.Name = "postulacionesPorRevisarToolStripMenuItem";
+            this.postulacionesPorRevisarToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
+            this.postulacionesPorRevisarToolStripMenuItem.Text = "Postulaciones por revisar";
+            this.postulacionesPorRevisarToolStripMenuItem.Click += new System.EventHandler(this.postulacionesPorRevisarToolStripMenuItem_Click);
             // 
             // departamentosToolStripMenuItem
             // 
@@ -425,12 +434,12 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // postulacionesPorRevisarToolStripMenuItem
+            // altaMinisteriosToolStripMenuItem
             // 
-            this.postulacionesPorRevisarToolStripMenuItem.Name = "postulacionesPorRevisarToolStripMenuItem";
-            this.postulacionesPorRevisarToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
-            this.postulacionesPorRevisarToolStripMenuItem.Text = "Postulaciones por revisar";
-            this.postulacionesPorRevisarToolStripMenuItem.Click += new System.EventHandler(this.postulacionesPorRevisarToolStripMenuItem_Click);
+            this.altaMinisteriosToolStripMenuItem.Name = "altaMinisteriosToolStripMenuItem";
+            this.altaMinisteriosToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
+            this.altaMinisteriosToolStripMenuItem.Text = "Alta Ministerios";
+            this.altaMinisteriosToolStripMenuItem.Click += new System.EventHandler(this.altaMinisteriosToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -498,6 +507,7 @@
         private System.Windows.Forms.ToolStripMenuItem altaDeMentoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem postularMiembrosADiscipuladoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem postulacionesPorRevisarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem altaMinisteriosToolStripMenuItem;
     }
 }
 

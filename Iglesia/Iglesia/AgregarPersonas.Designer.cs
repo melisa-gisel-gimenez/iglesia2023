@@ -54,8 +54,8 @@ namespace Iglesia
             this.label8 = new System.Windows.Forms.Label();
             this.txt_bautismo = new System.Windows.Forms.Label();
             this.textemail = new System.Windows.Forms.TextBox();
-            this.iglesiaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxParaID = new System.Windows.Forms.TextBox();
+            this.iglesiaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iglesiaDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -334,17 +334,18 @@ namespace Iglesia
             this.textemail.TabIndex = 48;
             this.textemail.MouseLeave += new System.EventHandler(this.textemail_MouseLeave);
             // 
-            // iglesiaDataSetBindingSource
-            // 
-            this.iglesiaDataSetBindingSource.DataSource = iglesiaDataSet1;
-            this.iglesiaDataSetBindingSource.Position = 0;
-            // 
             // textBoxParaID
             // 
             this.textBoxParaID.Location = new System.Drawing.Point(17, 345);
             this.textBoxParaID.Name = "textBoxParaID";
             this.textBoxParaID.Size = new System.Drawing.Size(100, 22);
             this.textBoxParaID.TabIndex = 46;
+            this.textBoxParaID.Visible = false;
+            // 
+            // iglesiaDataSetBindingSource
+            // 
+            this.iglesiaDataSetBindingSource.DataSource = iglesiaDataSet1;
+            this.iglesiaDataSetBindingSource.Position = 0;
             // 
             // AgregarPersonas
             // 

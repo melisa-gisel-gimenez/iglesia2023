@@ -225,5 +225,11 @@ namespace Iglesia
             PostulacionesRevisar Form1 = new PostulacionesRevisar();
             Form1 .Show();
         }
+
+        private void altaMinisteriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AltaMinisterios Form1 = new AltaMinisterios();
+            Form1.Show();
+        }
     }
 }
