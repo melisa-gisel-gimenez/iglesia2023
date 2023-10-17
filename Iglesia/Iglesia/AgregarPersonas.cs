@@ -14,9 +14,12 @@ namespace Iglesia
 {
     public partial class AgregarPersonas : Form
     {
+        private OleDbConnection conexion;
+        private string cadenaConexion = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb";
         public AgregarPersonas()
         {
             InitializeComponent();
+            conexion = new OleDbConnection(cadenaConexion);
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -40,19 +43,8 @@ namespace Iglesia
 
             if (Validacion() == true)
             {    
-                GuardarBD();
+                GuardarBD();                
                 
-                /*
-                txtDNI.Text = "";
-                txtApellido.Text = "";
-                txtBarrio.Text = "";
-                txtDireccion.Text = "";
-                txtNombre.Text = "";
-                txtTelefono.Text = "";
-                //textBox1.Text = "";
-                dateTimePicker1.Text = "";
-                textemail.Text = "";
-                */
             }
             
         }
@@ -70,7 +62,7 @@ namespace Iglesia
                     // string conexion @"Provider = Microsoft.Jet.OLEDB.4.0; Data Source = C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb";
                     OleDbConnection cn = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb");
                     cn.Open();
-                String consulta2 = "insert into Miembros (DNI, NOMBRE, APELLIDO, DIRECCION, BARRIO, TELEFONO, FECHA_NAC, BAUTIZADO, EMAIL, FECHA_ALTA) values (" + int.Parse(txtDNI.Text) + ", '" + txtNombre.Text + "', '" + txtApellido.Text + "', '" + txtDireccion.Text + "', '" + txtBarrio.Text + "', '" + txtTelefono.Text + "', '" + dateTimePicker1.Value + " ', " + checkBox_bautismo.Checked + ", '" + textemail.Text + "', '" + fechaAlta + "');";
+                    String consulta2 = "insert into Miembros (DNI, NOMBRE, APELLIDO, DIRECCION, BARRIO, TELEFONO, FECHA_NAC, BAUTIZADO, EMAIL, ID_ETAPAESPIRITUAL, FECHA_ALTA) values (" + int.Parse(txtDNI.Text) + ", '" + txtNombre.Text + "', '" + txtApellido.Text + "', '" + txtDireccion.Text + "', '" + txtBarrio.Text + "', '" + txtTelefono.Text + "', '" + dateTimePicker1.Value + " ', " + checkBox_bautismo.Checked + ", '" + textemail.Text + "', " + "'1', '" + fechaAlta + "');";
 
 
                     OleDbCommand comando1 = new OleDbCommand(consulta2, cn);
@@ -87,8 +79,55 @@ namespace Iglesia
                     {
                         MessageBox.Show("Se guardó con éxito!!!");
                     }
+
+                string consulta = "SELECT * FROM miembros WHERE DNI = @DNI";
+                OleDbCommand comando = new OleDbCommand(consulta, conexion);
+                comando.Parameters.AddWithValue("@DNI", txtDNI.Text);
+
+                try
+                {
+                    conexion.Open();
+                    OleDbDataReader reader = comando.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+
+                       textBoxParaID.Text = reader["id_miembro"].ToString();
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontró ningún registro con el DNI proporcionado.");
+                    }
+
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al buscar en la base de datos: " + ex.Message);
+                }
+                finally
+                {
+                    conexion.Close();
+                }
+
                 
-                             
+            string cadenaFecha2 = "INSERT INTO CambioEtapas (id_miembro, id_etapaEspiritual, fecha_alta_etapa) VALUES ('" + textBoxParaID.Text + "', " + "'1', '" + fechaAlta + "');";
+            OleDbCommand comando3 = new OleDbCommand(cadenaFecha2, conexion);
+            conexion.Open();
+            
+            int cantidad3 = comando3.ExecuteNonQuery();
+
+            if (cantidad3 < 1)
+            {
+                MessageBox.Show("Ocurrió un problema");
+            }
+
+            else
+            {
+                MessageBox.Show("Se registro la fecha de alta en Consolidación, correctamente");
+            }
+            conexion.Close();            
 
             }
         }
@@ -140,11 +179,9 @@ namespace Iglesia
                     txtDNI.Focus();
                     txtDNI.SelectAll();
                 }
-            }
-            
+            }            
 
-            return validado;
-            
+            return validado;            
             
             }
            

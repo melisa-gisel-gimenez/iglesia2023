@@ -31,7 +31,7 @@ namespace Iglesia
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Iglesia.IglesiaDataSet iglesiaDataSet2 = new Iglesia.IglesiaDataSet();
+            Iglesia.IglesiaDataSet iglesiaDataSet1 = new Iglesia.IglesiaDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,6 +55,7 @@ namespace Iglesia
             this.txt_bautismo = new System.Windows.Forms.Label();
             this.textemail = new System.Windows.Forms.TextBox();
             this.iglesiaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textBoxParaID = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iglesiaDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -138,7 +139,7 @@ namespace Iglesia
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtNombre.Location = new System.Drawing.Point(8, 60);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(216, 23);
             this.txtNombre.TabIndex = 7;
@@ -149,7 +150,7 @@ namespace Iglesia
             this.txtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellido.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtApellido.Location = new System.Drawing.Point(284, 60);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(132, 23);
             this.txtApellido.TabIndex = 8;
@@ -160,7 +161,7 @@ namespace Iglesia
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccion.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtDireccion.Location = new System.Drawing.Point(284, 206);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(132, 23);
             this.txtDireccion.TabIndex = 10;
@@ -171,7 +172,7 @@ namespace Iglesia
             this.txtDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDNI.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtDNI.Location = new System.Drawing.Point(8, 132);
-            this.txtDNI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDNI.Margin = new System.Windows.Forms.Padding(4);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(132, 23);
             this.txtDNI.TabIndex = 9;
@@ -183,7 +184,7 @@ namespace Iglesia
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtTelefono.Location = new System.Drawing.Point(8, 206);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(132, 23);
             this.txtTelefono.TabIndex = 11;
@@ -193,7 +194,7 @@ namespace Iglesia
             this.button1.BackColor = System.Drawing.Color.Lime;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(759, 22);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 78);
             this.button1.TabIndex = 14;
@@ -204,7 +205,7 @@ namespace Iglesia
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(779, 242);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 39);
             this.button2.TabIndex = 15;
@@ -217,7 +218,7 @@ namespace Iglesia
             this.txtBarrio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBarrio.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtBarrio.Location = new System.Drawing.Point(284, 272);
-            this.txtBarrio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBarrio.Margin = new System.Windows.Forms.Padding(4);
             this.txtBarrio.Name = "txtBarrio";
             this.txtBarrio.Size = new System.Drawing.Size(132, 23);
             this.txtBarrio.TabIndex = 25;
@@ -240,7 +241,7 @@ namespace Iglesia
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(4, 270);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(136, 23);
             this.dateTimePicker1.TabIndex = 32;
@@ -248,7 +249,7 @@ namespace Iglesia
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(779, 148);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(84, 39);
             this.button3.TabIndex = 33;
@@ -279,9 +280,9 @@ namespace Iglesia
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.groupBox2.Location = new System.Drawing.Point(13, 15);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(680, 305);
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
@@ -291,7 +292,7 @@ namespace Iglesia
             // 
             this.checkBox_bautismo.AutoSize = true;
             this.checkBox_bautismo.Location = new System.Drawing.Point(573, 66);
-            this.checkBox_bautismo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox_bautismo.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox_bautismo.Name = "checkBox_bautismo";
             this.checkBox_bautismo.Size = new System.Drawing.Size(42, 21);
             this.checkBox_bautismo.TabIndex = 47;
@@ -327,7 +328,7 @@ namespace Iglesia
             this.textemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textemail.ForeColor = System.Drawing.SystemColors.InfoText;
             this.textemail.Location = new System.Drawing.Point(283, 140);
-            this.textemail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textemail.Margin = new System.Windows.Forms.Padding(4);
             this.textemail.Name = "textemail";
             this.textemail.Size = new System.Drawing.Size(132, 23);
             this.textemail.TabIndex = 48;
@@ -335,19 +336,27 @@ namespace Iglesia
             // 
             // iglesiaDataSetBindingSource
             // 
-            this.iglesiaDataSetBindingSource.DataSource = iglesiaDataSet2;
+            this.iglesiaDataSetBindingSource.DataSource = iglesiaDataSet1;
             this.iglesiaDataSetBindingSource.Position = 0;
+            // 
+            // textBoxParaID
+            // 
+            this.textBoxParaID.Location = new System.Drawing.Point(17, 345);
+            this.textBoxParaID.Name = "textBoxParaID";
+            this.textBoxParaID.Size = new System.Drawing.Size(100, 22);
+            this.textBoxParaID.TabIndex = 46;
             // 
             // AgregarPersonas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(949, 380);
+            this.ClientSize = new System.Drawing.Size(949, 467);
+            this.Controls.Add(this.textBoxParaID);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AgregarPersonas";
             this.Text = "Guardar Personas";
             this.Load += new System.EventHandler(this.Agregar_Personas_Load);
@@ -355,6 +364,7 @@ namespace Iglesia
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iglesiaDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -384,6 +394,7 @@ namespace Iglesia
         private System.Windows.Forms.CheckBox checkBox_bautismo;
         private System.Windows.Forms.Label txt_bautismo;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBoxParaID;
     }
 
     internal class IglesiaDataSet
