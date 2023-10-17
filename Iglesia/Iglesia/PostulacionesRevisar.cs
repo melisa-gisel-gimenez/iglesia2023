@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -33,12 +34,19 @@ namespace Iglesia
 
 
             // Consulta SQL
-            string consulta = "SELECT p.id_postulacion AS Nro_Postulacion, p.id_mentor AS Nro_Mentor, p.id_miembro AS Nro_Miembro_Postulado, m.nombre AS Nombre, m.apellido AS Apellido, m.id_etapaespiritual AS Codigo_etapa_actual, m.fecha_alta AS Desde_fecha, ee.etapaEspiritual AS Proxima_Etapa,  p.aprobado " +
-                              "FROM (postulaciones p " +
-                              "INNER JOIN Miembros m ON p.id_miembro = m.id_miembro) " +
-                              "INNER JOIN EtapaEspiritual ee ON p.id_etapaespiritual = ee.id_etapaespiritual " +
-                              //"INNER JOIN EtapaEspiritual ee ON m.id_etapaespiritual = ee.id_etapaespiritual " +
-                              "WHERE aprobado = false";
+            // string consulta = "SELECT p.id_postulacion AS Nro_Postulacion, p.id_mentor AS Nro_Mentor, p.id_miembro AS Nro_Miembro_Postulado, m.nombre AS Nombre, m.apellido AS Apellido, m.id_etapaespiritual AS Codigo_etapa_actual, ce.fecha_alta_etapa AS Desde_fecha, ee.etapaEspiritual AS Proxima_Etapa,  p.aprobado " +
+            // "FROM ((postulaciones p " +
+            // "INNER JOIN Miembros m ON p.id_miembro = m.id_miembro) " +
+            // "INNER JOIN EtapaEspiritual ee ON p.id_etapaespiritual = ee.id_etapaespiritual) " +
+            // "INNER JOIN EtapaEspiritual ee ON m.id_etapaespiritual = ee.id_etapaespiritual " +
+            // "WHERE aprobado = false";
+            string consulta = "SELECT p.id_postulacion AS Nro_Postulacion, p.id_mentor AS Nro_Mentor, p.id_miembro AS Nro_Miembro_Postulado, m.nombre AS Nombre, m.apellido AS Apellido, m.id_etapaespiritual AS Codigo_etapa_actual, ce.fecha_alta_etapa AS Desde_fecha, ce.fecha_fin_etapa AS Hasta, ee.etapaEspiritual AS Proxima_Etapa, p.aprobado " +
+                             "FROM(((postulaciones p " +
+                             "INNER JOIN Miembros m ON p.id_miembro = m.id_miembro)" +
+                             "INNER JOIN EtapaEspiritual ee ON p.id_etapaespiritual = ee.id_etapaespiritual)" +
+                             "INNER JOIN CambioEtapas ce ON m.id_miembro = ce.id_miembro) " +
+                             //"INNER JOIN CambioEtapas ce_f ON m.id_etapaespiritual = ce_f.id_etapaEspiritual " +
+                             "WHERE p.aprobado = false AND ce.fecha_fin_etapa IS NULL";
 
 
             using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
@@ -130,8 +138,10 @@ namespace Iglesia
                     MessageBox.Show("Se aprobo la postulación con exito!");
                 }
 
-                string cadenaFecha= "INSERT INTO CambioEtapas (id_miembro, id_etapaEspiritual, fecha_alta_etapa, fecha_fin_etapa) VALUES ('" + labelIDMiembro.Text + "', " + "'" + labelIDProxEtapa.Text + "', '" + labelFechaAlta.Text + "', '" + fecha + "');";
+                string cadenaFecha= "UPDATE CAMBIOETAPAS SET fecha_fin_etapa ='" + fecha + "'" + " WHERE id_miembro = @IdMiembro";
                 OleDbCommand comando2 = new OleDbCommand(cadenaFecha, conexion);
+
+                comando2.Parameters.AddWithValue("@IdMiembro", labelIDMiembro.Text);
                 int cantidad2 = comando2.ExecuteNonQuery();
 
                 if (cantidad2 < 1)
@@ -162,7 +172,7 @@ namespace Iglesia
 
             if (labelIDProxEtapa.Text == "2")
             {
-                string cadena3 = "UPDATE MIEMBROS SET id_etapaespiritual = 3 WHERE id_miembro =@IdMiembro";
+                string cadena3 = "UPDATE MIEMBROS SET id_etapaespiritual = 3 WHERE id_miembro = @IdMiembro";
                 OleDbCommand comando = new OleDbCommand(cadena3, conexion);
                 conexion.Open();
 
@@ -181,8 +191,10 @@ namespace Iglesia
                     MessageBox.Show("Se aprobo la postulación con exito!");
                 }
 
-                string cadenaFecha = "INSERT INTO CambioEtapas (id_miembro, id_etapaEspiritual, fecha_alta_etapa, fecha_fin_etapa) VALUES ('" + labelIDMiembro.Text + "', " + "'" + labelIDProxEtapa.Text + "', '" + labelFechaAlta.Text + "', '" + fecha + "');";
+                string cadenaFecha = "UPDATE CAMBIOETAPAS SET fecha_fin_etapa ='" + fecha + "'" + " WHERE id_miembro = @IdMiembro";
                 OleDbCommand comando2 = new OleDbCommand(cadenaFecha, conexion);
+                
+                comando2.Parameters.AddWithValue("@IdMiembro", labelIDMiembro.Text);
                 int cantidad2 = comando2.ExecuteNonQuery();
 
                 if (cantidad2 < 1)
