@@ -151,6 +151,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistroReunionesMentor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroReunionesMentor.Designer.cs">
+      <DependentUpon>RegistroReunionesMentor.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Acerca de...resx">
       <DependentUpon>Acerca de...cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +200,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RegistroReunionesMentor.resx">
+      <DependentUpon>RegistroReunionesMentor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reporte.rdlc" />
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>

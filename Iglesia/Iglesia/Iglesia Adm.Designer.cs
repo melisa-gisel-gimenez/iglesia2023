@@ -70,8 +70,9 @@
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.altaMinisteriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.registroDeReunionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -106,7 +107,8 @@
             this.altaDeMentoresToolStripMenuItem,
             this.postularMiembrosADiscipuladoToolStripMenuItem,
             this.postulacionesPorRevisarToolStripMenuItem,
-            this.altaMinisteriosToolStripMenuItem});
+            this.altaMinisteriosToolStripMenuItem,
+            this.registroDeReunionesToolStripMenuItem});
             this.personasToolStripMenuItem.Name = "personasToolStripMenuItem";
             this.personasToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.personasToolStripMenuItem.Text = "Personas";
@@ -423,6 +425,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // altaMinisteriosToolStripMenuItem
+            // 
+            this.altaMinisteriosToolStripMenuItem.Name = "altaMinisteriosToolStripMenuItem";
+            this.altaMinisteriosToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
+            this.altaMinisteriosToolStripMenuItem.Text = "Alta Ministerios";
+            this.altaMinisteriosToolStripMenuItem.Click += new System.EventHandler(this.altaMinisteriosToolStripMenuItem_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -434,12 +443,12 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // altaMinisteriosToolStripMenuItem
+            // registroDeReunionesToolStripMenuItem
             // 
-            this.altaMinisteriosToolStripMenuItem.Name = "altaMinisteriosToolStripMenuItem";
-            this.altaMinisteriosToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
-            this.altaMinisteriosToolStripMenuItem.Text = "Alta Ministerios";
-            this.altaMinisteriosToolStripMenuItem.Click += new System.EventHandler(this.altaMinisteriosToolStripMenuItem_Click);
+            this.registroDeReunionesToolStripMenuItem.Name = "registroDeReunionesToolStripMenuItem";
+            this.registroDeReunionesToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
+            this.registroDeReunionesToolStripMenuItem.Text = "Registro de Reuniones";
+            this.registroDeReunionesToolStripMenuItem.Click += new System.EventHandler(this.registroDeReunionesToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -508,6 +517,7 @@
         private System.Windows.Forms.ToolStripMenuItem postularMiembrosADiscipuladoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem postulacionesPorRevisarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem altaMinisteriosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroDeReunionesToolStripMenuItem;
     }
 }
 

@@ -231,7 +231,7 @@ namespace Iglesia
             }
             else
             {
-                MessageBox.Show("Se registro el Ministerio en el registro dle miembro correctamente!");
+                MessageBox.Show("Se registro el Ministerio en el registro del miembro correctamente!");
             }
             conexion.Close();
 

@@ -231,5 +231,11 @@ namespace Iglesia
             AltaMinisterios Form1 = new AltaMinisterios();
             Form1.Show();
         }
+
+        private void registroDeReunionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistroReunionesMentor Form1 = new RegistroReunionesMentor();
+            Form1.Show();
+        }
     }
 }

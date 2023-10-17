@@ -15,13 +15,40 @@ namespace Iglesia
     {
         private OleDbConnection conexion;
         private string cadenaConexion = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb";
-        
+        private OleDbDataAdapter adaptador;
+        private DataSet dataSet;
         public AltaMinisterios()
         {
             InitializeComponent();
             conexion = new OleDbConnection(cadenaConexion);
+            CargarMinisterios();
         }
 
+        private void CargarMinisterios()
+        {
+            // Establece la cadena de conexión a tu archivo de base de datos Access (MDB).
+            string connectionString = @"Provider = Microsoft.Jet.OLEDB.4.0; Data Source = C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb";
+
+            // Crea una conexión a la base de datos.
+            conexion = new OleDbConnection(connectionString);
+
+            // Define la consulta SQL para seleccionar los registros con ID_Mentor vacío.
+            string consulta = "SELECT id_ministerio AS Nro_Ministerio, nombreMinisterio AS Nombre_Ministerio FROM ministerios";
+
+            // Crea un adaptador de datos para ejecutar la consulta y llenar el DataSet.
+            adaptador = new OleDbDataAdapter(consulta, conexion);
+
+            // Crea un DataSet para almacenar los datos.
+            dataSet = new DataSet();
+
+            // Abre la conexión y llena el DataSet con los datos de la tabla Miembros.
+            conexion.Open();
+            adaptador.Fill(dataSet, "Ministerios");
+            conexion.Close();
+
+            // Enlaza el DataGridView (DGV1) con el DataSet.
+            DGVMini.DataSource = dataSet.Tables["Ministerios"];
+        }
         private void buttonCrearMinisterio_Click(object sender, EventArgs e)
         {
             if (textBoxNombreMini.Text == "")
