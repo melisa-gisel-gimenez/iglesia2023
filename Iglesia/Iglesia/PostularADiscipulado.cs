@@ -47,6 +47,7 @@ namespace Iglesia
                             textFechaAlta.Text = reader["fecha_alta"].ToString();
                             textIDMentor.Text = reader["id_mentor"].ToString();
                             textBoxIDMiembro.Text = reader ["id_miembro"].ToString();
+                            textBoxIDMinisterio.Text = reader["id_ministerio"].ToString() ;
                             checkBoxSI.Checked = Convert.ToBoolean(reader["inhabilitado"]);
                         }
                         else
@@ -84,13 +85,49 @@ namespace Iglesia
             if (textIDEtapaActual.Text == "2")
             {
                 textEtapaActual.Text = "Discipulado";
-                textProxEtapa.Text = "Enviado";                
+                textProxEtapa.Text = "Enviado";
                 comboBoxMinisterios.Enabled = false;
                 textEtapaActual.Enabled = false;
                 textProxEtapa.Enabled = false;
-                textBoxIDProxEtapa.Text= "3";
-                textBoxIDProxEtapa.Enabled= false;
+                textBoxIDProxEtapa.Text = "3";
+                textBoxIDProxEtapa.Enabled = false;
 
+                if (textBoxIDMinisterio.Text != "")
+                {
+                    string idMinisterio = textBoxIDMinisterio.Text;
+
+                    string consulta = "SELECT nombreMinisterio FROM Ministerios WHERE id_ministerio = @IdMinisterio";
+                    using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@IdMinisterio", idMinisterio);
+
+                        try
+                        {
+                            conexion.Open();
+                            object resultado = comando.ExecuteScalar();
+
+                            if (resultado != null)
+                            {
+                                comboBoxMinisterios.Text = resultado.ToString();
+                            }
+                            else
+                            {
+                                // Manejar el caso donde no se encuentra el ministerio
+                                MessageBox.Show("El miembro no tiene un ministerio válido asignado.");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al obtener el nombre del ministerio: " + ex.Message);
+                        }
+                        finally
+                        {
+                            conexion.Close();
+                        }
+
+                    }
+
+                }
             }
 
             if (textIDEtapaActual.Text == "3")
