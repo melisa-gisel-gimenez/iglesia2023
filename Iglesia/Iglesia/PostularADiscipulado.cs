@@ -13,6 +13,7 @@ namespace Iglesia
 {
     public partial class PostularADiscipulado : Form
     {
+        
         private OleDbConnection conexion;
         private string cadenaConexion = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb";
         public PostularADiscipulado()
@@ -80,6 +81,7 @@ namespace Iglesia
                 textProxEtapa.Enabled = false;
                 textBoxIDProxEtapa.Text = "2";
                 textBoxIDProxEtapa.Enabled = false;
+                
             }
 
             if (textIDEtapaActual.Text == "2")
@@ -90,25 +92,26 @@ namespace Iglesia
                 textEtapaActual.Enabled = false;
                 textProxEtapa.Enabled = false;
                 textBoxIDProxEtapa.Text = "3";
-                textBoxIDProxEtapa.Enabled = false;
+                
 
                 if (textBoxIDMinisterio.Text != "")
                 {
                     string idMinisterio = textBoxIDMinisterio.Text;
-
                     string consulta = "SELECT nombreMinisterio FROM Ministerios WHERE id_ministerio = @IdMinisterio";
-                    using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
-                    {
-                        comando.Parameters.AddWithValue("@IdMinisterio", idMinisterio);
 
-                        try
+                    try
+                    {
+                        using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
                         {
+                            comando.Parameters.AddWithValue("@IdMinisterio", idMinisterio);
+
                             conexion.Open();
                             object resultado = comando.ExecuteScalar();
 
                             if (resultado != null)
                             {
                                 comboBoxMinisterios.Text = resultado.ToString();
+                                buttonPostular.Enabled = true;
                             }
                             else
                             {
@@ -116,15 +119,17 @@ namespace Iglesia
                                 MessageBox.Show("El miembro no tiene un ministerio válido asignado.");
                             }
                         }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Error al obtener el nombre del ministerio: " + ex.Message);
-                        }
-                        finally
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al obtener el nombre del ministerio: " + ex.Message);
+                    }
+                    finally
+                    {
+                        if (conexion.State == ConnectionState.Open)
                         {
                             conexion.Close();
                         }
-
                     }
 
                 }
@@ -132,82 +137,90 @@ namespace Iglesia
 
             if (textIDEtapaActual.Text == "3")
             {
+                
                 textEtapaActual.Text = "Enviado";
                 comboBoxMinisterios.Enabled = false;
                 textEtapaActual.Enabled = false;
                 textProxEtapa.Enabled = false;
                 textBoxIDProxEtapa.Enabled = false;
+                buttonPostular.Enabled = false;
                 MessageBox.Show("Esta persona ya llegó a la etapa de evolución máxima dentro de la Iglesia. Por favor elija otro miembro o revise los datos");
+                             
+                
             }
 
             if (checkBoxSI.Checked == true)
             {
                 MessageBox.Show("No puede postular a una persona inhabilitada. Consulte con Administración o verifique el DNI ingresado");
             }
-            string idMentor = textIDMentor.Text;
 
-            string consulta2 = "SELECT * FROM mentores WHERE id_mentor = @ID_MENTOR";
-
-            if (textIDMentor.Text != "")
+            if (textIDEtapaActual.Text == "1" || textIDEtapaActual.Text == "2")
             {
+                string idMentor = textIDMentor.Text;
 
-                using (OleDbCommand comando = new OleDbCommand(consulta2, conexion))
+                string consulta2 = "SELECT * FROM mentores WHERE id_mentor = @ID_MENTOR";
 
+                if (textIDMentor.Text != "")
                 {
 
-                    comando.Parameters.AddWithValue("@ID_MENTOR", idMentor);
-
-
-                    try
+                    using (OleDbCommand comando = new OleDbCommand(consulta2, conexion))
 
                     {
 
-                        conexion.Open();
-
-                        OleDbDataReader reader = comando.ExecuteReader();
+                        comando.Parameters.AddWithValue("@ID_MENTOR", idMentor);
 
 
-                        if (reader.Read())
+                        try
 
                         {
 
-                            textNombreMentor.Text = reader["NOMBRE"].ToString();
-                            buttonPostular.Enabled = true;
+                            conexion.Open();
+
+                            OleDbDataReader reader = comando.ExecuteReader();
+
+
+                            if (reader.Read())
+
+                            {
+
+                                textNombreMentor.Text = reader["NOMBRE"].ToString();
+                                buttonPostular.Enabled = true;
+
+                            }
+
+                            else
+
+                            {
+
+                                MessageBox.Show("No se encontró ningún mentor con el ID proporcionado.");
+
+                            }
+
+
+                            reader.Close();
 
                         }
 
-                        else
+                        catch (Exception ex)
+
+                        {
+                            MessageBox.Show("Error al buscar en la base de datos: " + ex.Message);
+
+                        }
+
+                        finally
 
                         {
 
-                            MessageBox.Show("No se encontró ningún mentor con el ID proporcionado.");
+                            conexion.Close();
 
                         }
-
-
-                        reader.Close();
-
-                    }
-
-                    catch (Exception ex)
-
-                    {
-                        MessageBox.Show("Error al buscar en la base de datos: " + ex.Message);
-
-                    }
-
-                    finally
-
-                    {
-
-                        conexion.Close();
-
                     }
                 }
-            }
-            else
-            {
-                MessageBox.Show("Por favor, ingresa un id válido.");
+                else
+                {
+                    MessageBox.Show("Por favor, ingresa un id válido.");
+                }
             }
         }
 
@@ -241,13 +254,50 @@ namespace Iglesia
 
         private void buttonPostular_Click(object sender, EventArgs e)
         {
-            if (comboBoxMinisterios.Text == "")
+            if (textIDEtapaActual.Text == "1")
             {
-                MessageBox.Show("No debe dejar campos vacíos. Por favor seleccione un Ministerio y verifique el restod e los datos.");
-            }
-            else
-            {
+                if (comboBoxMinisterios.Text == "")
+                {
+                    MessageBox.Show("No debe dejar campos vacíos. Por favor seleccione un Ministerio y verifique el restod e los datos.");
+                }
+                else
+                {
 
+                    string consulta2 = "INSERT INTO Postulaciones (id_mentor, id_miembro, id_etapaespiritual) values (" + textIDMentor.Text + "," + textBoxIDMiembro.Text + "," + textBoxIDProxEtapa.Text + ")";
+
+                    OleDbCommand comando = new OleDbCommand(consulta2, conexion);
+                    conexion.Open();
+                    int cantidad = comando.ExecuteNonQuery();
+
+                    if (cantidad < 1)
+                    {
+                        MessageBox.Show("Ocurrió un problema");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se registro la postulación con exito!");
+                    }
+
+                    string consulta3 = "UPDATE Miembros SET id_ministerio =" + textBoxIDMinisterio.Text + " WHERE id_miembro=" + textBoxIDMiembro.Text + ";";
+                    OleDbCommand comando2 = new OleDbCommand(consulta3, conexion);
+                    //conexion.Open();
+
+                    int cantidad2 = comando2.ExecuteNonQuery();
+
+                    if (cantidad2 < 1)
+                    {
+                        MessageBox.Show("Ocurrió un problema");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se registro el Ministerio en el registro del miembro correctamente!");
+                    }
+                    conexion.Close();
+                }
+            }
+
+            if (textIDEtapaActual.Text == "2")
+            {
                 string consulta2 = "INSERT INTO Postulaciones (id_mentor, id_miembro, id_etapaespiritual) values (" + textIDMentor.Text + "," + textBoxIDMiembro.Text + "," + textBoxIDProxEtapa.Text + ")";
 
                 OleDbCommand comando = new OleDbCommand(consulta2, conexion);
@@ -262,23 +312,8 @@ namespace Iglesia
                 {
                     MessageBox.Show("Se registro la postulación con exito!");
                 }
-
-                string consulta3 = "UPDATE Miembros SET id_ministerio =" + textBoxIDMinisterio.Text + " WHERE id_miembro=" + textBoxIDMiembro.Text + ";";
-                OleDbCommand comando2 = new OleDbCommand(consulta3, conexion);
-                //conexion.Open();
-
-                int cantidad2 = comando2.ExecuteNonQuery();
-
-                if (cantidad2 < 1)
-                {
-                    MessageBox.Show("Ocurrió un problema");
-                }
-                else
-                {
-                    MessageBox.Show("Se registro el Ministerio en el registro del miembro correctamente!");
-                }
                 conexion.Close();
-            }
+            }             
 
         }
 
@@ -352,23 +387,29 @@ namespace Iglesia
 
         private void buttonLimpiar_Click(object sender, EventArgs e)
         {
+            Limpiar();
+        }
+
+        private void Limpiar ()
+        {
             txtDNIBuscar.Text = string.Empty;
             textNombre.Text = string.Empty;
             textApellido.Text = string.Empty;
             textBoxIDMiembro.Text = string.Empty;
             textEtapaActual.Text = string.Empty;
             textProxEtapa.Text = string.Empty;
-            textBoxIDProxEtapa.Text = string.Empty; 
+            textBoxIDProxEtapa.Text = string.Empty;
             textIDEtapaActual.Text = string.Empty;
             comboBoxMinisterios.Text = "";
-            textBoxIDMinisterio.Text= string.Empty;
+            textBoxIDMinisterio.Text = string.Empty;
             textFechaAlta.Text = string.Empty;
             textNombreMentor.Text = string.Empty;
             textIDMentor.Text = string.Empty;
             textMinisterio.Text = string.Empty;
-            checkBoxSI.Checked = false;   
+            checkBoxSI.Checked = false;
             buttonPostular.Enabled = false;
         }
+        
     }
 }
     
