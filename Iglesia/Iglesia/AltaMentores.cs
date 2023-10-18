@@ -98,6 +98,8 @@ namespace Iglesia
             }
             else
             {
+                buttonAceptar.Enabled = true;
+
                 string consulta = "INSERT INTO Mentores (Nombre, Apellido, DNI_Mentor) values ('" + textBoxNombre.Text + "', '" + textBoxApellido.Text + "', '" + textBoxDNI.Text + "');";
                 //OleDbConnection conexion = new OleDbConnection(cadenaConexion);
                 conexion.Open();
@@ -118,6 +120,15 @@ namespace Iglesia
                     MessageBox.Show("Se guardó con éxito!!!");
                 }
             }
+        }
+
+        private void buttonLimpiar_Click(object sender, EventArgs e)
+        {
+            textBoxDNIBuscar.Text = "";
+            textBoxNombre.Text = "";
+            textBoxApellido.Text = "";
+            textBoxDNI.Text = "";
+            buttonAceptar.Enabled = false;
         }
     }
 }

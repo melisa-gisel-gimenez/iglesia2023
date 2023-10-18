@@ -40,6 +40,7 @@
             this.buttonBuscarDNI = new System.Windows.Forms.Button();
             this.checkBoxInhabilitado = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.buttonLimpiar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -85,9 +86,12 @@
             this.textBoxBuscarDNI.Name = "textBoxBuscarDNI";
             this.textBoxBuscarDNI.Size = new System.Drawing.Size(100, 22);
             this.textBoxBuscarDNI.TabIndex = 4;
+            this.textBoxBuscarDNI.TextChanged += new System.EventHandler(this.textBoxBuscarDNI_TextChanged_1);
+            this.textBoxBuscarDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxBuscarDNI_KeyPress);
             // 
             // txtNombre
             // 
+            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(155, 133);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 22);
@@ -95,6 +99,7 @@
             // 
             // txtApellido
             // 
+            this.txtApellido.Enabled = false;
             this.txtApellido.Location = new System.Drawing.Point(155, 179);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(100, 22);
@@ -102,6 +107,7 @@
             // 
             // buttonAceptar
             // 
+            this.buttonAceptar.Enabled = false;
             this.buttonAceptar.Location = new System.Drawing.Point(54, 302);
             this.buttonAceptar.Name = "buttonAceptar";
             this.buttonAceptar.Size = new System.Drawing.Size(97, 56);
@@ -112,12 +118,13 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(180, 302);
+            this.buttonCancelar.BackColor = System.Drawing.Color.Red;
+            this.buttonCancelar.Location = new System.Drawing.Point(311, 302);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(99, 56);
             this.buttonCancelar.TabIndex = 10;
             this.buttonCancelar.Text = "Cancelar";
-            this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.UseVisualStyleBackColor = false;
             // 
             // buttonBuscarDNI
             // 
@@ -148,11 +155,22 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Inhabilitado?";
             // 
+            // buttonLimpiar
+            // 
+            this.buttonLimpiar.Location = new System.Drawing.Point(181, 302);
+            this.buttonLimpiar.Name = "buttonLimpiar";
+            this.buttonLimpiar.Size = new System.Drawing.Size(97, 56);
+            this.buttonLimpiar.TabIndex = 14;
+            this.buttonLimpiar.Text = "Limpiar";
+            this.buttonLimpiar.UseVisualStyleBackColor = true;
+            this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click);
+            // 
             // InhabilitarPersonas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 450);
+            this.ClientSize = new System.Drawing.Size(514, 399);
+            this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.checkBoxInhabilitado);
             this.Controls.Add(this.buttonBuscarDNI);
@@ -187,5 +205,6 @@
         private System.Windows.Forms.Button buttonBuscarDNI;
         private System.Windows.Forms.CheckBox checkBoxInhabilitado;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button buttonLimpiar;
     }
 }

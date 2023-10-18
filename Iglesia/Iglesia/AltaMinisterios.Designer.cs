@@ -90,6 +90,7 @@
             // 
             // buttonCrearMinisterio
             // 
+            this.buttonCrearMinisterio.Enabled = false;
             this.buttonCrearMinisterio.Location = new System.Drawing.Point(80, 396);
             this.buttonCrearMinisterio.Name = "buttonCrearMinisterio";
             this.buttonCrearMinisterio.Size = new System.Drawing.Size(95, 61);

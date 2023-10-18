@@ -208,14 +208,7 @@ namespace Iglesia
             textBoxMentorAsignado.Text= DGV1.Rows[DGV1.CurrentRow.Index].Cells[3].Value.ToString();
 
             button2.Enabled = true;
-            //dni = int.Parse(textBoxDNI.Text);
-            //nombreM = textBoxNombre.Text;
-            /*
-            cb_EDITORIAL.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[3].Value.ToString();
-            cb_NomApeAut.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[4].Value.ToString();
-            cb_GENERO.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[5].Value.ToString();
-            checkBox1.Text = DGV_ListaLibros.Rows[DGV_ListaLibros.CurrentRow.Index].Cells[6].Value.ToString();
-            */
+            
         }
 
         private void DGV2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -407,6 +400,18 @@ namespace Iglesia
                 CargarMentores();
                 CargarMiembros();
             }
+        }
+
+        private void buttonLimpiar_Click(object sender, EventArgs e)
+        {
+            textBoxIDMiembro.Text = "";
+            textBoxNombre.Text = "";
+            textBoxIdMentor.Text = "";
+            textBoxMentorAsignado.Text = "";
+            textBoxNombreMentor.Text = "";
+            button1.Enabled = false;
+            button2.Enabled = false;
+            
         }
     }
 }

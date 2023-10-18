@@ -57,6 +57,8 @@ namespace Iglesia
             }
             else
             {
+                buttonCrearMinisterio.Enabled = true;
+
                 string consulta = "INSERT INTO Ministerios (nombreMinisterio) VALUES ('" + textBoxNombreMini.Text + "');";
 
                 OleDbCommand comando = new OleDbCommand(consulta, conexion);

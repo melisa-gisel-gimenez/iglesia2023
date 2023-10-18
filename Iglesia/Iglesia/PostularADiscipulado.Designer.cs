@@ -62,22 +62,24 @@
             this.label15 = new System.Windows.Forms.Label();
             this.textBoxIDMinisterio = new System.Windows.Forms.TextBox();
             this.comboBoxMinisterios = new System.Windows.Forms.ComboBox();
+            this.buttonLimpiar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(182, 380);
+            this.buttonCancelar.Location = new System.Drawing.Point(332, 377);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(86, 40);
+            this.buttonCancelar.Size = new System.Drawing.Size(97, 58);
             this.buttonCancelar.TabIndex = 62;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             // 
             // buttonPostular
             // 
-            this.buttonPostular.Location = new System.Drawing.Point(45, 380);
+            this.buttonPostular.Enabled = false;
+            this.buttonPostular.Location = new System.Drawing.Point(36, 377);
             this.buttonPostular.Name = "buttonPostular";
-            this.buttonPostular.Size = new System.Drawing.Size(86, 40);
+            this.buttonPostular.Size = new System.Drawing.Size(107, 58);
             this.buttonPostular.TabIndex = 61;
             this.buttonPostular.Text = "Postular";
             this.buttonPostular.UseVisualStyleBackColor = true;
@@ -93,6 +95,7 @@
             // 
             // textNombreMentor
             // 
+            this.textNombreMentor.Enabled = false;
             this.textNombreMentor.Location = new System.Drawing.Point(100, 339);
             this.textNombreMentor.Name = "textNombreMentor";
             this.textNombreMentor.Size = new System.Drawing.Size(100, 22);
@@ -109,15 +112,16 @@
             // 
             // textFechaAlta
             // 
-            this.textFechaAlta.Location = new System.Drawing.Point(520, 184);
+            this.textFechaAlta.Enabled = false;
+            this.textFechaAlta.Location = new System.Drawing.Point(302, 181);
             this.textFechaAlta.Name = "textFechaAlta";
-            this.textFechaAlta.Size = new System.Drawing.Size(100, 22);
+            this.textFechaAlta.Size = new System.Drawing.Size(127, 22);
             this.textFechaAlta.TabIndex = 57;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(452, 190);
+            this.label8.Location = new System.Drawing.Point(245, 184);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(51, 16);
             this.label8.TabIndex = 56;
@@ -125,10 +129,11 @@
             // 
             // textMinisterio
             // 
-            this.textMinisterio.Location = new System.Drawing.Point(571, 416);
+            this.textMinisterio.Location = new System.Drawing.Point(442, 336);
             this.textMinisterio.Name = "textMinisterio";
             this.textMinisterio.Size = new System.Drawing.Size(100, 22);
             this.textMinisterio.TabIndex = 55;
+            this.textMinisterio.Visible = false;
             // 
             // label7
             // 
@@ -141,6 +146,7 @@
             // 
             // textProxEtapa
             // 
+            this.textProxEtapa.Enabled = false;
             this.textProxEtapa.Location = new System.Drawing.Point(137, 235);
             this.textProxEtapa.Name = "textProxEtapa";
             this.textProxEtapa.Size = new System.Drawing.Size(100, 22);
@@ -157,6 +163,7 @@
             // 
             // textEtapaActual
             // 
+            this.textEtapaActual.Enabled = false;
             this.textEtapaActual.Location = new System.Drawing.Point(130, 181);
             this.textEtapaActual.Name = "textEtapaActual";
             this.textEtapaActual.Size = new System.Drawing.Size(100, 22);
@@ -173,13 +180,15 @@
             // 
             // textApellido
             // 
-            this.textApellido.Location = new System.Drawing.Point(315, 130);
+            this.textApellido.Enabled = false;
+            this.textApellido.Location = new System.Drawing.Point(302, 133);
             this.textApellido.Name = "textApellido";
-            this.textApellido.Size = new System.Drawing.Size(100, 22);
+            this.textApellido.Size = new System.Drawing.Size(127, 22);
             this.textApellido.TabIndex = 49;
             // 
             // textNombre
             // 
+            this.textNombre.Enabled = false;
             this.textNombre.Location = new System.Drawing.Point(130, 127);
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(100, 22);
@@ -252,6 +261,7 @@
             // 
             // textIDMentor
             // 
+            this.textIDMentor.Enabled = false;
             this.textIDMentor.Location = new System.Drawing.Point(303, 336);
             this.textIDMentor.Name = "textIDMentor";
             this.textIDMentor.Size = new System.Drawing.Size(100, 22);
@@ -260,31 +270,35 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(251, 187);
+            this.label11.Location = new System.Drawing.Point(443, 187);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(99, 16);
             this.label11.TabIndex = 66;
             this.label11.Text = "ID Etapa Actual";
+            this.label11.Visible = false;
             // 
             // textIDEtapaActual
             // 
-            this.textIDEtapaActual.Location = new System.Drawing.Point(356, 184);
+            this.textIDEtapaActual.Enabled = false;
+            this.textIDEtapaActual.Location = new System.Drawing.Point(548, 181);
             this.textIDEtapaActual.Name = "textIDEtapaActual";
             this.textIDEtapaActual.Size = new System.Drawing.Size(69, 22);
             this.textIDEtapaActual.TabIndex = 67;
+            this.textIDEtapaActual.Visible = false;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(443, 136);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(79, 16);
+            this.label12.Size = new System.Drawing.Size(91, 16);
             this.label12.TabIndex = 68;
-            this.label12.Text = "ID Miembro:";
+            this.label12.Text = "Nro. Miembro:";
             // 
             // textBoxIDMiembro
             // 
-            this.textBoxIDMiembro.Location = new System.Drawing.Point(520, 130);
+            this.textBoxIDMiembro.Enabled = false;
+            this.textBoxIDMiembro.Location = new System.Drawing.Point(552, 130);
             this.textBoxIDMiembro.Name = "textBoxIDMiembro";
             this.textBoxIDMiembro.Size = new System.Drawing.Size(65, 22);
             this.textBoxIDMiembro.TabIndex = 69;
@@ -292,7 +306,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(431, 242);
+            this.label13.Location = new System.Drawing.Point(245, 238);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(83, 16);
             this.label13.TabIndex = 70;
@@ -301,7 +315,8 @@
             // checkBoxSI
             // 
             this.checkBoxSI.AutoSize = true;
-            this.checkBoxSI.Location = new System.Drawing.Point(520, 241);
+            this.checkBoxSI.Enabled = false;
+            this.checkBoxSI.Location = new System.Drawing.Point(346, 237);
             this.checkBoxSI.Name = "checkBoxSI";
             this.checkBoxSI.Size = new System.Drawing.Size(41, 20);
             this.checkBoxSI.TabIndex = 71;
@@ -311,18 +326,21 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(251, 235);
+            this.label14.Location = new System.Drawing.Point(443, 237);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(89, 16);
             this.label14.TabIndex = 72;
             this.label14.Text = "ID Prox Etapa";
+            this.label14.Visible = false;
             // 
             // textBoxIDProxEtapa
             // 
-            this.textBoxIDProxEtapa.Location = new System.Drawing.Point(346, 232);
+            this.textBoxIDProxEtapa.Enabled = false;
+            this.textBoxIDProxEtapa.Location = new System.Drawing.Point(548, 231);
             this.textBoxIDProxEtapa.Name = "textBoxIDProxEtapa";
             this.textBoxIDProxEtapa.Size = new System.Drawing.Size(69, 22);
             this.textBoxIDProxEtapa.TabIndex = 73;
+            this.textBoxIDProxEtapa.Visible = false;
             // 
             // label15
             // 
@@ -332,13 +350,16 @@
             this.label15.Size = new System.Drawing.Size(92, 16);
             this.label15.TabIndex = 74;
             this.label15.Text = "Nro Ministerio:";
+            this.label15.Visible = false;
             // 
             // textBoxIDMinisterio
             // 
+            this.textBoxIDMinisterio.Enabled = false;
             this.textBoxIDMinisterio.Location = new System.Drawing.Point(421, 289);
             this.textBoxIDMinisterio.Name = "textBoxIDMinisterio";
             this.textBoxIDMinisterio.Size = new System.Drawing.Size(75, 22);
             this.textBoxIDMinisterio.TabIndex = 75;
+            this.textBoxIDMinisterio.Visible = false;
             // 
             // comboBoxMinisterios
             // 
@@ -349,11 +370,22 @@
             this.comboBoxMinisterios.TabIndex = 76;
             this.comboBoxMinisterios.SelectedIndexChanged += new System.EventHandler(this.comboBoxMinisterios_SelectedIndexChanged);
             // 
+            // buttonLimpiar
+            // 
+            this.buttonLimpiar.Location = new System.Drawing.Point(189, 377);
+            this.buttonLimpiar.Name = "buttonLimpiar";
+            this.buttonLimpiar.Size = new System.Drawing.Size(107, 58);
+            this.buttonLimpiar.TabIndex = 77;
+            this.buttonLimpiar.Text = "Limpiar";
+            this.buttonLimpiar.UseVisualStyleBackColor = true;
+            this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click);
+            // 
             // PostularADiscipulado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(683, 450);
+            this.ClientSize = new System.Drawing.Size(683, 472);
+            this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(this.comboBoxMinisterios);
             this.Controls.Add(this.textBoxIDMinisterio);
             this.Controls.Add(this.label15);
@@ -432,5 +464,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBoxIDMinisterio;
         private System.Windows.Forms.ComboBox comboBoxMinisterios;
+        private System.Windows.Forms.Button buttonLimpiar;
     }
 }

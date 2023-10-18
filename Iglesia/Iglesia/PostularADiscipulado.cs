@@ -135,7 +135,7 @@ namespace Iglesia
                         {
 
                             textNombreMentor.Text = reader["NOMBRE"].ToString();
-
+                            buttonPostular.Enabled = true;
 
                         }
 
@@ -204,36 +204,44 @@ namespace Iglesia
 
         private void buttonPostular_Click(object sender, EventArgs e)
         {
-            string consulta2 = "INSERT INTO Postulaciones (id_mentor, id_miembro, id_etapaespiritual) values (" + textIDMentor.Text + "," + textBoxIDMiembro.Text + "," + textBoxIDProxEtapa.Text +")";
-
-            OleDbCommand comando = new OleDbCommand(consulta2, conexion);
-            conexion.Open();
-            int cantidad = comando.ExecuteNonQuery();
-
-            if (cantidad < 1)
+            if (comboBoxMinisterios.Text == "")
             {
-                MessageBox.Show("Ocurrió un problema");
+                MessageBox.Show("No debe dejar campos vacíos. Por favor seleccione un Ministerio y verifique el restod e los datos.");
             }
             else
             {
-                MessageBox.Show("Se registraron la postulación con exito!");
-            }
 
-            string consulta3 = "UPDATE Miembros SET id_ministerio =" + textBoxIDMinisterio.Text + " WHERE id_miembro=" + textBoxIDMiembro.Text + ";";
-            OleDbCommand comando2 = new OleDbCommand(consulta3, conexion);
-            //conexion.Open();
-            
-            int cantidad2 = comando2.ExecuteNonQuery();
+                string consulta2 = "INSERT INTO Postulaciones (id_mentor, id_miembro, id_etapaespiritual) values (" + textIDMentor.Text + "," + textBoxIDMiembro.Text + "," + textBoxIDProxEtapa.Text + ")";
 
-            if (cantidad2 < 1)
-            {
-                MessageBox.Show("Ocurrió un problema");
+                OleDbCommand comando = new OleDbCommand(consulta2, conexion);
+                conexion.Open();
+                int cantidad = comando.ExecuteNonQuery();
+
+                if (cantidad < 1)
+                {
+                    MessageBox.Show("Ocurrió un problema");
+                }
+                else
+                {
+                    MessageBox.Show("Se registro la postulación con exito!");
+                }
+
+                string consulta3 = "UPDATE Miembros SET id_ministerio =" + textBoxIDMinisterio.Text + " WHERE id_miembro=" + textBoxIDMiembro.Text + ";";
+                OleDbCommand comando2 = new OleDbCommand(consulta3, conexion);
+                //conexion.Open();
+
+                int cantidad2 = comando2.ExecuteNonQuery();
+
+                if (cantidad2 < 1)
+                {
+                    MessageBox.Show("Ocurrió un problema");
+                }
+                else
+                {
+                    MessageBox.Show("Se registro el Ministerio en el registro del miembro correctamente!");
+                }
+                conexion.Close();
             }
-            else
-            {
-                MessageBox.Show("Se registro el Ministerio en el registro del miembro correctamente!");
-            }
-            conexion.Close();
 
         }
 
@@ -303,6 +311,26 @@ namespace Iglesia
                     conexion.Close();
                 }
             }
+        }
+
+        private void buttonLimpiar_Click(object sender, EventArgs e)
+        {
+            txtDNIBuscar.Text = string.Empty;
+            textNombre.Text = string.Empty;
+            textApellido.Text = string.Empty;
+            textBoxIDMiembro.Text = string.Empty;
+            textEtapaActual.Text = string.Empty;
+            textProxEtapa.Text = string.Empty;
+            textBoxIDProxEtapa.Text = string.Empty; 
+            textIDEtapaActual.Text = string.Empty;
+            comboBoxMinisterios.Text = "";
+            textBoxIDMinisterio.Text= string.Empty;
+            textFechaAlta.Text = string.Empty;
+            textNombreMentor.Text = string.Empty;
+            textIDMentor.Text = string.Empty;
+            textMinisterio.Text = string.Empty;
+            checkBoxSI.Checked = false;   
+            buttonPostular.Enabled = false;
         }
     }
 }

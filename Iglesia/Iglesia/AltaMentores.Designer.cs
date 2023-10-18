@@ -41,6 +41,7 @@ namespace Iglesia
             this.textBoxDNI = new System.Windows.Forms.TextBox();
             this.buttonAceptar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
+            this.buttonLimpiar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxDNIBuscar
@@ -133,6 +134,7 @@ namespace Iglesia
             // 
             // buttonAceptar
             // 
+            this.buttonAceptar.Enabled = false;
             this.buttonAceptar.Location = new System.Drawing.Point(44, 239);
             this.buttonAceptar.Name = "buttonAceptar";
             this.buttonAceptar.Size = new System.Drawing.Size(75, 51);
@@ -143,18 +145,30 @@ namespace Iglesia
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(159, 239);
+            this.buttonCancelar.BackColor = System.Drawing.Color.Red;
+            this.buttonCancelar.Location = new System.Drawing.Point(285, 239);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(75, 51);
             this.buttonCancelar.TabIndex = 11;
             this.buttonCancelar.Text = "Cancelar";
-            this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.UseVisualStyleBackColor = false;
+            // 
+            // buttonLimpiar
+            // 
+            this.buttonLimpiar.Location = new System.Drawing.Point(168, 239);
+            this.buttonLimpiar.Name = "buttonLimpiar";
+            this.buttonLimpiar.Size = new System.Drawing.Size(75, 51);
+            this.buttonLimpiar.TabIndex = 12;
+            this.buttonLimpiar.Text = "Limpiar";
+            this.buttonLimpiar.UseVisualStyleBackColor = true;
+            this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click);
             // 
             // AltaMentores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(429, 302);
+            this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonAceptar);
             this.Controls.Add(this.textBoxDNI);
@@ -189,5 +203,6 @@ namespace Iglesia
         private System.Windows.Forms.TextBox textBoxDNI;
         private System.Windows.Forms.Button buttonAceptar;
         private System.Windows.Forms.Button buttonCancelar;
+        private System.Windows.Forms.Button buttonLimpiar;
     }
 }

@@ -296,7 +296,23 @@ namespace Iglesia
 
         }
 
+        private void buttonLimpiar_Click(object sender, EventArgs e)
+        {
+            textBoxIDMiembro.Text = "";
+            textBoxDNI.Text = "";
+            textBoxNombre.Text = "";
+            textBoxIdMentor.Text = "";
+            textBoxNombreMentor.Text = "";
+            button1.Enabled = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            AltaMentores Form1 = new AltaMentores();
+            Form1.Show();
         
+        }
     }
 }
 

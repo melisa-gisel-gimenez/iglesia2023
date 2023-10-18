@@ -66,7 +66,8 @@ namespace Iglesia
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+
+            textBoxBuscarDNI.Text = "";
             txtApellido.Text = "";
             txtBarrio.Text = "";
             txtDireccion.Text = "";

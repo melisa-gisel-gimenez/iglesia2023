@@ -50,6 +50,7 @@ namespace Iglesia
                             txtNombre.Text = reader["NOMBRE"].ToString();
                             txtApellido.Text = reader["APELLIDO"].ToString();                           
                             checkBoxInhabilitado.Checked = Convert.ToBoolean(reader["inhabilitado"]);
+                            buttonAceptar.Enabled = true;
                         }
                         else
                         {
@@ -76,45 +77,84 @@ namespace Iglesia
 
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
-            if (checkBoxInhabilitado.Checked == true)
+            if (txtNombre.Text ==""|| txtApellido.Text=="")
             {
-
-                string consulta = "UPDATE Miembros SET inhabilitado=" + checkBoxInhabilitado.Checked + " WHERE DNI=" + textBoxBuscarDNI.Text + ";";
-
-                OleDbCommand comando = new OleDbCommand(consulta, conexion);
-                conexion.Open();
-                int cantidad = comando.ExecuteNonQuery();
-
-                if (cantidad < 1)
-                {
-                    MessageBox.Show("Ocurrió un problema");
-                }
-
-                else
-                {
-                    MessageBox.Show("Se ha inhabilitado a esta persona");
-                }
-                conexion.Close();
+                MessageBox.Show("No debe dejar campos vacíos, por favor ingrese un DNI y presione el boton Buscar.");
             }
             else
             {
-                string consulta1 = "UPDATE Miembros SET inhabilitado=" + checkBoxInhabilitado.Checked + " WHERE DNI=" + textBoxBuscarDNI.Text + ";";
-                OleDbCommand comando = new OleDbCommand(consulta1, conexion);
-                conexion.Open();
-            
-                int cantidad = comando.ExecuteNonQuery();
-
-                if (cantidad < 1)
+                if (checkBoxInhabilitado.Checked == true)
                 {
-                    MessageBox.Show("Ocurrió un problema");
-                }
 
+                    string consulta = "UPDATE Miembros SET inhabilitado=" + checkBoxInhabilitado.Checked + " WHERE DNI=" + textBoxBuscarDNI.Text + ";";
+
+                    OleDbCommand comando = new OleDbCommand(consulta, conexion);
+                    conexion.Open();
+                    int cantidad = comando.ExecuteNonQuery();
+
+                    if (cantidad < 1)
+                    {
+                        MessageBox.Show("Ocurrió un problema");
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Se ha inhabilitado a esta persona");
+                    }
+                    conexion.Close();
+                }
                 else
                 {
-                    MessageBox.Show("Se ha habilitado nuevamente a esta persona");
+                    string consulta1 = "UPDATE Miembros SET inhabilitado=" + checkBoxInhabilitado.Checked + " WHERE DNI=" + textBoxBuscarDNI.Text + ";";
+                    OleDbCommand comando = new OleDbCommand(consulta1, conexion);
+                    conexion.Open();
+
+                    int cantidad = comando.ExecuteNonQuery();
+
+                    if (cantidad < 1)
+                    {
+                        MessageBox.Show("Ocurrió un problema");
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Se ha habilitado nuevamente a esta persona");
+                    }
+                    conexion.Close();
                 }
-                conexion.Close();
             }
+        }
+
+        private void textBoxBuscarDNI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verifica si la tecla presionada no es un dígito numérico o una tecla de control
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // Si no es un número o una tecla de control, ignora la tecla presionada
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxBuscarDNI_TextChanged_1(object sender, EventArgs e)
+        {
+            // Verifica si la longitud del texto en el TextBox es mayor a 8
+            if (textBoxBuscarDNI.Text.Length > 8)
+            {
+                // Si es mayor a 8, recorta el texto para que solo tenga 8 caracteres
+                //txtDNI.Text = txtDNI.Text.Substring(0, 8);
+                // Coloca el cursor al final del texto
+                //txtDNI.SelectionStart = txtDNI.Text.Length;
+                MessageBox.Show("Solo puede ingresar 8 números. Por favor, verifique el DNI ingresado");
+            }
+        }
+
+        private void buttonLimpiar_Click(object sender, EventArgs e)
+        {
+            textBoxBuscarDNI.Text = string.Empty;
+            txtNombre.Text = string.Empty;
+            txtApellido.Text = string.Empty;
+            checkBoxInhabilitado.Checked = false;
+            buttonAceptar.Enabled = false;
         }
     }
 }

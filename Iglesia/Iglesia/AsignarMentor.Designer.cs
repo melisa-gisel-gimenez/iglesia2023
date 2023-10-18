@@ -48,6 +48,8 @@ namespace Iglesia
             this.button2 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxIDMiembro = new System.Windows.Forms.TextBox();
+            this.buttonLimpiar = new System.Windows.Forms.Button();
+            this.buttonCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV2)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +70,7 @@ namespace Iglesia
             this.DGV1.AllowUserToDeleteRows = false;
             this.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV1.Location = new System.Drawing.Point(64, 71);
-            this.DGV1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DGV1.Margin = new System.Windows.Forms.Padding(4);
             this.DGV1.Name = "DGV1";
             this.DGV1.ReadOnly = true;
             this.DGV1.RowHeadersWidth = 51;
@@ -92,7 +94,7 @@ namespace Iglesia
             this.DGV2.AllowUserToDeleteRows = false;
             this.DGV2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV2.Location = new System.Drawing.Point(64, 335);
-            this.DGV2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DGV2.Margin = new System.Windows.Forms.Padding(4);
             this.DGV2.Name = "DGV2";
             this.DGV2.ReadOnly = true;
             this.DGV2.RowHeadersWidth = 51;
@@ -142,32 +144,36 @@ namespace Iglesia
             // 
             // textBoxDNI
             // 
+            this.textBoxDNI.Enabled = false;
             this.textBoxDNI.Location = new System.Drawing.Point(649, 150);
-            this.textBoxDNI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxDNI.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDNI.Name = "textBoxDNI";
             this.textBoxDNI.Size = new System.Drawing.Size(132, 22);
             this.textBoxDNI.TabIndex = 0;
             // 
             // textBoxNombre
             // 
+            this.textBoxNombre.Enabled = false;
             this.textBoxNombre.Location = new System.Drawing.Point(649, 180);
-            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(132, 22);
             this.textBoxNombre.TabIndex = 8;
             // 
             // textBoxIdMentor
             // 
-            this.textBoxIdMentor.Location = new System.Drawing.Point(612, 335);
-            this.textBoxIdMentor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxIdMentor.Enabled = false;
+            this.textBoxIdMentor.Location = new System.Drawing.Point(640, 337);
+            this.textBoxIdMentor.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxIdMentor.Name = "textBoxIdMentor";
             this.textBoxIdMentor.Size = new System.Drawing.Size(132, 22);
             this.textBoxIdMentor.TabIndex = 9;
             // 
             // textBoxNombreMentor
             // 
-            this.textBoxNombreMentor.Location = new System.Drawing.Point(612, 380);
-            this.textBoxNombreMentor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNombreMentor.Enabled = false;
+            this.textBoxNombreMentor.Location = new System.Drawing.Point(640, 383);
+            this.textBoxNombreMentor.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNombreMentor.Name = "textBoxNombreMentor";
             this.textBoxNombreMentor.Size = new System.Drawing.Size(132, 22);
             this.textBoxNombreMentor.TabIndex = 10;
@@ -178,9 +184,9 @@ namespace Iglesia
             this.label7.Location = new System.Drawing.Point(537, 343);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(20, 16);
+            this.label7.Size = new System.Drawing.Size(95, 16);
             this.label7.TabIndex = 11;
-            this.label7.Text = "ID";
+            this.label7.Text = "Nro de Mentor:";
             // 
             // label8
             // 
@@ -196,7 +202,7 @@ namespace Iglesia
             // 
             this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(587, 471);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(159, 48);
             this.button1.TabIndex = 13;
@@ -207,7 +213,7 @@ namespace Iglesia
             // textBoxCantidad
             // 
             this.textBoxCantidad.Location = new System.Drawing.Point(612, 426);
-            this.textBoxCantidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCantidad.Name = "textBoxCantidad";
             this.textBoxCantidad.Size = new System.Drawing.Size(132, 22);
             this.textBoxCantidad.TabIndex = 15;
@@ -215,14 +221,14 @@ namespace Iglesia
             // 
             // button2
             // 
-            this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(175, 543);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(159, 48);
             this.button2.TabIndex = 16;
             this.button2.Text = "Alta de  Mentores";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label9
             // 
@@ -236,17 +242,43 @@ namespace Iglesia
             // 
             // textBoxIDMiembro
             // 
+            this.textBoxIDMiembro.Enabled = false;
             this.textBoxIDMiembro.Location = new System.Drawing.Point(649, 106);
             this.textBoxIDMiembro.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxIDMiembro.Name = "textBoxIDMiembro";
             this.textBoxIDMiembro.Size = new System.Drawing.Size(132, 22);
             this.textBoxIDMiembro.TabIndex = 18;
             // 
+            // buttonLimpiar
+            // 
+            this.buttonLimpiar.Location = new System.Drawing.Point(551, 557);
+            this.buttonLimpiar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonLimpiar.Name = "buttonLimpiar";
+            this.buttonLimpiar.Size = new System.Drawing.Size(99, 48);
+            this.buttonLimpiar.TabIndex = 19;
+            this.buttonLimpiar.Text = "Limpiar";
+            this.buttonLimpiar.UseVisualStyleBackColor = true;
+            this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click);
+            // 
+            // buttonCerrar
+            // 
+            this.buttonCerrar.BackColor = System.Drawing.Color.Red;
+            this.buttonCerrar.Enabled = false;
+            this.buttonCerrar.Location = new System.Drawing.Point(702, 557);
+            this.buttonCerrar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCerrar.Name = "buttonCerrar";
+            this.buttonCerrar.Size = new System.Drawing.Size(99, 48);
+            this.buttonCerrar.TabIndex = 20;
+            this.buttonCerrar.Text = "Cerrar/Volver";
+            this.buttonCerrar.UseVisualStyleBackColor = false;
+            // 
             // AsignarMentor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(848, 618);
+            this.Controls.Add(this.buttonCerrar);
+            this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(this.textBoxIDMiembro);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.button2);
@@ -266,7 +298,7 @@ namespace Iglesia
             this.Controls.Add(this.label2);
             this.Controls.Add(this.DGV1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AsignarMentor";
             this.Text = "AsignarMentor";
             this.Load += new System.EventHandler(this.AsignarMentor_Load);
@@ -298,5 +330,7 @@ namespace Iglesia
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBoxIDMiembro;
+        private System.Windows.Forms.Button buttonLimpiar;
+        private System.Windows.Forms.Button buttonCerrar;
     }
 }
