@@ -40,14 +40,15 @@ namespace Iglesia
             // "INNER JOIN EtapaEspiritual ee ON p.id_etapaespiritual = ee.id_etapaespiritual) " +
             // "INNER JOIN EtapaEspiritual ee ON m.id_etapaespiritual = ee.id_etapaespiritual " +
             // "WHERE aprobado = false";
-            string consulta = "SELECT p.id_postulacion AS Nro_Postulacion, p.id_mentor AS Nro_Mentor, p.id_miembro AS Nro_Miembro_Postulado, m.nombre AS Nombre, m.apellido AS Apellido, m.id_etapaespiritual AS Codigo_etapa_actual, ce.fecha_alta_etapa AS Desde_fecha, ce.fecha_fin_etapa AS Hasta, ee.etapaEspiritual AS Proxima_Etapa, p.aprobado " +
-                             "FROM(((postulaciones p " +
-                             "INNER JOIN Miembros m ON p.id_miembro = m.id_miembro)" +
-                             "INNER JOIN EtapaEspiritual ee ON p.id_etapaespiritual = ee.id_etapaespiritual)" +
-                             "INNER JOIN CambioEtapas ce ON m.id_miembro = ce.id_miembro) " +
+            string consulta = "SELECT p.id_postulacion AS Nro_Postulacion, p.id_mentor AS Nro_Mentor, p.id_miembro AS Nro_Miembro_Postulado, m.nombre AS Nombre, m.apellido AS Apellido, m.id_etapaespiritual AS Codigo_etapa_actual, p.aprobado "+// ce.fecha_alta_etapa AS Desde_fecha, ce.fecha_fin_etapa AS Hasta, ee.etapaEspiritual AS Proxima_Etapa, p.aprobado " +
+                             "FROM postulaciones p " +
+                             "INNER JOIN Miembros m ON p.id_miembro = m.id_miembro " +
+                             //"INNER JOIN EtapaEspiritual ee ON p.id_etapaespiritual = ee.id_etapaEspiritual) " +
+                             //"INNER JOIN CambioEtapas ce ON m.id_miembro = ce.id_miembro) " +
                              //"INNER JOIN CambioEtapas ce_f ON m.id_etapaespiritual = ce_f.id_etapaEspiritual " +
-                             "WHERE p.aprobado = false AND ce.fecha_fin_etapa IS NULL";
-
+                             "WHERE p.aprobado = false;";// AND ce.fecha_fin_etapa IS NULL";
+            
+            //string consula = "SELECT *FROM Postulaciones Where aprobado=false;";
 
             using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
             {
@@ -89,7 +90,7 @@ namespace Iglesia
         {
             DateTime fecha= DateTime.Now;
 
-            if (labelIDPostulacion.Text=="")
+            if (labelIDPostulacion.Text =="")
             {
                 MessageBox.Show("Por favor, haga click en la celda de la postulación que quiere aprobar");
             }

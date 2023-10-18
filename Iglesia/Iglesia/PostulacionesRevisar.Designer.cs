@@ -58,7 +58,7 @@
             this.DGV1.ReadOnly = true;
             this.DGV1.RowHeadersWidth = 51;
             this.DGV1.RowTemplate.Height = 24;
-            this.DGV1.Size = new System.Drawing.Size(1017, 150);
+            this.DGV1.Size = new System.Drawing.Size(1017, 229);
             this.DGV1.TabIndex = 1;
             this.DGV1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV1_CellContentClick);
             // 
@@ -72,7 +72,7 @@
             // 
             // buttonAprobar
             // 
-            this.buttonAprobar.Location = new System.Drawing.Point(466, 232);
+            this.buttonAprobar.Location = new System.Drawing.Point(471, 299);
             this.buttonAprobar.Name = "buttonAprobar";
             this.buttonAprobar.Size = new System.Drawing.Size(109, 55);
             this.buttonAprobar.TabIndex = 3;
