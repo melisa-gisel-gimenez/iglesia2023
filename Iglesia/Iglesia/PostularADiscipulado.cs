@@ -84,8 +84,8 @@ namespace Iglesia
             if (textIDEtapaActual.Text == "2")
             {
                 textEtapaActual.Text = "Discipulado";
-                textProxEtapa.Text = "Enviado";
-                //textMinisterio.Enabled = false;
+                textProxEtapa.Text = "Enviado";                
+                comboBoxMinisterios.Enabled = false;
                 textEtapaActual.Enabled = false;
                 textProxEtapa.Enabled = false;
                 textBoxIDProxEtapa.Text= "3";
@@ -96,7 +96,7 @@ namespace Iglesia
             if (textIDEtapaActual.Text == "3")
             {
                 textEtapaActual.Text = "Enviado";
-                //textMinisterio.Enabled = false;
+                comboBoxMinisterios.Enabled = false;
                 textEtapaActual.Enabled = false;
                 textProxEtapa.Enabled = false;
                 textBoxIDProxEtapa.Enabled = false;

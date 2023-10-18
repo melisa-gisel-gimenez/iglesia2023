@@ -26,30 +26,22 @@ namespace Iglesia
 
         {
             
-            cargarDGV();        
+            cargarDGV();
+            ConfigurarDGV1();
             
+
         }
         private void cargarDGV()
         {
-
-
-            // Consulta SQL
-            // string consulta = "SELECT p.id_postulacion AS Nro_Postulacion, p.id_mentor AS Nro_Mentor, p.id_miembro AS Nro_Miembro_Postulado, m.nombre AS Nombre, m.apellido AS Apellido, m.id_etapaespiritual AS Codigo_etapa_actual, ce.fecha_alta_etapa AS Desde_fecha, ee.etapaEspiritual AS Proxima_Etapa,  p.aprobado " +
-            // "FROM ((postulaciones p " +
-            // "INNER JOIN Miembros m ON p.id_miembro = m.id_miembro) " +
-            // "INNER JOIN EtapaEspiritual ee ON p.id_etapaespiritual = ee.id_etapaespiritual) " +
-            // "INNER JOIN EtapaEspiritual ee ON m.id_etapaespiritual = ee.id_etapaespiritual " +
-            // "WHERE aprobado = false";
-            string consulta = "SELECT p.id_postulacion AS Nro_Postulacion, p.id_mentor AS Nro_Mentor, p.id_miembro AS Nro_Miembro_Postulado, m.nombre AS Nombre, m.apellido AS Apellido, m.id_etapaespiritual AS Codigo_etapa_actual, p.aprobado "+// ce.fecha_alta_etapa AS Desde_fecha, ce.fecha_fin_etapa AS Hasta, ee.etapaEspiritual AS Proxima_Etapa, p.aprobado " +
-                             "FROM postulaciones p " +
-                             "INNER JOIN Miembros m ON p.id_miembro = m.id_miembro " +
-                             //"INNER JOIN EtapaEspiritual ee ON p.id_etapaespiritual = ee.id_etapaEspiritual) " +
-                             //"INNER JOIN CambioEtapas ce ON m.id_miembro = ce.id_miembro) " +
-                             //"INNER JOIN CambioEtapas ce_f ON m.id_etapaespiritual = ce_f.id_etapaEspiritual " +
-                             "WHERE p.aprobado = false;";// AND ce.fecha_fin_etapa IS NULL";
-            
-            //string consula = "SELECT *FROM Postulaciones Where aprobado=false;";
-
+            string consulta = "SELECT p.id_postulacion,p.id_mentor,p.id_miembro,p.id_etapaespiritual,p.aprobado,m.nombre,m.apellido,m.id_etapaespiritual AS id_etapaespiritual_miembro,ee.etapaEspiritual,ce.fecha_alta_etapa,ce.fecha_fin_etapa " +
+                "FROM ((postulaciones p " +
+                "INNER JOIN Miembros m ON p.id_miembro = m.id_miembro)" +
+                "INNER JOIN EtapaEspiritual ee ON p.id_etapaespiritual = ee.id_etapaespiritual)" +
+                "LEFT JOIN CambioEtapas ce ON p.id_miembro = ce.id_miembro " +
+                "WHERE p.aprobado = false " +
+                "AND ce.fecha_fin_etapa IS NULL;";
+                   
+          
             using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
             {
                
@@ -78,12 +70,40 @@ namespace Iglesia
 
         }
 
+        private void ConfigurarDGV1()
+        {
+            DGV1.Columns["id_postulacion"].DisplayIndex = 0;
+            DGV1.Columns["id_mentor"].DisplayIndex = 1;
+            DGV1.Columns["id_miembro"].DisplayIndex = 2;
+            DGV1.Columns["nombre"].DisplayIndex = 3;
+            DGV1.Columns["apellido"].DisplayIndex = 4;
+            DGV1.Columns["id_etapaespiritual_miembro"].DisplayIndex = 5;
+            DGV1.Columns["fecha_alta_etapa"].DisplayIndex = 6;
+            DGV1.Columns["id_etapaespiritual"].DisplayIndex = 7;
+            DGV1.Columns["etapaEspiritual"].DisplayIndex = 8;
+            DGV1.Columns["fecha_fin_etapa"].DisplayIndex = 9;
+            DGV1.Columns["aprobado"].DisplayIndex = 10;
+
+            // Cambiar los nombres de los encabezados de las columnas
+            DGV1.Columns["id_postulacion"].HeaderText = "Postulación N°";
+            DGV1.Columns["id_mentor"].HeaderText = "Mentor N°";
+            DGV1.Columns["id_miembro"].HeaderText = "Miembro N°";
+            DGV1.Columns["nombre"].HeaderText = "Nombre";
+            DGV1.Columns["apellido"].HeaderText = "Apellido";
+            DGV1.Columns["id_etapaespiritual_miembro"].HeaderText = "Etapa Actual";
+            DGV1.Columns["fecha_alta_etapa"].HeaderText = "Desde";
+            DGV1.Columns["id_etapaespiritual"].HeaderText = "ID Proxima Etapa";
+            DGV1.Columns["etapaEspiritual"].HeaderText = "Proxima Etapa";
+            DGV1.Columns["fecha_fin_etapa"].HeaderText = "Fecha Fin Etapa";
+            DGV1.Columns["aprobado"].HeaderText = "Aprobar?";
+
+        }
         private void DGV1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             labelIDPostulacion.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells[0].Value.ToString();
             labelIDMiembro.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells[2].Value.ToString();
-            labelIDProxEtapa.Text= DGV1.Rows[DGV1.CurrentRow.Index].Cells[5].Value.ToString();
-            labelFechaAlta.Text= DGV1.Rows[DGV1.CurrentRow.Index].Cells[6].Value.ToString();
+            labelIDProxEtapa.Text= DGV1.Rows[DGV1.CurrentRow.Index].Cells[7].Value.ToString();
+            //labelFechaAlta.Text= DGV1.Rows[DGV1.CurrentRow.Index].Cells[9].Value.ToString();
         }
 
         private void buttonAprobar_Click(object sender, EventArgs e)

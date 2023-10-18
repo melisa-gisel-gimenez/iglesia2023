@@ -35,6 +35,10 @@
             this.labelIDMiembro = new System.Windows.Forms.Label();
             this.labelIDProxEtapa = new System.Windows.Forms.Label();
             this.labelFechaAlta = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +62,7 @@
             this.DGV1.ReadOnly = true;
             this.DGV1.RowHeadersWidth = 51;
             this.DGV1.RowTemplate.Height = 24;
-            this.DGV1.Size = new System.Drawing.Size(1017, 229);
+            this.DGV1.Size = new System.Drawing.Size(1017, 108);
             this.DGV1.TabIndex = 1;
             this.DGV1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV1_CellContentClick);
             // 
@@ -104,14 +108,50 @@
             this.labelFechaAlta.Size = new System.Drawing.Size(0, 16);
             this.labelFechaAlta.TabIndex = 6;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(189, 397);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 16);
+            this.label2.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(532, 382);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 16);
+            this.label3.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(767, 382);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 16);
+            this.label4.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(843, 382);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 16);
+            this.label5.TabIndex = 6;
+            // 
             // PostulacionesRevisar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1096, 450);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.labelFechaAlta);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.labelIDProxEtapa);
             this.Controls.Add(this.labelIDMiembro);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonAprobar);
             this.Controls.Add(this.labelIDPostulacion);
             this.Controls.Add(this.DGV1);
@@ -134,5 +174,9 @@
         private System.Windows.Forms.Label labelIDMiembro;
         private System.Windows.Forms.Label labelIDProxEtapa;
         private System.Windows.Forms.Label labelFechaAlta;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
