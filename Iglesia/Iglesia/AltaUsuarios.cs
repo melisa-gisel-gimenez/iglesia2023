@@ -107,5 +107,15 @@ namespace Iglesia
                 MessageBox.Show("Se registró el usuario con exito");
             }
         }
+
+        private void buttonLimpiar_Click(object sender, EventArgs e)
+        {
+            textBoxDNIBuscar.Text = string.Empty;
+            txtNombre.Text = string.Empty;
+            txtApellido.Text = string.Empty;
+            checkBoxInhabilitado.Checked = false;
+            comboBoxTipoUsuario.Text = string.Empty;
+            checkBoxAltaUser.Checked = false;
+        }
     }
 }

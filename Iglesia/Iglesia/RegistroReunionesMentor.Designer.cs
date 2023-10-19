@@ -46,6 +46,7 @@
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxIDMiembro = new System.Windows.Forms.TextBox();
+            this.buttonLimpiar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -173,6 +174,7 @@
             // 
             // buttonGuardar
             // 
+            this.buttonGuardar.Enabled = false;
             this.buttonGuardar.Location = new System.Drawing.Point(83, 363);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(96, 51);
@@ -183,7 +185,7 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(216, 363);
+            this.buttonCancelar.Location = new System.Drawing.Point(510, 363);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(96, 51);
             this.buttonCancelar.TabIndex = 15;
@@ -207,11 +209,22 @@
             this.textBoxIDMiembro.Size = new System.Drawing.Size(72, 22);
             this.textBoxIDMiembro.TabIndex = 17;
             // 
+            // buttonLimpiar
+            // 
+            this.buttonLimpiar.Location = new System.Drawing.Point(287, 363);
+            this.buttonLimpiar.Name = "buttonLimpiar";
+            this.buttonLimpiar.Size = new System.Drawing.Size(96, 51);
+            this.buttonLimpiar.TabIndex = 18;
+            this.buttonLimpiar.Text = "Limpiar";
+            this.buttonLimpiar.UseVisualStyleBackColor = true;
+            this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click);
+            // 
             // RegistroReunionesMentor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 450);
+            this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(this.textBoxIDMiembro);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonCancelar);
@@ -257,5 +270,6 @@
         private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxIDMiembro;
+        private System.Windows.Forms.Button buttonLimpiar;
     }
 }

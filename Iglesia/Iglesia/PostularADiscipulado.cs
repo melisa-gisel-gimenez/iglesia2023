@@ -64,7 +64,10 @@ namespace Iglesia
                     }
                     finally
                     {
-                        conexion.Close();
+                        if (conexion.State == ConnectionState.Open)
+                        {
+                            conexion.Close();
+                        }
                     }
                 }
             }
@@ -81,6 +84,7 @@ namespace Iglesia
                 textProxEtapa.Enabled = false;
                 textBoxIDProxEtapa.Text = "2";
                 textBoxIDProxEtapa.Enabled = false;
+                comboBoxMinisterios.Enabled = true;
                 
             }
 
@@ -145,8 +149,7 @@ namespace Iglesia
                 textBoxIDProxEtapa.Enabled = false;
                 buttonPostular.Enabled = false;
                 MessageBox.Show("Esta persona ya llegó a la etapa de evolución máxima dentro de la Iglesia. Por favor elija otro miembro o revise los datos");
-                             
-                
+                              
             }
 
             if (checkBoxSI.Checked == true)
@@ -212,7 +215,10 @@ namespace Iglesia
 
                         {
 
-                            conexion.Close();
+                            if (conexion.State == ConnectionState.Open)
+                            {
+                                conexion.Close();
+                            }
 
                         }
                     }
@@ -313,7 +319,12 @@ namespace Iglesia
                     MessageBox.Show("Se registro la postulación con exito!");
                 }
                 conexion.Close();
-            }             
+            }
+
+            if (textIDEtapaActual.Text == "3")
+            {
+                MessageBox.Show("Esta persona ya llego a la etapa maxima dentro de la Iglesia. Por favor busque otro Miembro.");
+            }
 
         }
 
@@ -340,7 +351,10 @@ namespace Iglesia
                 }
                 finally
                 {
-                    conexion.Close();
+                    if (conexion.State == ConnectionState.Open)
+                    {
+                        conexion.Close();
+                    }
                 }
             }
         }
@@ -380,7 +394,10 @@ namespace Iglesia
                 }
                 finally
                 {
-                    conexion.Close();
+                    if (conexion.State == ConnectionState.Open)
+                    {
+                        conexion.Close();
+                    }
                 }
             }
         }
@@ -406,7 +423,7 @@ namespace Iglesia
             textNombreMentor.Text = string.Empty;
             textIDMentor.Text = string.Empty;
             textMinisterio.Text = string.Empty;
-            checkBoxSI.Checked = false;
+            checkBoxSI.Checked = false;            
             buttonPostular.Enabled = false;
         }
         

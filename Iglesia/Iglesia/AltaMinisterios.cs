@@ -56,8 +56,7 @@ namespace Iglesia
                 MessageBox.Show("Por favor, escriba un nombre para el Ministerio que quiere crear. No debe quedar el campo vacío.");
             }
             else
-            {
-                buttonCrearMinisterio.Enabled = true;
+            {             
 
                 string consulta = "INSERT INTO Ministerios (nombreMinisterio) VALUES ('" + textBoxNombreMini.Text + "');";
 
@@ -79,6 +78,15 @@ namespace Iglesia
 
             }
         }
-        
+
+        private void textBoxNombreMini_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            buttonCrearMinisterio.Enabled = true;
+        }        
+
+        private void buttonLimpiar_Click(object sender, EventArgs e)
+        {
+            textBoxNombreMini.Text = string.Empty;
+        }
     }
 }

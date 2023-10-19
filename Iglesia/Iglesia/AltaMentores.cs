@@ -65,6 +65,7 @@ namespace Iglesia
                             textBoxNombre.Text = reader["NOMBRE"].ToString();
                             textBoxApellido.Text = reader["APELLIDO"].ToString();
                             textBoxDNI.Text = reader["DNI"].ToString();
+                            buttonAceptar.Enabled = true;
 
                         }
                         else
@@ -97,8 +98,7 @@ namespace Iglesia
                 MessageBox.Show("Por favor busque los datos del miembro que desea dar de alta como mentor");
             }
             else
-            {
-                buttonAceptar.Enabled = true;
+            {               
 
                 string consulta = "INSERT INTO Mentores (Nombre, Apellido, DNI_Mentor) values ('" + textBoxNombre.Text + "', '" + textBoxApellido.Text + "', '" + textBoxDNI.Text + "');";
                 //OleDbConnection conexion = new OleDbConnection(cadenaConexion);

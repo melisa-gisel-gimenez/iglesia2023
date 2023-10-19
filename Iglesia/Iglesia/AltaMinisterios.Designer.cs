@@ -35,6 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.buttonCrearMinisterio = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
+            this.buttonLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVMini)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,6 +65,7 @@
             this.textBoxNombreMini.Name = "textBoxNombreMini";
             this.textBoxNombreMini.Size = new System.Drawing.Size(166, 22);
             this.textBoxNombreMini.TabIndex = 2;
+            this.textBoxNombreMini.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNombreMini_KeyPress);
             // 
             // DGVMini
             // 
@@ -91,7 +93,7 @@
             // buttonCrearMinisterio
             // 
             this.buttonCrearMinisterio.Enabled = false;
-            this.buttonCrearMinisterio.Location = new System.Drawing.Point(80, 396);
+            this.buttonCrearMinisterio.Location = new System.Drawing.Point(42, 396);
             this.buttonCrearMinisterio.Name = "buttonCrearMinisterio";
             this.buttonCrearMinisterio.Size = new System.Drawing.Size(95, 61);
             this.buttonCrearMinisterio.TabIndex = 5;
@@ -101,18 +103,30 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(237, 396);
+            this.buttonCancelar.BackColor = System.Drawing.Color.Red;
+            this.buttonCancelar.Location = new System.Drawing.Point(335, 396);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(93, 61);
             this.buttonCancelar.TabIndex = 6;
             this.buttonCancelar.Text = "Cancelar";
-            this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.UseVisualStyleBackColor = false;
+            // 
+            // buttonLimpiar
+            // 
+            this.buttonLimpiar.Location = new System.Drawing.Point(180, 396);
+            this.buttonLimpiar.Name = "buttonLimpiar";
+            this.buttonLimpiar.Size = new System.Drawing.Size(93, 61);
+            this.buttonLimpiar.TabIndex = 7;
+            this.buttonLimpiar.Text = "Limpiar";
+            this.buttonLimpiar.UseVisualStyleBackColor = true;
+            this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click);
             // 
             // AltaMinisterios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(490, 500);
+            this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonCrearMinisterio);
             this.Controls.Add(this.label3);
@@ -137,5 +151,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonCrearMinisterio;
         private System.Windows.Forms.Button buttonCancelar;
+        private System.Windows.Forms.Button buttonLimpiar;
     }
 }

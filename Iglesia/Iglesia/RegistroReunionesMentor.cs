@@ -47,7 +47,7 @@ namespace Iglesia
                             textBoxApellido.Text = reader["APELLIDO"].ToString();                            
                             textBoxIDMiembro.Text = reader["id_miembro"].ToString();
                             textBoxIDMentor.Text = reader["id_mentor"].ToString();
-
+                            buttonGuardar.Enabled = true;
                         }
                         else
                         {
@@ -110,6 +110,17 @@ namespace Iglesia
                     }
                 }
             }
+        }
+
+        private void buttonLimpiar_Click(object sender, EventArgs e)
+        {
+            textBoxDNI.Text= string.Empty;
+            textBoxNombre.Text= string.Empty;
+            textBoxApellido.Text= string.Empty;
+            textBoxIDMiembro.Text= string.Empty;
+            textBoxIDMentor.Text = string.Empty;
+            textBoxDetalle.Text= string.Empty;
+            buttonGuardar.Enabled = false;
         }
     }
 }
