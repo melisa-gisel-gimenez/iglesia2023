@@ -243,5 +243,11 @@ namespace Iglesia
             AltaUsuarios Form1 = new AltaUsuarios();
             Form1.Show();
         }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoginJuli Form1 = new LoginJuli();
+            Form1.Show();
+        }
     }
 }

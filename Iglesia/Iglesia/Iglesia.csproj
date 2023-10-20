@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Iglesia</RootNamespace>
     <AssemblyName>Iglesia</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <PublishUrl>publicar\</PublishUrl>
     <Install>true</Install>
@@ -92,6 +92,12 @@
     </Compile>
     <Compile Include="AltaUsuarios.Designer.cs">
       <DependentUpon>AltaUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="PostulacionesRevisar.cs">
       <SubType>Form</SubType>
@@ -181,6 +187,9 @@
     <EmbeddedResource Include="InhabilitarPersonas.resx">
       <DependentUpon>InhabilitarPersonas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModificarMentor.resx">
       <DependentUpon>ModificarMentor.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,6 +260,13 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\9a3c57e9-594f-42dc-b745-e54fa9adebeb.png" />
+    <Content Include="Resources\ad509a0b-2b57-4de0-9ec8-599f1f1d66a0.png" />
+    <Content Include="Resources\Diseño sin título.png" />
+    <Content Include="Resources\logo.PNG" />
+    <Content Include="Resources\ojo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
