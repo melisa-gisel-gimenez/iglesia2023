@@ -42,54 +42,65 @@ namespace Iglesia
                 MessageBox.Show("Solo puede ingresar 8 números. Por favor, verifique el DNI ingresado");
             }
         }
+
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             string dniABuscar = textBoxDNIBuscar.Text.Trim();
 
             if (!string.IsNullOrEmpty(dniABuscar))
             {
-                string consulta = "SELECT * FROM miembros WHERE DNI = @DNI";
-
-                using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
+                using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
                 {
-                    comando.Parameters.AddWithValue("@DNI", dniABuscar);
+                    conexion.Open();
 
-                    try
+                    string consulta = "SELECT * FROM mentores WHERE DNI_MENTOR = @DNI";
+                    using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
                     {
-                        conexion.Open();
-                        OleDbDataReader reader = comando.ExecuteReader();
-
-                        if (reader.Read())
+                        comando.Parameters.AddWithValue("@DNI", dniABuscar);
+                        try
                         {
-                            
-                            textBoxNombre.Text = reader["NOMBRE"].ToString();
-                            textBoxApellido.Text = reader["APELLIDO"].ToString();
-                            textBoxDNI.Text = reader["DNI"].ToString();
-                            buttonAceptar.Enabled = true;
+                            OleDbDataReader reader = comando.ExecuteReader();
 
+                            if (reader.Read())
+                            {
+                                MessageBox.Show("Esta persona ya está dada de alta como mentor, por favor verifique el DNI ingresado.");
+                            }
+                            else
+                            {
+                                string consulta2 = "SELECT * FROM miembros WHERE DNI = @DNI";
+                                using (OleDbCommand comando2 = new OleDbCommand(consulta2, conexion))
+                                {
+                                    comando2.Parameters.AddWithValue("@DNI", dniABuscar);
+                                    try
+                                    {
+                                        OleDbDataReader reader2 = comando2.ExecuteReader();
+                                        if (reader2.Read())
+                                        {
+                                            textBoxNombre.Text = reader2["NOMBRE"].ToString();
+                                            textBoxApellido.Text = reader2["APELLIDO"].ToString();
+                                            textBoxDNI.Text = reader2["DNI"].ToString();
+                                            buttonAceptar.Enabled = true;
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("No se encontró ninguna persona registrada con el DNI proporcionado.");
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show("Error al buscar en la base de datos: " + ex.Message);
+                                    }
+                                }
+                            }
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            MessageBox.Show("No se encontró ningún registro con el DNI proporcionado.");
+                            MessageBox.Show("Error al buscar el DNI en la base de datos: " + ex.Message);
                         }
-
-                        reader.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error al buscar en la base de datos: " + ex.Message);
-                    }
-                    finally
-                    {
-                        conexion.Close();
                     }
                 }
             }
-            else
-            {
-                MessageBox.Show("Por favor, ingresa un DNI válido.");
-            }
-        }
+        }        
 
         private void buttonAceptar_Click(object sender, EventArgs e)
         {

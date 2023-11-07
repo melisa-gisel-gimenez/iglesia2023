@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnIniciarSesion = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNombreUsuario = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.buttonCerrar = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -67,13 +67,13 @@
             this.btnIniciarSesion.UseVisualStyleBackColor = false;
             this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
             // 
-            // textBox1
+            // txtNombreUsuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(211, 57);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtNombreUsuario.Location = new System.Drawing.Point(211, 57);
+            this.txtNombreUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombreUsuario.Name = "txtNombreUsuario";
+            this.txtNombreUsuario.Size = new System.Drawing.Size(209, 20);
+            this.txtNombreUsuario.TabIndex = 1;
             // 
             // txtPass
             // 
@@ -190,7 +190,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNombreUsuario);
             this.Controls.Add(this.pbOcultar);
             this.Controls.Add(this.pbMostrar);
             this.Controls.Add(this.pictureBox4);
@@ -220,7 +220,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pbMostrar;
         private System.Windows.Forms.PictureBox pbOcultar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNombreUsuario;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Button buttonCerrar;
         private System.Windows.Forms.LinkLabel linkLabel1;
