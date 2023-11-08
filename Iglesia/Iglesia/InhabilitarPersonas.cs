@@ -48,7 +48,7 @@ namespace Iglesia
                         {
 
                             txtNombre.Text = reader["NOMBRE"].ToString();
-                            txtApellido.Text = reader["APELLIDO"].ToString();                           
+                            txtApellido.Text = reader["APELLIDO"].ToString();
                             checkBoxInhabilitado.Checked = Convert.ToBoolean(reader["inhabilitado"]);
                             buttonAceptar.Enabled = true;
                         }
@@ -77,7 +77,7 @@ namespace Iglesia
 
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text ==""|| txtApellido.Text=="")
+            if (txtNombre.Text == "" || txtApellido.Text == "")
             {
                 MessageBox.Show("No debe dejar campos vacíos, por favor ingrese un DNI y presione el boton Buscar.");
             }

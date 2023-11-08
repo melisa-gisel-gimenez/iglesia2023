@@ -12,24 +12,24 @@ using System.Windows.Forms;
 namespace Iglesia
 {
     public partial class ModificarMentor : Form
-    {        
-            private OleDbConnection conexion;
-            private OleDbDataAdapter adaptador;
-            private DataSet dataSet;
+    {
+        private OleDbConnection conexion;
+        private OleDbDataAdapter adaptador;
+        private DataSet dataSet;
 
-            public ModificarMentor()
-            {
-                InitializeComponent();
+        public ModificarMentor()
+        {
+            InitializeComponent();
 
-            }
+        }
 
-            private void AsignarMentor_Load(object sender, EventArgs e)
-            {
-             ConfigurarDGV();
-             ConfigurarDGV2();
-             CargarMiembros();
-             CargarMentores();
-            }
+        private void AsignarMentor_Load(object sender, EventArgs e)
+        {
+            ConfigurarDGV();
+            ConfigurarDGV2();
+            CargarMiembros();
+            CargarMentores();
+        }
         private void ConfigurarDGV()
         {
             // Configura el DataGridView (DGV) para que no genere automáticamente las columnas.
@@ -43,7 +43,7 @@ namespace Iglesia
             colId.HeaderText = "Nro de Miembro";
             colId.DisplayIndex = 0;
             DGV1.Columns.Add(colId);
-            
+
             /* 
             Columna DNI
             DataGridViewTextBoxColumn colDNI = new DataGridViewTextBoxColumn();
@@ -91,14 +91,14 @@ namespace Iglesia
 
 
         private void CargarMiembros()
-            {
-             
-            
-            // Establece la cadena de conexión a tu archivo de base de datos Access (MDB).
-              string connectionString = @"Provider = Microsoft.Jet.OLEDB.4.0; Data Source = C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb";
+        {
 
-              // Crea una conexión a la base de datos.
-              conexion = new OleDbConnection(connectionString);
+
+            // Establece la cadena de conexión a tu archivo de base de datos Access (MDB).
+            string connectionString = @"Provider = Microsoft.Jet.OLEDB.4.0; Data Source = C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb";
+
+            // Crea una conexión a la base de datos.
+            conexion = new OleDbConnection(connectionString);
 
             // Define la consulta SQL para seleccionar los miembros que tienen mentor asignado.
             //string consulta = "SELECT DNI, nombre, fecha_alta, id_mentor FROM Miembros WHERE id_mentor IS NOT NULL";
@@ -116,17 +116,17 @@ namespace Iglesia
             // Crea un adaptador de datos para ejecutar la consulta y llenar el DataSet.
             adaptador = new OleDbDataAdapter(consulta, conexion);
 
-              // Crea un DataSet para almacenar los datos.
-              dataSet = new DataSet();
+            // Crea un DataSet para almacenar los datos.
+            dataSet = new DataSet();
 
-              // Abre la conexión y llena el DataSet con los datos de la tabla Miembros.
-              conexion.Open();
-              adaptador.Fill(dataSet, "AsignacionMentor");
-              conexion.Close();
+            // Abre la conexión y llena el DataSet con los datos de la tabla Miembros.
+            conexion.Open();
+            adaptador.Fill(dataSet, "AsignacionMentor");
+            conexion.Close();
 
-              // Enlaza el DataGridView (DGV1) con el DataSet.
-              DGV1.DataSource = dataSet.Tables["AsignacionMentor"];
-            }
+            // Enlaza el DataGridView (DGV1) con el DataSet.
+            DGV1.DataSource = dataSet.Tables["AsignacionMentor"];
+        }
 
         private void CargarMentores()
         {
@@ -201,14 +201,14 @@ namespace Iglesia
         {
             int dni;
             string nombreM;
-            
+
             textBoxIDMiembro.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells[0].Value.ToString();
             //textBoxDNI.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells[1].Value.ToString();
             textBoxNombre.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells[1].Value.ToString();
-            textBoxMentorAsignado.Text= DGV1.Rows[DGV1.CurrentRow.Index].Cells[3].Value.ToString();
+            textBoxMentorAsignado.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells[3].Value.ToString();
 
             button2.Enabled = true;
-            
+
         }
 
         private void DGV2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -264,9 +264,9 @@ namespace Iglesia
                     //agregar consulta de fecha fin asignacion en el mentor viejo.
                     string consulta6 = "UPDATE AsignacionMentor SET Fecha_fin_asignacion ='" + fechaFin + "'" + "WHERE id_miembro=" + int.Parse(textBoxIDMiembro.Text) + " AND id_mentor=" + int.Parse(textBoxMentorAsignado.Text) + ";";
                     string consulta7 = "INSERT INTO AsignacionMentor (id_miembro, id_mentor, fecha_asignacion) values (" + int.Parse(textBoxIDMiembro.Text) + "," + int.Parse(textBoxIdMentor.Text) + "," + "'" + fechaAsignacion + "');";
-                    
-                    
-                    
+
+
+
                     OleDbCommand comando1 = new OleDbCommand(consulta3, cn);
                     int cantidad = comando1.ExecuteNonQuery();
 
@@ -295,7 +295,7 @@ namespace Iglesia
                     {
                         MessageBox.Show("Se registró el mentoreado con éxito!!!");
                     }
-                    
+
                     OleDbCommand comando3 = new OleDbCommand(consulta5, cn);
 
                     int cantidad2 = comando3.ExecuteNonQuery();
@@ -363,10 +363,10 @@ namespace Iglesia
                 OleDbConnection cn = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb");
                 cn.Open();
                 //String consulta3 = "UPDATE Miembros SET id_mentor = NULL WHERE DNI = '" + int.Parse(textBoxDNI.Text) + "';";
-                  String consulta3 = "UPDATE Mentores SET cantidad = cantidad - 1" + " WHERE id_mentor = " + int.Parse(textBoxMentorAsignado.Text) + ";";
+                String consulta3 = "UPDATE Mentores SET cantidad = cantidad - 1" + " WHERE id_mentor = " + int.Parse(textBoxMentorAsignado.Text) + ";";
                 //agregar consulta para registrar fecha fin asignacion en la tabla asignaciones
                 string consulta6 = "UPDATE AsignacionMentor SET Fecha_fin_asignacion ='" + fechaFin + "'" + "WHERE id_miembro=" + int.Parse(textBoxIDMiembro.Text) + " AND id_mentor=" + int.Parse(textBoxMentorAsignado.Text) + ";";
-                
+
                 OleDbCommand comando1 = new OleDbCommand(consulta3, cn);
 
                 int cantidad = comando1.ExecuteNonQuery();
@@ -411,7 +411,12 @@ namespace Iglesia
             textBoxNombreMentor.Text = "";
             button1.Enabled = false;
             button2.Enabled = false;
-            
+
+        }
+
+        private void textBoxCantidad_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

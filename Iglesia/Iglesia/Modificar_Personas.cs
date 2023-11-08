@@ -15,7 +15,7 @@ namespace Iglesia
     {
         private OleDbConnection conexion;
         private string cadenaConexion = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb";
-        
+
         public Modificar_Personas()
         {
             InitializeComponent();
@@ -44,9 +44,9 @@ namespace Iglesia
         }
         private void Modificar_Personas_Load(object sender, EventArgs e)
         {
-            
-        }        
-        
+
+        }
+
         /*
          * private void button1_Click(object sender, EventArgs e)
         {
@@ -62,7 +62,7 @@ namespace Iglesia
                       
         }
         */
-        
+
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -76,64 +76,64 @@ namespace Iglesia
             txtTelefono.Text = "";
             textemail.Text = "";
             textBoxFechaNac.Text = "";
-            
+
         }
-                  
-        
-            private void btnBuscar_Click(object sender, EventArgs e)
+
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string dniABuscar = textBoxBuscarDNI.Text.Trim();
+
+            if (!string.IsNullOrEmpty(dniABuscar))
             {
-                string dniABuscar = textBoxBuscarDNI.Text.Trim();
+                string consulta = "SELECT * FROM miembros WHERE DNI = @DNI";
 
-                if (!string.IsNullOrEmpty(dniABuscar))
+                using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
                 {
-                    string consulta = "SELECT * FROM miembros WHERE DNI = @DNI";
+                    comando.Parameters.AddWithValue("@DNI", dniABuscar);
 
-                    using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
+                    try
                     {
-                        comando.Parameters.AddWithValue("@DNI", dniABuscar);
+                        conexion.Open();
+                        OleDbDataReader reader = comando.ExecuteReader();
 
-                        try
+                        if (reader.Read())
                         {
-                            conexion.Open();
-                            OleDbDataReader reader = comando.ExecuteReader();
+                            txtDNI.Text = reader["DNI"].ToString();
+                            txtNombre.Text = reader["NOMBRE"].ToString();
+                            txtApellido.Text = reader["APELLIDO"].ToString();
+                            txtDireccion.Text = reader["DIRECCION"].ToString();
+                            txtBarrio.Text = reader["BARRIO"].ToString();
+                            txtTelefono.Text = reader["TELEFONO"].ToString();
+                            textemail.Text = reader["EMAIL"].ToString();
+                            textBoxFechaNac.Text = reader["FECHA_NAC"].ToString();
+                            checkBoxBautizado.Checked = Convert.ToBoolean(reader["bautizado"]);
 
-                            if (reader.Read())
-                            {
-                                txtDNI.Text = reader["DNI"].ToString();
-                                txtNombre.Text = reader["NOMBRE"].ToString();
-                                txtApellido.Text = reader["APELLIDO"].ToString();
-                                txtDireccion.Text = reader["DIRECCION"].ToString();
-                                txtBarrio.Text = reader["BARRIO"].ToString();
-                                txtTelefono.Text = reader["TELEFONO"].ToString();
-                                textemail.Text = reader["EMAIL"].ToString();
-                                textBoxFechaNac.Text = reader["FECHA_NAC"].ToString();
-                                checkBoxBautizado.Checked = Convert.ToBoolean(reader["bautizado"]);
-                                
-                                
+
 
                         }
-                            else
-                            {
-                                MessageBox.Show("No se encontró ningún registro con el DNI proporcionado.");
-                            }
-
-                            reader.Close();
-                        }
-                        catch (Exception ex)
+                        else
                         {
-                            MessageBox.Show("Error al buscar en la base de datos: " + ex.Message);
+                            MessageBox.Show("No se encontró ningún registro con el DNI proporcionado.");
                         }
-                        finally
-                        {
-                            conexion.Close();
-                        }
+
+                        reader.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al buscar en la base de datos: " + ex.Message);
+                    }
+                    finally
+                    {
+                        conexion.Close();
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Por favor, ingresa un DNI válido.");
-                }
             }
+            else
+            {
+                MessageBox.Show("Por favor, ingresa un DNI válido.");
+            }
+        }
 
         private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -177,7 +177,7 @@ namespace Iglesia
                     comando.Parameters.AddWithValue("@Barrio", txtBarrio.Text);
                     comando.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
                     comando.Parameters.AddWithValue("@Email", textemail.Text);
-                    comando.Parameters.AddWithValue("@Checkbox",checkBoxBautizado.Checked);                    
+                    comando.Parameters.AddWithValue("@Checkbox", checkBoxBautizado.Checked);
                     comando.Parameters.AddWithValue("@FECHA_NAC", textBoxFechaNac.Text);
                     comando.Parameters.AddWithValue("@DNI", dniModificado);
                     comando.Parameters.AddWithValue("@DNI2", dniAModificar);
@@ -237,6 +237,7 @@ namespace Iglesia
         }
     }
 }
+
 
 
 

@@ -13,7 +13,7 @@ namespace Iglesia
 {
     public partial class PostularADiscipulado : Form
     {
-        
+
         private OleDbConnection conexion;
         private string cadenaConexion = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb";
         public PostularADiscipulado()
@@ -47,8 +47,8 @@ namespace Iglesia
                             textIDEtapaActual.Text = reader["id_etapaespiritual"].ToString();
                             textFechaAlta.Text = reader["fecha_alta"].ToString();
                             textIDMentor.Text = reader["id_mentor"].ToString();
-                            textBoxIDMiembro.Text = reader ["id_miembro"].ToString();
-                            textBoxIDMinisterio.Text = reader["id_ministerio"].ToString() ;
+                            textBoxIDMiembro.Text = reader["id_miembro"].ToString();
+                            textBoxIDMinisterio.Text = reader["id_ministerio"].ToString();
                             checkBoxSI.Checked = Convert.ToBoolean(reader["inhabilitado"]);
                         }
                         else
@@ -85,7 +85,7 @@ namespace Iglesia
                 textBoxIDProxEtapa.Text = "2";
                 textBoxIDProxEtapa.Enabled = false;
                 comboBoxMinisterios.Enabled = true;
-                
+
             }
 
             if (textIDEtapaActual.Text == "2")
@@ -96,7 +96,7 @@ namespace Iglesia
                 textEtapaActual.Enabled = false;
                 textProxEtapa.Enabled = false;
                 textBoxIDProxEtapa.Text = "3";
-                
+
 
                 if (textBoxIDMinisterio.Text != "")
                 {
@@ -141,7 +141,7 @@ namespace Iglesia
 
             if (textIDEtapaActual.Text == "3")
             {
-                
+
                 textEtapaActual.Text = "Enviado";
                 comboBoxMinisterios.Enabled = false;
                 textEtapaActual.Enabled = false;
@@ -149,7 +149,7 @@ namespace Iglesia
                 textBoxIDProxEtapa.Enabled = false;
                 buttonPostular.Enabled = false;
                 MessageBox.Show("Esta persona ya llegó a la etapa de evolución máxima dentro de la Iglesia. Por favor elija otro miembro o revise los datos");
-                              
+
             }
 
             if (checkBoxSI.Checked == true)
@@ -240,6 +240,10 @@ namespace Iglesia
             }
         }
 
+        private void textApellido_TextChanged(object sender, EventArgs e)
+        {
+
+        }
         private void txtDNIBuscar_TextChanged(object sender, EventArgs e)
         {
             // Verifica si la longitud del texto en el TextBox es mayor a 8
@@ -407,7 +411,7 @@ namespace Iglesia
             Limpiar();
         }
 
-        private void Limpiar ()
+        private void Limpiar()
         {
             txtDNIBuscar.Text = string.Empty;
             textNombre.Text = string.Empty;
@@ -423,11 +427,11 @@ namespace Iglesia
             textNombreMentor.Text = string.Empty;
             textIDMentor.Text = string.Empty;
             textMinisterio.Text = string.Empty;
-            checkBoxSI.Checked = false;            
+            checkBoxSI.Checked = false;
             buttonPostular.Enabled = false;
         }
-        
+
     }
 }
-    
+
 

@@ -25,10 +25,10 @@ namespace Iglesia
         private void PostulacionesRevisar_Load(object sender, EventArgs e)
 
         {
-            
+
             cargarDGV();
             ConfigurarDGV1();
-            
+
 
         }
         private void cargarDGV()
@@ -40,11 +40,11 @@ namespace Iglesia
                 "LEFT JOIN CambioEtapas ce ON p.id_miembro = ce.id_miembro " +
                 "WHERE p.aprobado = false " +
                 "AND ce.fecha_fin_etapa IS NULL;";
-                   
-          
+
+
             using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
             {
-               
+
 
                 try
                 {
@@ -102,26 +102,26 @@ namespace Iglesia
         {
             labelIDPostulacion.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells[0].Value.ToString();
             labelIDMiembro.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells[2].Value.ToString();
-            labelIDProxEtapa.Text= DGV1.Rows[DGV1.CurrentRow.Index].Cells[7].Value.ToString();
+            labelIDProxEtapa.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells[7].Value.ToString();
             //labelFechaAlta.Text= DGV1.Rows[DGV1.CurrentRow.Index].Cells[9].Value.ToString();
         }
 
         private void buttonAprobar_Click(object sender, EventArgs e)
         {
-            DateTime fecha= DateTime.Now;
+            DateTime fecha = DateTime.Now;
 
-            if (labelIDPostulacion.Text =="")
+            if (labelIDPostulacion.Text == "")
             {
                 MessageBox.Show("Por favor, haga click en la celda de la postulación que quiere aprobar");
             }
             else
             {
-                string cadenaUpdate= "UPDATE Postulaciones SET aprobado = true WHERE Id_postulacion = @IdPostulacion";
+                string cadenaUpdate = "UPDATE Postulaciones SET aprobado = true WHERE Id_postulacion = @IdPostulacion";
 
 
                 OleDbCommand comando = new OleDbCommand(cadenaUpdate, conexion);
                 conexion.Open();
-               
+
                 comando.Parameters.AddWithValue("@IdPostulacion", labelIDPostulacion.Text);
 
                 int cantidad = comando.ExecuteNonQuery();
@@ -139,7 +139,7 @@ namespace Iglesia
                 conexion.Close();
             }
 
-           if (labelIDProxEtapa.Text =="1")
+            if (labelIDProxEtapa.Text == "1")
             {
                 string cadena2 = "UPDATE MIEMBROS SET id_etapaespiritual = 2 WHERE id_miembro = @IdMiembro";
                 OleDbCommand comando = new OleDbCommand(cadena2, conexion);
@@ -159,7 +159,7 @@ namespace Iglesia
                     MessageBox.Show("Se aprobo la postulación con exito!");
                 }
 
-                string cadenaFecha= "UPDATE CAMBIOETAPAS SET fecha_fin_etapa ='" + fecha + "'" + " WHERE id_miembro = @IdMiembro";
+                string cadenaFecha = "UPDATE CAMBIOETAPAS SET fecha_fin_etapa ='" + fecha + "'" + " WHERE id_miembro = @IdMiembro";
                 OleDbCommand comando2 = new OleDbCommand(cadenaFecha, conexion);
 
                 comando2.Parameters.AddWithValue("@IdMiembro", labelIDMiembro.Text);
@@ -214,7 +214,7 @@ namespace Iglesia
 
                 string cadenaFecha = "UPDATE CAMBIOETAPAS SET fecha_fin_etapa ='" + fecha + "'" + " WHERE id_miembro = @IdMiembro";
                 OleDbCommand comando2 = new OleDbCommand(cadenaFecha, conexion);
-                
+
                 comando2.Parameters.AddWithValue("@IdMiembro", labelIDMiembro.Text);
                 int cantidad2 = comando2.ExecuteNonQuery();
 

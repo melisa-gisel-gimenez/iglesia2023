@@ -16,13 +16,13 @@ namespace Iglesia
     {
         private OleDbConnection conexion;
         private string cadenaConexion = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\MELIS\Documents\Baseiglesiaproduccion.mdb";
-        
+
         public RegistroReunionesMentor()
         {
             InitializeComponent();
             conexion = new OleDbConnection(cadenaConexion);
         }
-               
+
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
@@ -44,7 +44,7 @@ namespace Iglesia
                         if (reader.Read())
                         {
                             textBoxNombre.Text = reader["NOMBRE"].ToString();
-                            textBoxApellido.Text = reader["APELLIDO"].ToString();                            
+                            textBoxApellido.Text = reader["APELLIDO"].ToString();
                             textBoxIDMiembro.Text = reader["id_miembro"].ToString();
                             textBoxIDMentor.Text = reader["id_mentor"].ToString();
                             buttonGuardar.Enabled = true;
@@ -74,21 +74,21 @@ namespace Iglesia
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            if (textBoxNombre.Text =="" || textBoxApellido.Text ==""|| textBoxIDMentor.Text == "" || textBoxIDMiembro.Text == "")
+            if (textBoxNombre.Text == "" || textBoxApellido.Text == "" || textBoxIDMentor.Text == "" || textBoxIDMiembro.Text == "")
             {
                 MessageBox.Show("Por favor, seleccione un miembro antes de Guardar los cambios. Ingrese el DNI en el campo correspondiente y presione Buscar.");
             }
             else
             {
-                string consulta = "INSERT INTO reuniones_mentor (id_miembro, id_mentor, fecha_reunion, detalle) VALUES (" + textBoxIDMiembro.Text +", "+ textBoxIDMentor.Text + ", '"+ dateTimePicker1.Value +"', " + "'" + textBoxDetalle.Text +"');";
+                string consulta = "INSERT INTO reuniones_mentor (id_miembro, id_mentor, fecha_reunion, detalle) VALUES (" + textBoxIDMiembro.Text + ", " + textBoxIDMentor.Text + ", '" + dateTimePicker1.Value + "', " + "'" + richTextBox1.Text + "');";
 
                 using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
                 {
-                    
+
                     try
                     {
                         conexion.Open();
-                        
+
                         int cantidad = comando.ExecuteNonQuery();
 
                         if (cantidad < 1)
@@ -114,12 +114,12 @@ namespace Iglesia
 
         private void buttonLimpiar_Click(object sender, EventArgs e)
         {
-            textBoxDNI.Text= string.Empty;
-            textBoxNombre.Text= string.Empty;
-            textBoxApellido.Text= string.Empty;
-            textBoxIDMiembro.Text= string.Empty;
+            textBoxDNI.Text = string.Empty;
+            textBoxNombre.Text = string.Empty;
+            textBoxApellido.Text = string.Empty;
+            textBoxIDMiembro.Text = string.Empty;
             textBoxIDMentor.Text = string.Empty;
-            textBoxDetalle.Text= string.Empty;
+            richTextBox1.Text = string.Empty;
             buttonGuardar.Enabled = false;
         }
     }
