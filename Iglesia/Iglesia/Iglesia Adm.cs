@@ -22,8 +22,8 @@ namespace Iglesia
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Acerca_de Form1 = new Acerca_de();
-            //Form1.ShowDialog();
+             AcercaDe Form1 = new AcercaDe();
+             Form1.Show();
         }
 
         private void tesoreríaToolStripMenuItem_Click(object sender, EventArgs e)

@@ -87,7 +87,6 @@ C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023 - vale\Iglesia\Iglesia\bi
 C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023 - vale\Iglesia\Iglesia\bin\Debug\Iglesia.pdb
 C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023 - vale\Iglesia\Iglesia\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023 - vale\Iglesia\Iglesia\obj\Debug\Iglesia.csproj.AssemblyReference.cache
-C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023 - vale\Iglesia\Iglesia\obj\Debug\Iglesia.Acerca_de.resources
 C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023 - vale\Iglesia\Iglesia\obj\Debug\Iglesia.Properties.Resources.resources
 C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023 - vale\Iglesia\Iglesia\obj\Debug\Iglesia.csproj.GenerateResource.cache
 C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023 - vale\Iglesia\Iglesia\obj\Debug\Iglesia.csproj.CoreCompileInputs.cache
@@ -131,3 +130,4 @@ C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023 - vale\Iglesia\Iglesia\ob
 C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023 - vale\Iglesia\Iglesia\obj\Debug\Iglesia.PostularADiscipulado.resources
 C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023 - vale\Iglesia\Iglesia\obj\Debug\Iglesia.RegistroReunionesMentor.resources
 C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023 - vale\Iglesia\Iglesia\obj\Debug\Iglesia.LoginJuli.resources
+C:\Users\MELIS\OneDrive\Escritorio\proyectoiglesia2023 - vale\Iglesia\Iglesia\obj\Debug\Iglesia.AcercaDe.resources
