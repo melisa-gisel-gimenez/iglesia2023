@@ -42,7 +42,7 @@ namespace Iglesia
                         if (reader.Read())
                         {
                             txtNombre.Text = reader["NOMBRE"].ToString();
-                            txtApellido.Text = reader["APELLIDO"].ToString();                            
+                            txtApellido.Text = reader["APELLIDO"].ToString();
                             checkBoxInhabilitado.Checked = Convert.ToBoolean(reader["inhabilitado"]);
                             buttonAceptar.Enabled = true;
                         }
