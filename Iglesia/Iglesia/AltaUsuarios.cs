@@ -117,6 +117,7 @@ namespace Iglesia
             checkBoxInhabilitado.Checked = false;
             comboBoxTipoUsuario.Text = string.Empty;
             checkBoxAltaUser.Checked = false;
+            buttonAceptar.Enabled = false;
         }
     }
 }
